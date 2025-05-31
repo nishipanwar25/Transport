@@ -28,23 +28,34 @@
 
  let currentIndex = 0;
 
+  function getVisibleCardCount() {
+    const containerWidth = document.querySelector(".slider-container").offsetWidth;
+    const cardWidth = document.querySelector(".testimonial-card").offsetWidth + 20; // 20 is the gap
+    return Math.floor(containerWidth / cardWidth);
+  }
+
   function updateSlidePosition() {
     const track = document.getElementById("sliderTrack");
-    const slide = document.querySelector(".testimonial-card");
-    const slideWidth = slide.offsetWidth + 20; // include gap
-    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    const cardWidth = document.querySelector(".testimonial-card").offsetWidth + 20;
+    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
   }
 
   function nextSlide() {
     const slides = document.querySelectorAll(".testimonial-card");
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlidePosition();
+    const visibleCards = getVisibleCardCount();
+    const maxIndex = slides.length - visibleCards;
+
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+      updateSlidePosition();
+    }
   }
 
   function prevSlide() {
-    const slides = document.querySelectorAll(".testimonial-card");
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlidePosition();
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlidePosition();
+    }
   }
 
   window.addEventListener("resize", updateSlidePosition);
