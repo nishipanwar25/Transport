@@ -695,11 +695,14 @@ p {
 .footer-col h3 {
   margin-bottom: 15px;
   font-size: 18px;
+  font-weight: 700;
 }
 
 .footer-col p,
 .footer-col a {
   font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
   line-height: 1.5;
   color: #ccc;
   text-decoration: none;
@@ -709,6 +712,9 @@ p {
   margin-right: 8px;
   color: red;
   font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
 }
 
 .contact-info {
