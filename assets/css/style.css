@@ -436,13 +436,12 @@ p {
 
 .testimonial-img {
   flex: 1;
-  background-image: url('/images/Aboutus.avif');
+  background: linear-gradient(rgba(72, 6, 6, 0.656)), url('https://images.pexels.com/photos/3961932/pexels-photo-3961932.jpeg?auto=compress&cs=tinysrgb&w=600');
   background-size: cover;
   background-position: center;
   width: 500px;
   border-top-right-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
-
 }
 
 .testimonial-content {
@@ -730,11 +729,68 @@ p {
 
 
 
+.client-logos {
+  background-color: #7b0f1d;
+}
+
+.client-logos-slider {
+  width: 100%;
+  overflow: hidden;
+  padding: 30px 0;
+  margin: auto;
+}
+
+.client-slider-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.client-slider-track img {
+  height: 40px;
+  width: 12vw;
+  max-width: 150px;
+  min-width: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes logos white */
+  padding: 0 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .client-slider-track img {
+    width: 20vw;
+    max-width: 100px;
+    height: 30px;
+    padding: 0 5px;
+  }
+
+  .client-slider-track {
+    gap: 40px;
+    animation: scroll 20s linear infinite; /* Faster on mobile */
+  }
+}
+
+
+
 
 
 
 /* ================ END Testimonial Section ===================== */
 
+/* ================ Start Why-choose-us Section ===================== */
 
 .why-choose-us {
   display: flex;
@@ -841,7 +897,7 @@ p {
 }
 
 .right-blow-container {
-  height: 50%;
+  height: 100%;
   width: 100%;
   display: flex;
 }
@@ -923,7 +979,8 @@ p {
   }
 
   .left-container img {
-    width: 100%;
+    /* min-width: 100%; */
+    min-width: 100wh;
     height: auto;
     object-fit: cover;
   }
@@ -1017,6 +1074,137 @@ p {
   }
 }
 
+/* ================ END Why-choose-us Section ===================== */
+
+
+/* ================ END Services Section ===================== */
+
+.services-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+}
+
+.service-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  position: relative;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #111;
+  color: #f02d47;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom-left-radius: 6px;
+}
+
+.service-card .service-icon {
+  font-size: 40px;
+  color: #7b0f1d;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.service-card .read-more2 {
+  font-size: 14px;
+  color: #7b0f1d;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 🌐 Responsive Design */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .service-card {
+    padding: 25px 15px;
+  }
+
+  .service-card .service-icon {
+    font-size: 36px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+
+  .service-card .read-more2 {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .service-card h3 {
+    font-size: 15px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+  }
+}
+
+
+
+/* ================ END Services Section ===================== */
 
 
 
