@@ -75,6 +75,8 @@ body {
 .titleUp {
   font-weight: 700;
   text-transform: uppercase;
+  margin-left: 95px;
+  margin-top: 25px;
 }
 
 .inline-block.space {
@@ -1004,6 +1006,7 @@ p {
     text-align: center;
   }
 
+
   .text-content{
     margin: auto;
   }
@@ -1032,8 +1035,6 @@ p {
     min-width: 45%;
     margin: 10px;
   }
-
-  
 }
 
 @media (max-width: 768px) {
