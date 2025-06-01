@@ -419,7 +419,7 @@ p {
   display: flex;
   flex-direction: column;
   /* border-radius: 1.5rem; */
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #eee;
   /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07); */
   max-width: 100%;
@@ -453,25 +453,33 @@ p {
   justify-content: center;
 }
 
+.testimonial-title {
+  position: absolute;
+  top: 5%;
+}
+
 .subtitle {
   color: #7b0f1d;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
+  margin-left: 21px;
 }
 
 .title {
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 1rem;
-
+  margin-right: 100px;
+  /* padding: none; */
 }
 
 .desc {
   font-size: 1rem;
   color: #555;
   margin-bottom: 2rem;
+  margin-left: 21px;
 }
 
 .slider-full-container {
@@ -586,12 +594,7 @@ p {
 }
 
 /* Adjust for medium and small screens */
-@media (max-width: 992px) {
-  .testimonial-card {
-    flex: 0 0 calc(50% - 20px);
-    /* 2 cards */
-  }
-}
+@media (max-width: 992px) {}
 
 @media (max-width: 600px) {
   .testimonial-card {
@@ -624,50 +627,47 @@ p {
   background: #ddd;
 }
 
-@media (max-width: 992px) {
-  .testimonial-card {
+@media (max-width: 1024px) {
+
+  /* .testimonial-card {
     flex: 0 0 calc(50% - 20px);
+  } */
+  .testimonial-content {
+    overflow-y: hidden;
+    height: auto;
   }
-}
 
-@media (max-width: 600px) {
   .testimonial-card {
-    flex: 0 0 100%;
-  }
-
-  .title {
-    font-size: 1.5rem;
-  }
-
-  .desc {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .testimonial-card {
+    margin-top: 50px;
     flex: 0 0 calc(50% - 20px);
-    /* Show 2 cards */
-  }
-}
-
-@media (max-width: 600px) {
-  .testimonial-card {
-    flex: 0 0 100%;
-    /* Show 1 card */
+    width: 100%;
   }
 
-  .title {
-    font-size: 1.5rem;
+  .slider-full-container {
+    position: relative;
+    right: auto;
+    top: 10%;
+    width: 100%;
+    margin-top: 3rem;
+    overflow-x: hidden;
   }
 
-  .desc {
-    font-size: 0.9rem;
+   .testimonial-card {
+    flex: 0 0 300px;
+    width: 300px;
+  }
+
+  .slider-container {
+    width: 100%;
+    /* padding: 0 1rem; */
+  }
+
+  .testimonial-img {
+    display: none;
   }
 
   .nav-buttons {
-    margin-left: 0;
-    justify-content: center;
+    margin: 20px auto;
   }
 }
 
@@ -676,7 +676,7 @@ p {
   .testimonial-section {
     flex-direction: column;
     align-items: center;
-    height: 1000px;
+    height: 800px;
   }
 
   .testimonial-img {
@@ -689,10 +689,14 @@ p {
     text-align: center;
   }
 
+  .title{
+    margin-left: 100px;
+  }
+
   .slider-full-container {
     position: relative;
     right: auto;
-    top: auto;
+    top: 10%;
     width: 100%;
     margin-top: 3rem;
     overflow-x: hidden;
@@ -713,7 +717,7 @@ p {
   }
 
   .nav-buttons {
-    margin: 1rem auto 0 auto;
+    margin: 4rem auto 0 auto;
     justify-content: center;
   }
 
@@ -727,7 +731,7 @@ p {
   }
 }
 
-
+/* ========================== */
 
 .client-logos {
   background-color: #7b0f1d;
@@ -754,7 +758,8 @@ p {
   max-width: 150px;
   min-width: 80px;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* Makes logos white */
+  filter: brightness(0) invert(1);
+  /* Makes logos white */
   padding: 0 10px;
 }
 
@@ -779,12 +784,10 @@ p {
 
   .client-slider-track {
     gap: 40px;
-    animation: scroll 20s linear infinite; /* Faster on mobile */
+    animation: scroll 20s linear infinite;
+    /* Faster on mobile */
   }
 }
-
-
-
 
 
 
@@ -970,6 +973,7 @@ p {
   .why-choose-us {
     flex-direction: column;
     height: auto;
+    width: 100%;
   }
 
   .left-container,
@@ -978,8 +982,8 @@ p {
     flex-direction: column;
   }
 
-  .left-container img {
-    /* min-width: 100%; */
+  .left-container-image {
+    width: 1000px;
     min-width: 100wh;
     height: auto;
     object-fit: cover;
@@ -998,6 +1002,10 @@ p {
     flex: 1;
     margin: 0 10px;
     text-align: center;
+  }
+
+  .text-content{
+    margin: auto;
   }
 
   .title {
@@ -1024,6 +1032,8 @@ p {
     min-width: 45%;
     margin: 10px;
   }
+
+  
 }
 
 @media (max-width: 768px) {
