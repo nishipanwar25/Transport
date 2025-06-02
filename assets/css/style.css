@@ -1271,13 +1271,14 @@ p {
  /* <!----------- Start Contact Sections ----------------> */
 
    .contact-section {
-      /* background-color: #fff; */
-      background: 
-      url(/images/Aboutus.avif);
+      background-color: #fff;
+      /* background: 
+      url(/images/Aboutus.avif); */
       text-align: center;
       padding: 60px 20px 40px;
-      height: auto;
+      height: 100vh;
       max-width: 100%;
+      margin-top: 100px;
     }
 
     .contact-section h2 {
@@ -1326,7 +1327,7 @@ p {
       font-size: 16px;
       cursor: pointer;
       transition: 0.3s;
-      width: 52%;
+      width: 53%;
     }
 
     .submit-btn:hover {

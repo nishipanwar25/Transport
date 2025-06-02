@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+    <style>
+        /* General Resets & Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --dark-blue: #1A1E2C;
+    --light-grey: #F5F7FA;
+    --primary-blue: #007bff; /* Example, adjust if needed */
+    --gold-star: #FFD700;
+    --text-color-light: #fff;
+    --text-color-dark: #333;
+    --subtitle-color: #889098;
+    --arrow-bg: #2B3040;
+    --arrow-color: #fff;
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--dark-blue); /* Fallback */
+    overflow-x: hidden; /* Prevent horizontal scroll due to diagonal cut */
+}
+
+/* Header */
+.main-header {
+    position: relative;
+    z-index: 10;
+    height: 40px; /* Adjust as needed */
+    background: linear-gradient(to right, #007bff, #0056b3); /* Example blue gradient */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content Wrapper */
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack vertically on small screens */
+    min-height: calc(100vh - 40px); /* Adjust for header height */
+    position: relative;
+}
+
+.left-section {
+    background-color: var(--dark-blue);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure it's above the background diagonal */
+    flex: 1; /* Allow it to grow */
+}
+
+.right-section {
+    background-color: var(--light-grey);
+    color: var(--text-color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1; /* Below the left section if diagonal overlaps */
+    overflow: hidden; /* For sparkles */
+    flex: 1; /* Allow it to grow */
+    padding: 20px; /* Add some padding */
+}
+
+/* Diagonal Cut (using pseudo-elements) */
+/* The image shows the right section having a diagonal cut.
+   We achieve this by making the right section full width and then
+   using a background with a linear gradient or clip-path.
+   A simpler approach for this design might be to layer sections.
+   Let's try a transform on the right section, or a more complex SVG background.
+   For simplicity and good responsiveness, we'll aim for a responsive layout
+   and use a pseudo-element for the diagonal.
+*/
+
+/* This creates the diagonal split effect */
+@media (min-width: 992px) {
+    .content-wrapper {
+        flex-direction: row; /* Side-by-side on larger screens */
+    }
+
+    .left-section {
+        flex: 2; /* Give more space to left section on desktop */
+        padding: 80px 60px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .right-section {
+        flex: 1; /* Give less space to right section on desktop */
+        padding: 0; /* Image itself will handle spacing */
+        position: relative;
+        /* Using clip-path for diagonal cut */
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        margin-left: -15%; /* Pull it back to overlap with left section */
+        z-index: 1; /* Make sure it's below content but above image */
+        background-color: var(--light-grey); /* Ensure background fills clipped area */
+    }
+
+    .left-section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -15%; /* Matches the clip-path shift */
+        bottom: 0;
+        width: 15%; /* Width of the overlap */
+        background-color: var(--dark-blue); /* Same as left section */
+        transform: skewX(-15deg); /* Adjust angle to match diagonal */
+        transform-origin: top left;
+        z-index: 0; /* Behind content */
+    }
+}
+
+
+/* Testimonials Section */
+.testimonials-section {
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 60px;
+    position: relative;
+    padding-right: 80px; /* Space for quote icon */
+}
+
+.section-subtitle {
+    color: var(--subtitle-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.testimonial-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 250px; /* Ensure space for content */
+}
+
+.testimonial-item {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-item.active {
+    display: block;
+    opacity: 1;
+}
+
+.stars {
+    color: var(--gold-star);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.stars i {
+    margin-right: 2px;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Quote icon */
+.testimonial-text::before {
+    content: '\201C'; /* Left double quotation mark */
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    z-index: 0;
+}
+
+.testimonial-text::after {
+    content: '\201D'; /* Right double quotation mark */
+    font-size: 100px;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    z-index: 0;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-blue);
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color-light);
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: var(--subtitle-color);
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 0; /* Adjust as needed */
+    right: 0;
+    display: flex;
+    gap: 10px;
+    z-index: 5; /* Above testimonial items */
+}
+
+.nav-arrow {
+    background-color: var(--arrow-bg);
+    color: var(--arrow-color);
+    border: none;
+    border-radius: var(--border-radius);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background-color: var(--primary-blue);
+}
+
+/* Stats Section */
+.stats-section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 600px; /* Align with testimonial section width */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: calc(50% - 20px); /* 2 items per row with gap */
+    max-width: 180px; /* Max width for each circle */
+}
+
+.stat-label {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: var(--subtitle-color);
+}
+
+/* Progress Circle CSS (from a common pattern) */
+.progress-circle {
+    position: relative;
+    width: 120px; /* Diameter of the circle */
+    height: 120px;
+    border-radius: 50%;
+    background-color: #33384A; /* Background for the empty part of the circle */
+    overflow: hidden;
+}
+
+.circle-mask,
+.circle-fill {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-blue); /* Color of the filled part */
+    transform-origin: center right;
+}
+
+.circle-mask.full,
+.circle-mask.half {
+    transform-origin: center right;
+}
+
+.circle-mask.full {
+    transform: rotate(180deg);
+}
+
+.circle-mask.half {
+    background-color: transparent; /* Makes this half transparent */
+}
+
+.circle-fill.fix {
+    transform: rotate(180deg);
+}
+
+.circle-inset {
+    position: absolute;
+    width: calc(100% - 10px); /* Inner circle size */
+    height: calc(100% - 10px);
+    background-color: var(--dark-blue); /* Background color of the inner circle */
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-light);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.percentage-text {
+    position: absolute;
+    z-index: 10;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color-light);
+}
+
+/* Image Section */
+.image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%; /* Make image fill container */
+    height: 100%; /* Make image fill container */
+    object-fit: cover; /* Cover the area, crop if necessary */
+    display: block;
+}
+
+
+/* Sparkles (Subtle background elements) */
+.sparkles {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.sparkles span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.sparkles span:nth-child(1) { top: 0; right: 0; animation: sparkle 2s infinite ease-in-out; }
+.sparkles span:nth-child(2) { top: 15px; right: 20px; width: 8px; height: 8px; animation: sparkle 2.5s infinite ease-in-out 0.5s; }
+.sparkles span:nth-child(3) { top: 30px; right: 10px; width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.6); animation: sparkle 3s infinite ease-in-out 1s; }
+.sparkles span:nth-child(4) { top: 40px; right: 30px; width: 7px; height: 7px; animation: sparkle 2.2s infinite ease-in-out 0.2s; }
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.5; transform: scale(1) rotate(45deg); }
+    50% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 991px) {
+    .left-section {
+        padding: 60px 30px;
+    }
+    .right-section {
+        padding: 0; /* Remove padding as image will fill */
+    }
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .right-section {
+        clip-path: none; /* Remove diagonal clip on smaller screens */
+        margin-left: 0;
+    }
+    .left-section::after {
+        display: none; /* Hide pseudo-element for diagonal on small screens */
+    }
+    .testimonials-section {
+        padding-right: 20px; /* Reduce padding */
+    }
+    .carousel-nav {
+        position: static; /* Place nav below testimonial on small screens */
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .author-info {
+        justify-content: center;
+    }
+    .testimonial-text::before,
+    .testimonial-text::after {
+        font-size: 80px;
+        top: -30px;
+        left: -20px;
+    }
+    .testimonial-text::after {
+        bottom: -30px;
+        right: -20px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    .stat-item {
+        flex-basis: 100%; /* Stack items on very small screens */
+        max-width: 250px; /* Keep circle size reasonable */
+    }
+    .left-section, .right-section {
+        padding: 40px 15px;
+    }
+    .sparkles {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section {
+        margin-bottom: 40px;
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .stars {
+        font-size: 1rem;
+    }
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .author-name {
+        font-size: 1rem;
+    }
+    .author-title {
+        font-size: 0.8rem;
+    }
+    .progress-circle {
+        width: 100px;
+        height: 100px;
+    }
+    .percentage-text {
+        font-size: 1.5rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-blue-bar"></div>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="left-section">
+            <div class="testimonials-section">
+                <p class="section-subtitle">TESTIMONIALS</p>
+                <h2 class="section-title">What's Client's Say?</h2>
+
+                <div class="testimonial-carousel">
+                    <div class="testimonial-item active">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "If you're looking for a rewarding career and the chance to make an impact, you've come to the right place. We will transform your business through our techniques."
+                        </p>
+                        <div class="author-info">
+                            <img src="https://via.placeholder.com/60" alt="Eliana Hernandez" class="author-avatar">
+                            <div>
+                                <p class="author-name">Eliana Hernandez</p>
+                                <p class="author-title">Berkeley Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "This team truly understands client needs and delivers exceptional results. Their innovative approach has significantly boosted our efficiency and overall performance."
+                        </p>
+                        <div class="author-info">
+                            <img src="https://via.placeholder.com/60" alt="John Doe" class="author-avatar">
+                            <div>
+                                <p class="author-name">John Doe</p>
+                                <p class="author-title">CEO, Tech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Absolutely thrilled with the partnership! Their dedication and expertise are unmatched. Highly recommend for anyone looking to scale their operations."
+                        </p>
+                        <div class="author-info">
+                            <img src="https://via.placeholder.com/60" alt="Jane Smith" class="author-avatar">
+                            <div>
+                                <p class="author-name">Jane Smith</p>
+                                <p class="author-title">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-nav">
+                        <button class="nav-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="progress-circle" data-percentage="85">
+                        <div class="circle-mask full">
+                            <div class="circle-fill"></div>
+                        </div>
+                        <div class="circle-mask half">
+                            <div class="circle-fill"></div>
+                            <div class="circle-fill fix"></div>
+                        </div>
+                        <div class="circle-inset"></div>
+                        <span class="percentage-text">85%</span>
+                    </div>
+                    <p class="stat-label">Our Satisfied customer</p>
+                </div>
+                <div class="stat-item">
+                    <div class="progress-circle" data-percentage="75">
+                        <div class="circle-mask full">
+                            <div class="circle-fill"></div>
+                        </div>
+                        <div class="circle-mask half">
+                            <div class="circle-fill"></div>
+                            <div class="circle-fill fix"></div>
+                        </div>
+                        <div class="circle-inset"></div>
+                        <span class="percentage-text">75%</span>
+                    </div>
+                    <p class="stat-label">Projects are completed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="image-container">
+                <img src="image_58dcf6.png" alt="Mechanics working on a car">
+            </div>
+            <div class="sparkles">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Testimonial Carousel
+    const testimonialItems = document.querySelectorAll('.testimonial-item');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+    let currentIndex = 0;
+
+    function showTestimonial(index) {
+        testimonialItems.forEach((item, i) => {
+            item.classList.remove('active');
+            if (i === index) {
+                item.classList.add('active');
+            }
+        });
+    }
+
+    function goToNextTestimonial() {
+        currentIndex = (currentIndex + 1) % testimonialItems.length;
+        showTestimonial(currentIndex);
+    }
+
+    function goToPrevTestimonial() {
+        currentIndex = (currentIndex - 1 + testimonialItems.length) % testimonialItems.length;
+        showTestimonial(currentIndex);
+    }
+
+    // Event listeners for arrows
+    nextArrow.addEventListener('click', goToNextTestimonial);
+    prevArrow.addEventListener('click', goToPrevTestimonial);
+
+    // Initial display
+    showTestimonial(currentIndex);
+
+    // Optional: Auto-play carousel
+    let autoPlayInterval = setInterval(goToNextTestimonial, 7000); // Change testimonial every 7 seconds
+
+    // Pause auto-play on hover (optional)
+    const carouselContainer = document.querySelector('.testimonial-carousel');
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(goToNextTestimonial, 7000);
+    });
+
+
+    // Progress Circles Animation
+    const progressCircles = document.querySelectorAll('.progress-circle');
+
+    const animateProgressCircle = (circleElement) => {
+        const percentage = parseInt(circleElement.dataset.percentage, 10);
+        const fillElement = circleElement.querySelector('.circle-fill');
+        const fixElement = circleElement.querySelector('.circle-fill.fix');
+        const percentageText = circleElement.querySelector('.percentage-text');
+
+        const totalDegrees = (percentage / 100) * 360;
+        const halfDegrees = totalDegrees / 2;
+
+        if (percentage <= 50) {
+            fillElement.style.transform = `rotate(${halfDegrees}deg)`;
+            fixElement.style.transform = `rotate(0deg)`; // Ensure fix is reset
+            circleElement.querySelector('.circle-mask.full').style.transform = 'rotate(180deg)'; // Keep full mask at 180
+        } else {
+            fillElement.style.transform = `rotate(180deg)`; // Full mask is full
+            fixElement.style.transform = `rotate(${halfDegrees}deg)`; // Second half fills
+            circleElement.querySelector('.circle-mask.full').style.transform = 'rotate(180deg)'; // Keep full mask at 180
+        }
+
+        // Update text with percentage
+        percentageText.textContent = `${percentage}%`;
+    };
+
+    // Initialize circles with their percentages on load
+    progressCircles.forEach(circle => {
+        animateProgressCircle(circle);
+    });
+
+    // Optional: Animate when they become visible (Intersection Observer)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+
+    const progressObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Re-run animation for elements when they enter viewport
+                animateProgressCircle(entry.target);
+                observer.unobserve(entry.target); // Stop observing once animated
+            }
+        });
+    }, observerOptions);
+
+    progressCircles.forEach(circle => {
+        // Reset styles for animation re-triggering if needed, or just observe for initial load
+        // For a simple 'animate once on load/visibility', the initial call and unobserve work.
+        progressObserver.observe(circle);
+    });
+});
+    </script>
+</body>
+</html>

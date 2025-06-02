@@ -1741,9 +1741,9 @@ html:not(.tt-no-scroll) #tt-header:not(.redLogo) {
     pointer-events: none
 }
 
-#tt-header.tt-header-fixed {
-    /* position: fixed */
-}
+/* #tt-header.tt-header-fixed {
+    position: fixed
+} */
 
 .tt-header-inner {
     width: 100%;
