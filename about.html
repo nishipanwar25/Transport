@@ -3,86 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>AOS Example</title>
+  <title>Contact Section</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
-    body {
-      padding: 0;
+    * {
       margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    .client-logos {
-      background-color: #1663d6;
-
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      /* background-color: #fff; */
     }
 
-    .client-logos-slider {
-      width: 1200px;
-      overflow: hidden;
-      padding: 30px 0;
-      margin: auto;
-    }
-
-    .slider-track {
-      display: flex;
-      justify-content: center;
-      width: calc(250px * 14);
-      /* 14 logos × logo width */
-      animation: scroll 30s linear infinite;
-      gap: 100px;
-    }
-
-    .slider-track img {
-      height: 30px;
-      width: 100px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-      /* Makes logos white */
-      padding: 0 20px;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
+  
   </style>
 </head>
 
 <body>
-  <div class="client-logos">
 
-    <div class="client-logos-slider">
-      <div class="slider-track">
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Nasscom" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Volkswagen" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Rawbank" />
-        <img src="https://files.logoscdn.com/v1/assets/16969678/optimized?w=280" alt="Wonder Cement" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Raytec" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Volkswagen" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Rawbank" />
-
-        <!-- Repeat for infinite effect -->
-        <img src="https://files.logoscdn.com/v1/assets/16969678/optimized?w=280" alt="Wonder Cement" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Nasscom" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Volkswagen" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Rawbank" />
-        <img src="https://files.logoscdn.com/v1/assets/16969678/optimized?w=280" alt="Wonder Cement" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Raytec" />
-        <img src="https://files.logoscdn.com/v1/assets/16969680/optimized?w=207" alt="Volkswagen" />
-      </div>
-    </div>
-  </div>
-
-
-
-
+  
 </body>
 
 </html>
