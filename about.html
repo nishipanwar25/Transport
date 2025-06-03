@@ -479,7 +479,7 @@
       width: 100%;
       height: 250px;
       object-fit: cover;
-      
+
       display: block;
       transition: filter 0.3s ease;
       float: inline-end;
@@ -721,6 +721,384 @@
         right: 10px;
       }
     }
+
+
+
+    .testimonial-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* padding: 40px 20px; */
+      max-width: 1400px;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+
+    /* Testimonial and Image Section */
+    .testimonial-main {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      background-color: #1a202c;
+      /* Dark background for testimonial side */
+      /* border-radius: 15px; */
+      overflow: hidden;
+      /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .testimonial-content {
+      background-color: transparent;
+      flex: 1;
+      min-width: 300px;
+      padding: 60px;
+      color: #fff;
+      text-align: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-content h5 {
+      color: #e74c3c;
+      font-size: 0.9em;
+      font-weight: 600;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .testimonial-content h2 {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: #ccc;
+    }
+
+    .star-rating {
+      color: #f39c12;
+      /* Gold color for stars */
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .quote-icon {
+      font-size: 3em;
+      color: rgba(255, 255, 255, 0.2);
+      margin-bottom: 15px;
+      line-height: 0.5;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      font-weight: 300;
+      width: 400px;
+      color: #ddd;
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+      border: 2px solid #e74c3c;
+    }
+
+    .author-details h4 {
+      font-size: 1.2em;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .author-details p {
+      font-size: 0.8rem;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .testimonial-navigation {
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+      /* Push navigation to the right */
+    }
+
+    .nav-arrow {
+      background-color: transparent;
+      /* Transparent background */
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      /* Light border */
+      border-radius: 0;
+      /* Remove border-radius */
+      width: 50px;
+      /* Adjusted width for parallelogram */
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+      color: #fff;
+      font-size: 1.2em;
+      transform: skewX(-20deg);
+      /* Skew to create parallelogram shape */
+      position: relative;
+      /* For inner content */
+      margin-bottom: 40px;
+    }
+
+    .nav-arrow:hover {
+      background-color: #e74c3c;
+      /* Red background on hover */
+      border-color: #e74c3c;
+      /* Red border on hover */
+    }
+
+    .nav-arrow span {
+      transform: skewX(20deg);
+      /* Counter-skew to keep arrow upright */
+      display: block;
+      /* Ensure transform applies */
+    }
+
+    .testimonial-image {
+      flex: 1;
+      min-width: 500px;
+      background-color: #fff;
+      /* Light background for image side */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .testimonial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: absolute;
+    }
+
+    /* Diagonal shape on the right side of testimonial content */
+    .testimonial-content::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -100px;
+      /* Adjust to control the overlap */
+      width: 200px;
+      /* Width of the diagonal section */
+      height: 100%;
+      background-color: #1a202c;
+      /* Match testimonial background */
+      transform: skewX(-20deg);
+      /* Create the diagonal effect */
+      transform-origin: top left;
+      z-index: 0;
+    }
+
+    /* Statistics Section */
+    .statistics-section {
+      display: flex;
+      /* flex-wrap: wrap; */
+      justify-content: left;
+      width: 100%;
+      height: auto;
+      padding: 40px 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .stat-item {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      text-align: center;
+      width: 100%;
+      /* margin-left: 30px; */
+    }
+
+    .progress-circle {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: conic-gradient(#e74c3c 0%, #e74c3c 0%, #ddd 0%);
+      /* Initial state */
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .progress-circle::before {
+      content: '';
+      position: absolute;
+      background-color: #fff;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .progress-text {
+      position: relative;
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #333;
+      z-index: 1;
+    }
+
+    .stat-label {
+      font-size: 1em;
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .testimonial-main {
+        flex-direction: column;
+      }
+
+      .testimonial-content,
+      .testimonial-image {
+        flex: none;
+        width: 100%;
+      }
+
+      .testimonial-content {
+        padding: 40px;
+        padding-right: 40px;
+        /* Reset padding for smaller screens */
+      }
+
+      .testimonial-content::after {
+        display: none;
+        /* Hide diagonal shape on smaller screens for better layout */
+      }
+
+      .testimonial-image {
+        height: 350px;
+        /* Fixed height for image on smaller screens */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-content {
+        padding: 30px;
+      }
+
+      .testimonial-content h2 {
+        font-size: 2em;
+      }
+
+      .testimonial-text {
+        font-size: 1em;
+      }
+
+      .author-details h4 {
+        font-size: 1.1em;
+      }
+
+      .author-details p {
+        font-size: 0.85em;
+      }
+
+      .statistics-section {
+        padding: 30px 10px;
+      }
+
+      .stat-item {
+        margin: 15px;
+      }
+
+      .progress-circle {
+        width: 100px;
+        height: 100px;
+      }
+
+      .progress-circle::before {
+        width: 85px;
+        height: 85px;
+      }
+
+      .progress-text {
+        font-size: 1.5em;
+      }
+
+      .stat-label {
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-container {
+        padding: 20px 10px;
+      }
+
+      .testimonial-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .testimonial-content h2 {
+        font-size: 1.8em;
+      }
+
+      .star-rating {
+        font-size: 1.2em;
+      }
+
+      .quote-icon {
+        font-size: 2.5em;
+      }
+
+      .testimonial-text {
+        font-size: 0.9em;
+      }
+
+      .author-info {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .author-avatar {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-navigation {
+        justify-content: center;
+      }
+
+      .testimonial-image {
+        height: 250px;
+      }
+
+      .statistics-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+      }
+
+      .stat-item {
+        margin: 10px;
+      }
+    }
   </style>
 </head>
 
@@ -932,7 +1310,8 @@
 
       <div class="staff-cards-container">
         <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2020/01/team_01-600x770.jpg" alt="Aaron Nunez">
+          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2020/01/team_01-600x770.jpg"
+            alt="Aaron Nunez">
           <div class="social-icons-overlay">
             <div class="social-icon facebook">
               <svg class="social-icon-svg" viewBox="0 0 24 24">
@@ -976,7 +1355,8 @@
         </div>
 
         <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2020/01/team02-600x770.jpg" alt="Dustin Mock">
+          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2020/01/team02-600x770.jpg"
+            alt="Dustin Mock">
           <div class="social-icons-overlay">
             <div class="social-icon facebook">
               <svg class="social-icon-svg" viewBox="0 0 24 24">
@@ -1020,7 +1400,8 @@
         </div>
 
         <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2019/05/team03-600x770.jpg" alt="Dianna Smiley">
+          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2019/05/team03-600x770.jpg"
+            alt="Dianna Smiley">
           <div class="social-icons-overlay">
             <div class="social-icon facebook">
               <svg class="social-icon-svg" viewBox="0 0 24 24">
@@ -1064,7 +1445,8 @@
         </div>
 
         <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2019/05/team04-600x770.jpg" alt="Edward Willey">
+          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2019/05/team04-600x770.jpg"
+            alt="Edward Willey">
           <div class="social-icons-overlay">
             <div class="social-icon facebook">
               <svg class="social-icon-svg" viewBox="0 0 24 24">
@@ -1106,6 +1488,65 @@
             </span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <section class="testimonial-container">
+    <div class="testimonial-main">
+      <div class="testimonial-content">
+        <h5>TESTIMONIALS</h5>
+        <h2>What's Client's Say?</h2>
+        <div style="display: flex; justify-content: left; gap: 220px;">
+          <div class="star-rating">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <div class="quote-icon" style="font-size: 2rem; margin-top: 1px;"><i class="fa-solid fa-quote-right"></i>
+          </div>
+        </div>
+
+        <p class="testimonial-text">
+          "If you're looking for a rewarding career and the chance to make an Impact, you've come to the
+          right place. We will transform your business through our techniques."
+        </p>
+        <div style="display:flex; align-items:center; justify-content:space-between; width:400px;">
+          <div class="author-info">
+            <img src="https://placehold.co/60x60/e74c3c/ffffff?text=EH" alt="Eliana Hernandez" class="author-avatar">
+            <div class="author-details">
+              <h4>Eliana Hernandez</h4>
+              <p>CEO & Founder</p>
+            </div>
+          </div>
+          <div class="testimonial-navigation">
+            <button class="nav-arrow prev-arrow"><span>&lt;</span></button>
+            <button class="nav-arrow next-arrow"><span>&gt;</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-image">
+        <img src="/images/Aboutus.avif" alt="Mechanic working on car">
+      </div>
+    </div>
+
+    <div class="statistics-section">
+      <div class="stat-item">
+        <div class="progress-circle" data-progress="85">
+          <span class="progress-text">85%</span>
+        </div>
+        <span class="stat-label">Our Satisfied customer</span>
+      </div>
+      <div class="stat-item">
+        <div class="progress-circle" data-progress="75">
+          <span class="progress-text">75%</span>
+        </div>
+        <span class="stat-label">Projects are completed</span>
       </div>
     </div>
   </section>
@@ -1207,6 +1648,99 @@
 
   <!-- server is down -->
   <script src="https://cdn.jsdelivr.net/npm/split-type"></script>
+
+
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+            // Function to update progress circles
+            function updateProgressCircles() {
+                document.querySelectorAll('.progress-circle').forEach(circle => {
+                    const progress = circle.dataset.progress;
+                    // Animate from 0% to the target progress
+                    setTimeout(() => {
+                        const gradient = `conic-gradient(#e74c3c ${progress}%, #add8e6 ${progress}%)`;
+                        circle.style.background = gradient;
+                        circle.querySelector('.progress-text').textContent = `${progress}%`;
+                    }, 100); // Small delay to ensure initial 0% is rendered
+                });
+            }
+
+            // Testimonial Slider (Basic functionality)
+            const testimonials = [{
+                quote: "We don't take ourselves too seriously, but seriously enough to ensure we're creating the best product and experience for our customers. I feel like Help Scout does the same.",
+                author: "Lusicca Williams",
+                designation: "CEO & Founder",
+                avatar: "https://placehold.co/60x60/e74c3c/ffffff?text=LW"
+            }, {
+                quote: "Outstanding service and highly skilled technicians! My car has never run better. They truly provide a genuine solution to vehicle problems.",
+                author: "John Doe",
+                designation: "Happy Customer",
+                avatar: "https://placehold.co/60x60/3498db/ffffff?text=JD"
+            }, {
+                quote: "A fantastic team that delivers on their promises. The attention to detail and customer care is exceptional. Highly recommend their services!",
+                author: "Jane Smith",
+                designation: "Local Business Owner",
+                avatar: "https://placehold.co/60x60/2ecc71/ffffff?text=JS"
+            }, ];
+
+            let currentIndex = 0;
+            const testimonialText = document.querySelector('.testimonial-text');
+            const authorName = document.querySelector('.author-details h4');
+            const authorDesignation = document.querySelector('.author-details p');
+            const authorAvatar = document.querySelector('.author-avatar');
+            const prevArrow = document.querySelector('.prev-arrow');
+            const nextArrow = document.querySelector('.next-arrow');
+
+            function updateTestimonial() {
+                const current = testimonials[currentIndex];
+                testimonialText.textContent = current.quote;
+                authorName.textContent = current.author;
+                authorDesignation.textContent = current.designation;
+                authorAvatar.src = current.avatar;
+            }
+
+            // Function to advance to the next testimonial
+            function showNextTestimonial() {
+                currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+                updateTestimonial();
+            }
+
+            // Automatic testimonial change every 5 seconds
+            let autoSlideInterval = setInterval(showNextTestimonial, 5000); // Change every 5 seconds
+
+            // Reset interval on manual navigation
+            prevArrow.addEventListener('click', () => {
+                clearInterval(autoSlideInterval); // Stop current interval
+                currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+                updateTestimonial();
+                autoSlideInterval = setInterval(showNextTestimonial, 3000); // Restart interval
+            });
+
+            nextArrow.addEventListener('click', () => {
+                clearInterval(autoSlideInterval); // Stop current interval
+                showNextTestimonial(); // Show next immediately
+                autoSlideInterval = setInterval(showNextTestimonial, 3000); // Restart interval
+            });
+
+            // Intersection Observer for statistics-section animation
+            const statisticsSection = document.querySelector('.statistics-section');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateProgressCircles(); // Trigger animation when section is in view
+                        observer.disconnect(); // Disconnect observer after animation is triggered once
+                    }
+                });
+            }, {
+                threshold: 0.5 // Trigger when 50% of the section is visible
+            });
+
+            observer.observe(statisticsSection);
+
+            // Initial testimonial load
+            updateTestimonial();
+        });
+  </script>
 
 
 </body>
