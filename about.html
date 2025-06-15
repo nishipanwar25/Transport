@@ -24,6 +24,46 @@
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/about.css">
 
+  <style>
+    .sidebar-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 220px;
+      background-color: transparent;
+    }
+
+    .sidebar-menu li {
+      /* border-bottom: 1px solid #34495e; */
+    }
+
+    .sidebar-menu a {
+      display: block;
+      padding: 12px 20px;
+      color: #ecf0f1;
+      text-decoration: none;
+    }
+
+    .sidebar-menu a:hover {
+      background-color: transparent;
+    }
+
+    .tt-ol-submenu {
+      display: none;
+      list-style: none;
+      background-color: tra;
+    }
+
+    .tt-ol-submenu li a {
+      padding-left: 40px;
+      font-size: 14px;
+    }
+
+    .tt-ol-submenu-wrap:hover .tt-ol-submenu {
+      display: block;
+    }
+  </style>
+
 
 </head>
 
@@ -57,27 +97,45 @@
                       <a href="/index.html">Home</a>
                     </div>
                   </li>
+                  <ul class="sidebar-menu">
+                    <li class="tt-ol-submenu-wrap active">
+                      <div class="tt-ol-submenu-trigger">
+                        <a href="/about.html">About Us</a>
+                      </div>
+                      <ul class="tt-ol-submenu">
+                        <li><a href="/our-team.html">Our Team</a></li>
+                        <li><a href="/mission.html">Our Mission</a></li>
+                        <li><a href="/careers.html">Careers</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+
                   <li class="tt-ol-submenu-wrap">
                     <div class="tt-ol-submenu-trigger">
-                      <a href="/about.html">About Us</a>
+                      <a href="">Services</a>
                     </div>
                   </li>
                   <li class="tt-ol-submenu-wrap">
                     <div class="tt-ol-submenu-trigger">
-                      <a href="https://www.gozoop.com/culture">services</a>
+                      <a href="">Fleet</a>
                     </div>
                   </li>
                   <li class="tt-ol-submenu-wrap">
                     <div class="tt-ol-submenu-trigger">
-                      <a href="/contact.html">Contact US</a>
+                      <a href="">Industries Served</a>
                     </div>
                   </li>
                   <li class="tt-ol-submenu-wrap">
                     <div class="tt-ol-submenu-trigger">
-                      <a href="https://www.gozoop.com/services">services</a>
+                      <a href="">Testimonials</a>
                     </div>
                   </li>
-                  <li><a href="https://www.gozoop.com/contact-us">GET IN TOUCH</a></li>
+                  <li class="tt-ol-submenu-wrap">
+                    <div class="tt-ol-submenu-trigger">
+                      <a href="">Gallery</a>
+                    </div>
+                  </li>
+                  <li><a href="/contact.html">Contact US</a></li>
                 </ul>
                 <!-- End menu list -->
               </div>
@@ -423,15 +481,16 @@
 
 
   <section class="guarantee-section">
-        <div class="guarantee-overlay"></div>
-        <div class="guarantee-content">
-            <img src="https://placehold.co/100x100/ffd700/000000?text=Award" alt="Best Car Award" class="award-badge">
-            <div class="text-content">
-                <h2>We have a 100% carvax<br>happiness guarantee!</h2>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form injected.</p>
-            </div>
-        </div>
-    </section>
+    <div class="guarantee-overlay"></div>
+    <div class="guarantee-content">
+      <img src="https://placehold.co/100x100/ffd700/000000?text=Award" alt="Best Car Award" class="award-badge">
+      <div class="text-content">
+        <h2>We have a 100% carvax<br>happiness guarantee!</h2>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+          some form injected.</p>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -591,120 +650,120 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-            // Function to update progress circles with animation
-            function updateProgressCircles() {
-                document.querySelectorAll('.progress-circle').forEach(circle => {
-                    const targetProgress = parseInt(circle.dataset.progress);
-                    const progressTextElement = circle.querySelector('.progress-text');
+      // Function to update progress circles with animation
+      function updateProgressCircles() {
+        document.querySelectorAll('.progress-circle').forEach(circle => {
+          const targetProgress = parseInt(circle.dataset.progress);
+          const progressTextElement = circle.querySelector('.progress-text');
 
-                    // Set initial state to 0%
-                    progressTextElement.textContent = '0%';
-                    circle.style.background = `conic-gradient(#e74c3c 0%, #add8e6 0%)`;
+          // Set initial state to 0%
+          progressTextElement.textContent = '0%';
+          circle.style.background = `conic-gradient(#e74c3c 0%, #add8e6 0%)`;
 
-                    let currentProgress = 0;
-                    const duration = 2000; // 2 seconds for animation
-                    const startTime = performance.now();
+          let currentProgress = 0;
+          const duration = 2000; // 2 seconds for animation
+          const startTime = performance.now();
 
-                    function animateProgress(currentTime) {
-                        const elapsedTime = currentTime - startTime;
-                        const progressRatio = Math.min(elapsedTime / duration, 1); // Ensure it doesn't go over 1
+          function animateProgress(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progressRatio = Math.min(elapsedTime / duration, 1); // Ensure it doesn't go over 1
 
-                        currentProgress = Math.floor(progressRatio * targetProgress);
+            currentProgress = Math.floor(progressRatio * targetProgress);
 
-                        // Update text
-                        progressTextElement.textContent = `${currentProgress}%`;
+            // Update text
+            progressTextElement.textContent = `${currentProgress}%`;
 
-                        // Update circle gradient
-                        const gradient = `conic-gradient(#e74c3c ${currentProgress}%, #add8e6 ${currentProgress}%)`;
-                        circle.style.background = gradient;
+            // Update circle gradient
+            const gradient = `conic-gradient(#e74c3c ${currentProgress}%, #add8e6 ${currentProgress}%)`;
+            circle.style.background = gradient;
 
-                        if (progressRatio < 1) {
-                            requestAnimationFrame(animateProgress);
-                        }
-                    }
-
-                    // Start the animation after a small delay to ensure initial 0% is rendered
-                    setTimeout(() => {
-                        requestAnimationFrame(animateProgress);
-                    }, 100);
-                });
+            if (progressRatio < 1) {
+              requestAnimationFrame(animateProgress);
             }
+          }
 
-            // Testimonial Slider (Basic functionality)
-            const testimonials = [{
-                quote: "We don't take ourselves too seriously, but seriously enough to ensure we're creating the best product and experience for our customers. I feel like Help Scout does the same.",
-                author: "Lusicca Williams",
-                designation: "CEO & Founder",
-                avatar: "https://placehold.co/60x60/e74c3c/ffffff?text=LW"
-            }, {
-                quote: "Outstanding service and highly skilled technicians! My car has never run better. They truly provide a genuine solution to vehicle problems.",
-                author: "John Doe",
-                designation: "Happy Customer",
-                avatar: "https://placehold.co/60x60/3498db/ffffff?text=JD"
-            }, {
-                quote: "A fantastic team that delivers on their promises. The attention to detail and customer care is exceptional. Highly recommend their services!",
-                author: "Jane Smith",
-                designation: "Local Business Owner",
-                avatar: "https://placehold.co/60x60/2ecc71/ffffff?text=JS"
-            }, ];
-
-            let currentIndex = 0;
-            const testimonialText = document.querySelector('.testimonial-text');
-            const authorName = document.querySelector('.author-details h4');
-            const authorDesignation = document.querySelector('.author-details p');
-            const authorAvatar = document.querySelector('.author-avatar');
-            const prevArrow = document.querySelector('.prev-arrow');
-            const nextArrow = document.querySelector('.next-arrow');
-
-            function updateTestimonial() {
-                const current = testimonials[currentIndex];
-                testimonialText.textContent = current.quote;
-                authorName.textContent = current.author;
-                authorDesignation.textContent = current.designation;
-                authorAvatar.src = current.avatar;
-            }
-
-            // Function to advance to the next testimonial
-            function showNextTestimonial() {
-                currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
-                updateTestimonial();
-            }
-
-            // Automatic testimonial change every 5 seconds
-            let autoSlideInterval = setInterval(showNextTestimonial, 5000); // Change every 5 seconds
-
-            // Reset interval on manual navigation
-            prevArrow.addEventListener('click', () => {
-                clearInterval(autoSlideInterval); // Stop current interval
-                currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
-                updateTestimonial();
-                autoSlideInterval = setInterval(showNextTestimonial, 5000); // Restart interval
-            });
-
-            nextArrow.addEventListener('click', () => {
-                clearInterval(autoSlideInterval); // Stop current interval
-                showNextTestimonial(); // Show next immediately
-                autoSlideInterval = setInterval(showNextTestimonial, 5000); // Restart interval
-            });
-
-            // Intersection Observer for statistics-section animation
-            const statisticsSection = document.querySelector('.statistics-section');
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        updateProgressCircles(); // Trigger animation when section is in view
-                        observer.disconnect(); // Disconnect observer after animation is triggered once
-                    }
-                });
-            }, {
-                threshold: 0.5 // Trigger when 50% of the section is visible
-            });
-
-            observer.observe(statisticsSection);
-
-            // Initial testimonial load
-            updateTestimonial();
+          // Start the animation after a small delay to ensure initial 0% is rendered
+          setTimeout(() => {
+            requestAnimationFrame(animateProgress);
+          }, 100);
         });
+      }
+
+      // Testimonial Slider (Basic functionality)
+      const testimonials = [{
+        quote: "We don't take ourselves too seriously, but seriously enough to ensure we're creating the best product and experience for our customers. I feel like Help Scout does the same.",
+        author: "Lusicca Williams",
+        designation: "CEO & Founder",
+        avatar: "https://placehold.co/60x60/e74c3c/ffffff?text=LW"
+      }, {
+        quote: "Outstanding service and highly skilled technicians! My car has never run better. They truly provide a genuine solution to vehicle problems.",
+        author: "John Doe",
+        designation: "Happy Customer",
+        avatar: "https://placehold.co/60x60/3498db/ffffff?text=JD"
+      }, {
+        quote: "A fantastic team that delivers on their promises. The attention to detail and customer care is exceptional. Highly recommend their services!",
+        author: "Jane Smith",
+        designation: "Local Business Owner",
+        avatar: "https://placehold.co/60x60/2ecc71/ffffff?text=JS"
+      },];
+
+      let currentIndex = 0;
+      const testimonialText = document.querySelector('.testimonial-text');
+      const authorName = document.querySelector('.author-details h4');
+      const authorDesignation = document.querySelector('.author-details p');
+      const authorAvatar = document.querySelector('.author-avatar');
+      const prevArrow = document.querySelector('.prev-arrow');
+      const nextArrow = document.querySelector('.next-arrow');
+
+      function updateTestimonial() {
+        const current = testimonials[currentIndex];
+        testimonialText.textContent = current.quote;
+        authorName.textContent = current.author;
+        authorDesignation.textContent = current.designation;
+        authorAvatar.src = current.avatar;
+      }
+
+      // Function to advance to the next testimonial
+      function showNextTestimonial() {
+        currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+        updateTestimonial();
+      }
+
+      // Automatic testimonial change every 5 seconds
+      let autoSlideInterval = setInterval(showNextTestimonial, 5000); // Change every 5 seconds
+
+      // Reset interval on manual navigation
+      prevArrow.addEventListener('click', () => {
+        clearInterval(autoSlideInterval); // Stop current interval
+        currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+        updateTestimonial();
+        autoSlideInterval = setInterval(showNextTestimonial, 5000); // Restart interval
+      });
+
+      nextArrow.addEventListener('click', () => {
+        clearInterval(autoSlideInterval); // Stop current interval
+        showNextTestimonial(); // Show next immediately
+        autoSlideInterval = setInterval(showNextTestimonial, 5000); // Restart interval
+      });
+
+      // Intersection Observer for statistics-section animation
+      const statisticsSection = document.querySelector('.statistics-section');
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateProgressCircles(); // Trigger animation when section is in view
+            observer.disconnect(); // Disconnect observer after animation is triggered once
+          }
+        });
+      }, {
+        threshold: 0.5 // Trigger when 50% of the section is visible
+      });
+
+      observer.observe(statisticsSection);
+
+      // Initial testimonial load
+      updateTestimonial();
+    });
   </script>
 
 
