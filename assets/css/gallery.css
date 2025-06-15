@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Urbanist", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+  background-color: #fff;
+}
+
+.tt-logo img {
+  width: 150px;
+  /* or whatever width you prefer */
+  height: 200px;
+  /* maintains aspect ratio */
+  display: block;
+}
+
+.gallery-hero{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(rgba(0, 0, 0, 0.779)) ,url('https://images.pexels.com/photos/192364/pexels-photo-192364.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-attachment: fixed;
+
+}
+
+.gallery-hero h1{
+    margin-top: 100px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.gallery-hero p{
+    width: 700px;
+}
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); */
+        }
+
+        .text-content {
+            margin-bottom: 40px;
+            font-size: 1rem;
+            color: #555;
+            text-align: left;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Space between grid items */
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%; /* Ensure image fills its container */
+            display: block;
+            object-fit: cover; /* Cover the area, cropping if necessary */
+            border-radius: 8px; /* Apply border-radius to the image itself */
+        }
+
+        /* Specific grid item sizes as seen in the image */
+        /* This part might require more specific image-to-grid mapping if the aspect ratios are fixed */
+        /* For now, assuming responsive square/rectangle images */
+
+        /* Adjustments for layout seen in the image on larger screens */
+        @media (min-width: 768px) {
+            .image-gallery {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+                grid-auto-rows: minmax(180px, auto); /* Minimum row height */
+            }
+
+            .gallery-item:nth-child(1) { /* Top left - small */
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-item:nth-child(2) { /* Top middle - small */
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-item:nth-child(3) { /* Top right tall - spans 2 rows */
+                grid-column: span 1;
+                grid-row: span 2;
+            }
+            .gallery-item:nth-child(4) { /* Top far right - small */
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-item:nth-child(5) { /* Bottom left - large, spans 2 columns */
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            .gallery-item:nth-child(6) { /* Bottom middle-right - small */
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-item:nth-child(7) { /* Bottom far right - small */
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            /* Add more specific rules if the layout requires it, e.g., for `gallery-item:nth-child(8)` etc. */
+            /* The image provided only shows 7 distinct image placements in the grid. */
+        }
+
+
+
+
+
