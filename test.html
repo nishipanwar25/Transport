@@ -1,729 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Client Testimonials</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+    <title>Testimonial Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* General Resets & Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        /* Basic Reset & Body Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+        }
 
-:root {
-    --dark-blue: #1A1E2C;
-    --light-grey: #F5F7FA;
-    --primary-blue: #007bff; /* Example, adjust if needed */
-    --gold-star: #FFD700;
-    --text-color-light: #fff;
-    --text-color-dark: #333;
-    --subtitle-color: #889098;
-    --arrow-bg: #2B3040;
-    --arrow-color: #fff;
-    --border-radius: 8px;
-}
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* padding: 40px 20px; */
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Testimonial and Image Section */
+        .testimonial-main {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            background-color: #1a202c;
+            /* Dark background for testimonial side */
+            /* border-radius: 15px; */
+            overflow: hidden;
+            /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+            position: relative;
+            padding: 0 20px;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color-light);
-    background-color: var(--dark-blue); /* Fallback */
-    overflow-x: hidden; /* Prevent horizontal scroll due to diagonal cut */
-}
+        .testimonial-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 60px;
+            color: #fff;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
 
-/* Header */
-.main-header {
-    position: relative;
-    z-index: 10;
-    height: 40px; /* Adjust as needed */
-    background: linear-gradient(to right, #007bff, #0056b3); /* Example blue gradient */
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .testimonial-content h5 {
+            color: #e74c3c;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-/* Main Content Wrapper */
-.content-wrapper {
-    display: flex;
-    flex-direction: column; /* Stack vertically on small screens */
-    min-height: calc(100vh - 40px); /* Adjust for header height */
-    position: relative;
-}
+        .testimonial-content h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
 
-.left-section {
-    background-color: var(--dark-blue);
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    z-index: 2; /* Ensure it's above the background diagonal */
-    flex: 1; /* Allow it to grow */
-}
+        .star-rating {
+            color: #f39c12;
+            /* Gold color for stars */
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
 
-.right-section {
-    background-color: var(--light-grey);
-    color: var(--text-color-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1; /* Below the left section if diagonal overlaps */
-    overflow: hidden; /* For sparkles */
-    flex: 1; /* Allow it to grow */
-    padding: 20px; /* Add some padding */
-}
+        .quote-icon {
+            font-size: 3em;
+            color: rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
+            line-height: 0.5;
+        }
 
-/* Diagonal Cut (using pseudo-elements) */
-/* The image shows the right section having a diagonal cut.
-   We achieve this by making the right section full width and then
-   using a background with a linear gradient or clip-path.
-   A simpler approach for this design might be to layer sections.
-   Let's try a transform on the right section, or a more complex SVG background.
-   For simplicity and good responsiveness, we'll aim for a responsive layout
-   and use a pseudo-element for the diagonal.
-*/
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+            width: 400px;
+        }
 
-/* This creates the diagonal split effect */
-@media (min-width: 992px) {
-    .content-wrapper {
-        flex-direction: row; /* Side-by-side on larger screens */
-    }
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
 
-    .left-section {
-        flex: 2; /* Give more space to left section on desktop */
-        padding: 80px 60px;
-        text-align: left;
-        align-items: flex-start;
-    }
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #e74c3c;
+        }
 
-    .right-section {
-        flex: 1; /* Give less space to right section on desktop */
-        padding: 0; /* Image itself will handle spacing */
-        position: relative;
-        /* Using clip-path for diagonal cut */
-        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-        margin-left: -15%; /* Pull it back to overlap with left section */
-        z-index: 1; /* Make sure it's below content but above image */
-        background-color: var(--light-grey); /* Ensure background fills clipped area */
-    }
+        .author-details h4 {
+            font-size: 1.2em;
+            margin: 0;
+            font-weight: 600;
+        }
 
-    .left-section::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: -15%; /* Matches the clip-path shift */
-        bottom: 0;
-        width: 15%; /* Width of the overlap */
-        background-color: var(--dark-blue); /* Same as left section */
-        transform: skewX(-15deg); /* Adjust angle to match diagonal */
-        transform-origin: top left;
-        z-index: 0; /* Behind content */
-    }
-}
+        .author-details p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
 
+        .testimonial-navigation {
+            display: flex;
+            gap: 10px;
+            margin-left: auto; /* Push navigation to the right */
+        }
 
-/* Testimonials Section */
-.testimonials-section {
-    max-width: 600px;
-    width: 100%;
-    margin-bottom: 60px;
-    position: relative;
-    padding-right: 80px; /* Space for quote icon */
-}
+        .nav-arrow {
+            background-color: transparent; /* Transparent background */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+            border-radius: 0; /* Remove border-radius */
+            width: 50px; /* Adjusted width for parallelogram */
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            color: #fff;
+            font-size: 1.2em;
+            transform: skewX(-20deg); /* Skew to create parallelogram shape */
+            position: relative; /* For inner content */
+            margin-bottom: 40px;
+        }
 
-.section-subtitle {
-    color: var(--subtitle-color);
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
+        .nav-arrow:hover {
+            background-color: #e74c3c; /* Red background on hover */
+            border-color: #e74c3c; /* Red border on hover */
+        }
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    line-height: 1.2;
-}
+        .nav-arrow span {
+            transform: skewX(20deg); /* Counter-skew to keep arrow upright */
+            display: block; /* Ensure transform applies */
+        }
 
-.testimonial-carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    min-height: 250px; /* Ensure space for content */
-}
+        .testimonial-image {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            /* Light background for image side */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-.testimonial-item {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+        .testimonial-image img {
+            width: 400px;
+            height: 500px;
+            object-fit: cover;
+            /* display: block; */
+            position: absolute;
+            /* z-index: 1000;
+            top: 10%;
+            left: -10%; */
+        }
 
-.testimonial-item.active {
-    display: block;
-    opacity: 1;
-}
+        /* Diagonal shape on the right side of testimonial content */
+        .testimonial-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100px;
+            /* Adjust to control the overlap */
+            width: 200px;
+            /* Width of the diagonal section */
+            height: 100%;
+            background-color: #1a202c;
+            /* Match testimonial background */
+            transform: skewX(-20deg);
+            /* Create the diagonal effect */
+            transform-origin: top left;
+            z-index: 0;
+        }
 
-.stars {
-    color: var(--gold-star);
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
+        /* Statistics Section */
+        .statistics-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            height: 160px;
+            padding: 40px 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+            /* margin-top: 40px; */
+        }
 
-.stars i {
-    margin-right: 2px;
-}
+        .stat-item {
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+            width: 600px;
+        }
 
-.testimonial-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    position: relative;
-}
+        .progress-circle {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(#e74c3c 0%, #e74c3c 0%, #ddd 0%);
+            /* Initial state */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-/* Quote icon */
-.testimonial-text::before {
-    content: '\201C'; /* Left double quotation mark */
-    font-size: 100px;
-    color: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: -40px;
-    left: -40px;
-    z-index: 0;
-}
+        .progress-circle::before {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
 
-.testimonial-text::after {
-    content: '\201D'; /* Right double quotation mark */
-    font-size: 100px;
-    color: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    bottom: -40px;
-    right: -40px;
-    z-index: 0;
-}
+        .progress-text {
+            position: relative;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #333;
+            z-index: 1;
+        }
 
-.author-info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 30px;
-    text-align: left;
-}
+        .stat-label {
+            font-size: 1em;
+            color: #555;
+            font-weight: 500;
+        }
 
-.author-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-blue);
-}
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .testimonial-main {
+                flex-direction: column;
+            }
 
-.author-name {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--text-color-light);
-}
+            .testimonial-content,
+            .testimonial-image {
+                flex: none;
+                width: 100%;
+            }
 
-.author-title {
-    font-size: 0.9rem;
-    color: var(--subtitle-color);
-}
+            .testimonial-content {
+                padding: 40px;
+                padding-right: 40px;
+                /* Reset padding for smaller screens */
+            }
 
-.carousel-nav {
-    position: absolute;
-    bottom: 0; /* Adjust as needed */
-    right: 0;
-    display: flex;
-    gap: 10px;
-    z-index: 5; /* Above testimonial items */
-}
+            .testimonial-content::after {
+                display: none;
+                /* Hide diagonal shape on smaller screens for better layout */
+            }
 
-.nav-arrow {
-    background-color: var(--arrow-bg);
-    color: var(--arrow-color);
-    border: none;
-    border-radius: var(--border-radius);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+            .testimonial-image {
+                height: 350px;
+                /* Fixed height for image on smaller screens */
+            }
+        }
 
-.nav-arrow:hover {
-    background-color: var(--primary-blue);
-}
+        @media (max-width: 768px) {
+            .testimonial-content {
+                padding: 30px;
+            }
 
-/* Stats Section */
-.stats-section {
-    display: flex;
-    gap: 40px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center;
-    margin-top: 40px;
-    width: 100%;
-    max-width: 600px; /* Align with testimonial section width */
-}
+            .testimonial-content h2 {
+                font-size: 2em;
+            }
 
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex-basis: calc(50% - 20px); /* 2 items per row with gap */
-    max-width: 180px; /* Max width for each circle */
-}
+            .testimonial-text {
+                font-size: 1em;
+            }
 
-.stat-label {
-    margin-top: 15px;
-    font-size: 0.95rem;
-    color: var(--subtitle-color);
-}
+            .author-details h4 {
+                font-size: 1.1em;
+            }
 
-/* Progress Circle CSS (from a common pattern) */
-.progress-circle {
-    position: relative;
-    width: 120px; /* Diameter of the circle */
-    height: 120px;
-    border-radius: 50%;
-    background-color: #33384A; /* Background for the empty part of the circle */
-    overflow: hidden;
-}
+            .author-details p {
+                font-size: 0.85em;
+            }
 
-.circle-mask,
-.circle-fill {
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--primary-blue); /* Color of the filled part */
-    transform-origin: center right;
-}
+            .statistics-section {
+                padding: 30px 10px;
+            }
 
-.circle-mask.full,
-.circle-mask.half {
-    transform-origin: center right;
-}
+            .stat-item {
+                margin: 15px;
+            }
 
-.circle-mask.full {
-    transform: rotate(180deg);
-}
+            .progress-circle {
+                width: 100px;
+                height: 100px;
+            }
 
-.circle-mask.half {
-    background-color: transparent; /* Makes this half transparent */
-}
+            .progress-circle::before {
+                width: 85px;
+                height: 85px;
+            }
 
-.circle-fill.fix {
-    transform: rotate(180deg);
-}
+            .progress-text {
+                font-size: 1.5em;
+            }
 
-.circle-inset {
-    position: absolute;
-    width: calc(100% - 10px); /* Inner circle size */
-    height: calc(100% - 10px);
-    background-color: var(--dark-blue); /* Background color of the inner circle */
-    border-radius: 50%;
-    top: 5px;
-    left: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-color-light);
-    font-size: 1.8rem;
-    font-weight: 600;
-}
+            .stat-label {
+                font-size: 0.9em;
+            }
+        }
 
-.percentage-text {
-    position: absolute;
-    z-index: 10;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--text-color-light);
-}
+        @media (max-width: 480px) {
+            .section-container {
+                padding: 20px 10px;
+            }
 
-/* Image Section */
-.image-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
+            .testimonial-content {
+                padding: 20px;
+                text-align: center;
+            }
 
-.image-container img {
-    width: 100%; /* Make image fill container */
-    height: 100%; /* Make image fill container */
-    object-fit: cover; /* Cover the area, crop if necessary */
-    display: block;
-}
+            .testimonial-content h2 {
+                font-size: 1.8em;
+            }
 
+            .star-rating {
+                font-size: 1.2em;
+            }
 
-/* Sparkles (Subtle background elements) */
-.sparkles {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
-    pointer-events: none;
-}
+            .quote-icon {
+                font-size: 2.5em;
+            }
 
-.sparkles span {
-    display: block;
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
-    transform: rotate(45deg);
-    position: absolute;
-}
+            .testimonial-text {
+                font-size: 0.9em;
+            }
 
-.sparkles span:nth-child(1) { top: 0; right: 0; animation: sparkle 2s infinite ease-in-out; }
-.sparkles span:nth-child(2) { top: 15px; right: 20px; width: 8px; height: 8px; animation: sparkle 2.5s infinite ease-in-out 0.5s; }
-.sparkles span:nth-child(3) { top: 30px; right: 10px; width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.6); animation: sparkle 3s infinite ease-in-out 1s; }
-.sparkles span:nth-child(4) { top: 40px; right: 30px; width: 7px; height: 7px; animation: sparkle 2.2s infinite ease-in-out 0.2s; }
+            .author-info {
+                flex-direction: column;
+                text-align: center;
+            }
 
-@keyframes sparkle {
-    0%, 100% { opacity: 0.5; transform: scale(1) rotate(45deg); }
-    50% { opacity: 1; transform: scale(1.2) rotate(45deg); }
-}
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
 
+            .testimonial-navigation {
+                justify-content: center;
+            }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 991px) {
-    .left-section {
-        padding: 60px 30px;
-    }
-    .right-section {
-        padding: 0; /* Remove padding as image will fill */
-    }
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .right-section {
-        clip-path: none; /* Remove diagonal clip on smaller screens */
-        margin-left: 0;
-    }
-    .left-section::after {
-        display: none; /* Hide pseudo-element for diagonal on small screens */
-    }
-    .testimonials-section {
-        padding-right: 20px; /* Reduce padding */
-    }
-    .carousel-nav {
-        position: static; /* Place nav below testimonial on small screens */
-        justify-content: center;
-        margin-top: 30px;
-    }
-    .author-info {
-        justify-content: center;
-    }
-    .testimonial-text::before,
-    .testimonial-text::after {
-        font-size: 80px;
-        top: -30px;
-        left: -20px;
-    }
-    .testimonial-text::after {
-        bottom: -30px;
-        right: -20px;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-}
+            .testimonial-image {
+                height: 250px;
+            }
 
-@media (max-width: 767px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-    .testimonial-text {
-        font-size: 1rem;
-    }
-    .stat-item {
-        flex-basis: 100%; /* Stack items on very small screens */
-        max-width: 250px; /* Keep circle size reasonable */
-    }
-    .left-section, .right-section {
-        padding: 40px 15px;
-    }
-    .sparkles {
-        top: 10px;
-        right: 10px;
-    }
-}
+            .statistics-section {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 10px;
+            }
 
-@media (max-width: 480px) {
-    .testimonials-section {
-        margin-bottom: 40px;
-    }
-    .section-title {
-        font-size: 1.6rem;
-    }
-    .stars {
-        font-size: 1rem;
-    }
-    .author-avatar {
-        width: 50px;
-        height: 50px;
-    }
-    .author-name {
-        font-size: 1rem;
-    }
-    .author-title {
-        font-size: 0.8rem;
-    }
-    .progress-circle {
-        width: 100px;
-        height: 100px;
-    }
-    .percentage-text {
-        font-size: 1.5rem;
-    }
-}
+            .stat-item {
+                margin: 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
-
-    <header class="main-header">
-        <div class="top-blue-bar"></div>
-    </header>
-
-    <main class="content-wrapper">
-        <div class="left-section">
-            <div class="testimonials-section">
-                <p class="section-subtitle">TESTIMONIALS</p>
-                <h2 class="section-title">What's Client's Say?</h2>
-
-                <div class="testimonial-carousel">
-                    <div class="testimonial-item active">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "If you're looking for a rewarding career and the chance to make an impact, you've come to the right place. We will transform your business through our techniques."
-                        </p>
-                        <div class="author-info">
-                            <img src="https://via.placeholder.com/60" alt="Eliana Hernandez" class="author-avatar">
-                            <div>
-                                <p class="author-name">Eliana Hernandez</p>
-                                <p class="author-title">Berkeley Developer</p>
-                            </div>
+    <section class="section-container">
+        <div class="testimonial-main">
+            <div class="testimonial-content">
+                <h5>TESTIMONIALS</h5>
+                <h2>What's Client's Say?</h2>
+                <div style="display: flex; justify-content: left; gap: 300px;">
+                    <div class="star-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <div class="quote-icon">"</div>
+                </div>
+                
+                <p class="testimonial-text">
+                    "If you're looking for a rewarding career and the chance to make an Impact, you've come to the
+                    right place. We will transform your business through our techniques."
+                </p>
+                <div style="display:flex; align-items:center; justify-content:space-between; width:400px;">
+                    <div class="author-info">
+                        <img src="https://placehold.co/60x60/e74c3c/ffffff?text=EH" alt="Eliana Hernandez"
+                            class="author-avatar">
+                        <div class="author-details">
+                            <h4>Eliana Hernandez</h4>
+                            <p>CEO & Founder</p>
                         </div>
                     </div>
-
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "This team truly understands client needs and delivers exceptional results. Their innovative approach has significantly boosted our efficiency and overall performance."
-                        </p>
-                        <div class="author-info">
-                            <img src="https://via.placeholder.com/60" alt="John Doe" class="author-avatar">
-                            <div>
-                                <p class="author-name">John Doe</p>
-                                <p class="author-title">CEO, Tech Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">
-                            "Absolutely thrilled with the partnership! Their dedication and expertise are unmatched. Highly recommend for anyone looking to scale their operations."
-                        </p>
-                        <div class="author-info">
-                            <img src="https://via.placeholder.com/60" alt="Jane Smith" class="author-avatar">
-                            <div>
-                                <p class="author-name">Jane Smith</p>
-                                <p class="author-title">Marketing Director</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-nav">
-                        <button class="nav-arrow prev-arrow"><i class="fas fa-chevron-left"></i></button>
-                        <button class="nav-arrow next-arrow"><i class="fas fa-chevron-right"></i></button>
+                    <div class="testimonial-navigation">
+                        <button class="nav-arrow prev-arrow"><span>&lt;</span></button>
+                        <button class="nav-arrow next-arrow"><span>&gt;</span></button>
                     </div>
                 </div>
             </div>
-
-            <div class="stats-section">
-                <div class="stat-item">
-                    <div class="progress-circle" data-percentage="85">
-                        <div class="circle-mask full">
-                            <div class="circle-fill"></div>
-                        </div>
-                        <div class="circle-mask half">
-                            <div class="circle-fill"></div>
-                            <div class="circle-fill fix"></div>
-                        </div>
-                        <div class="circle-inset"></div>
-                        <span class="percentage-text">85%</span>
-                    </div>
-                    <p class="stat-label">Our Satisfied customer</p>
-                </div>
-                <div class="stat-item">
-                    <div class="progress-circle" data-percentage="75">
-                        <div class="circle-mask full">
-                            <div class="circle-fill"></div>
-                        </div>
-                        <div class="circle-mask half">
-                            <div class="circle-fill"></div>
-                            <div class="circle-fill fix"></div>
-                        </div>
-                        <div class="circle-inset"></div>
-                        <span class="percentage-text">75%</span>
-                    </div>
-                    <p class="stat-label">Projects are completed</p>
-                </div>
+            <div class="testimonial-image">
+                <img src="/images/truck1.webp"
+                    alt="Mechanic working on car">
             </div>
         </div>
 
-        <div class="right-section">
-            <div class="image-container">
-                <img src="image_58dcf6.png" alt="Mechanics working on a car">
+        <div class="statistics-section">
+            <div class="stat-item">
+                <div class="progress-circle" data-progress="85">
+                    <span class="progress-text">85%</span>
+                </div>
+                <span class="stat-label">Our Satisfied customer</span>
             </div>
-            <div class="sparkles">
-                <span></span><span></span><span></span><span></span>
+            <div class="stat-item">
+                <div class="progress-circle" data-progress="75">
+                    <span class="progress-text">75%</span>
+                </div>
+                <span class="stat-label">Projects are completed</span>
             </div>
         </div>
-    </main>
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    // Testimonial Carousel
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
-    const prevArrow = document.querySelector('.prev-arrow');
-    const nextArrow = document.querySelector('.next-arrow');
-    let currentIndex = 0;
-
-    function showTestimonial(index) {
-        testimonialItems.forEach((item, i) => {
-            item.classList.remove('active');
-            if (i === index) {
-                item.classList.add('active');
+            // Function to update progress circles
+            function updateProgressCircles() {
+                document.querySelectorAll('.progress-circle').forEach(circle => {
+                    const progress = circle.dataset.progress;
+                    const gradient = `conic-gradient(#e74c3c ${progress}%, #ddd ${progress}%)`;
+                    circle.style.background = gradient;
+                    circle.querySelector('.progress-text').textContent = `${progress}%`;
+                });
             }
-        });
-    }
 
-    function goToNextTestimonial() {
-        currentIndex = (currentIndex + 1) % testimonialItems.length;
-        showTestimonial(currentIndex);
-    }
+            // Initial update of progress circles on page load
+            updateProgressCircles();
 
-    function goToPrevTestimonial() {
-        currentIndex = (currentIndex - 1 + testimonialItems.length) % testimonialItems.length;
-        showTestimonial(currentIndex);
-    }
+            // Testimonial Slider (Basic functionality)
+            const testimonials = [{
+                quote: "We don't take ourselves too seriously, but seriously enough to ensure we're creating the best product and experience for our customers. I feel like Help Scout does the same.",
+                author: "Lusicca Williams",
+                designation: "CEO & Founder",
+                avatar: "https://placehold.co/60x60/e74c3c/ffffff?text=LW"
+            }, {
+                quote: "Outstanding service and highly skilled technicians! My car has never run better. They truly provide a genuine solution to vehicle problems.",
+                author: "John Doe",
+                designation: "Happy Customer",
+                avatar: "https://placehold.co/60x60/3498db/ffffff?text=JD"
+            }, {
+                quote: "A fantastic team that delivers on their promises. The attention to detail and customer care is exceptional. Highly recommend their services!",
+                author: "Jane Smith",
+                designation: "Local Business Owner",
+                avatar: "https://placehold.co/60x60/2ecc71/ffffff?text=JS"
+            }, ];
 
-    // Event listeners for arrows
-    nextArrow.addEventListener('click', goToNextTestimonial);
-    prevArrow.addEventListener('click', goToPrevTestimonial);
+            let currentIndex = 0;
+            const testimonialText = document.querySelector('.testimonial-text');
+            const authorName = document.querySelector('.author-details h4');
+            const authorDesignation = document.querySelector('.author-details p');
+            const authorAvatar = document.querySelector('.author-avatar');
+            const prevArrow = document.querySelector('.prev-arrow');
+            const nextArrow = document.querySelector('.next-arrow');
 
-    // Initial display
-    showTestimonial(currentIndex);
-
-    // Optional: Auto-play carousel
-    let autoPlayInterval = setInterval(goToNextTestimonial, 7000); // Change testimonial every 7 seconds
-
-    // Pause auto-play on hover (optional)
-    const carouselContainer = document.querySelector('.testimonial-carousel');
-    carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoPlayInterval);
-    });
-    carouselContainer.addEventListener('mouseleave', () => {
-        autoPlayInterval = setInterval(goToNextTestimonial, 7000);
-    });
-
-
-    // Progress Circles Animation
-    const progressCircles = document.querySelectorAll('.progress-circle');
-
-    const animateProgressCircle = (circleElement) => {
-        const percentage = parseInt(circleElement.dataset.percentage, 10);
-        const fillElement = circleElement.querySelector('.circle-fill');
-        const fixElement = circleElement.querySelector('.circle-fill.fix');
-        const percentageText = circleElement.querySelector('.percentage-text');
-
-        const totalDegrees = (percentage / 100) * 360;
-        const halfDegrees = totalDegrees / 2;
-
-        if (percentage <= 50) {
-            fillElement.style.transform = `rotate(${halfDegrees}deg)`;
-            fixElement.style.transform = `rotate(0deg)`; // Ensure fix is reset
-            circleElement.querySelector('.circle-mask.full').style.transform = 'rotate(180deg)'; // Keep full mask at 180
-        } else {
-            fillElement.style.transform = `rotate(180deg)`; // Full mask is full
-            fixElement.style.transform = `rotate(${halfDegrees}deg)`; // Second half fills
-            circleElement.querySelector('.circle-mask.full').style.transform = 'rotate(180deg)'; // Keep full mask at 180
-        }
-
-        // Update text with percentage
-        percentageText.textContent = `${percentage}%`;
-    };
-
-    // Initialize circles with their percentages on load
-    progressCircles.forEach(circle => {
-        animateProgressCircle(circle);
-    });
-
-    // Optional: Animate when they become visible (Intersection Observer)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5 // Trigger when 50% of the element is visible
-    };
-
-    const progressObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Re-run animation for elements when they enter viewport
-                animateProgressCircle(entry.target);
-                observer.unobserve(entry.target); // Stop observing once animated
+            function updateTestimonial() {
+                const current = testimonials[currentIndex];
+                testimonialText.textContent = current.quote;
+                authorName.textContent = current.author;
+                authorDesignation.textContent = current.designation;
+                authorAvatar.src = current.avatar;
             }
-        });
-    }, observerOptions);
 
-    progressCircles.forEach(circle => {
-        // Reset styles for animation re-triggering if needed, or just observe for initial load
-        // For a simple 'animate once on load/visibility', the initial call and unobserve work.
-        progressObserver.observe(circle);
-    });
-});
+            prevArrow.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+                updateTestimonial();
+            });
+
+            nextArrow.addEventListener('click', () => {
+                currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+                updateTestimonial();
+            });
+
+            // Initial testimonial load
+            updateTestimonial();
+        });
     </script>
 </body>
+
 </html>
