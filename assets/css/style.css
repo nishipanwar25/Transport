@@ -661,7 +661,7 @@ body {
   }
 
   to {
-    background-position-x: -20px;
+    background-position-x: 20px;
   }
 
   /* Move one dash length to loop */

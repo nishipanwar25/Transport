@@ -34,6 +34,7 @@
     <link rel='stylesheet' id='bootstrap-css'
         href='https://bracketweb.com/cityridewp/wp-content/themes/cityride/assets/vendors/bootstrap/css/bootstrap.min.css?ver=5.0.0'
         media='all' />
+
     <link rel='stylesheet' id='cityride-style-css'
         href='https://bracketweb.com/cityridewp/wp-content/themes/cityride/style.css?ver=1750152550' media='all' />
 
@@ -69,40 +70,63 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            transition: display 2s ease;
         }
-
-        .tt-ol-submenu-wrap {
-            position: relative;
-        }
-
+ 
         .tt-ol-submenu {
-            display: none;
-            list-style-type: circle; 
-            padding: 0;
-            margin: 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999; 
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(5px);
+            /* start slightly lower */
+            transition: all 2s ease;
+            list-style-type: disc;
             min-width: 160px;
-            transition-duration: 2s;
         }
 
         .tt-ol-submenu li a {
+            color: #f0f0f0;
             display: block;
-            padding: 10px 15px;
-            color: #fff;
+            padding: 5px 0px;
             text-decoration: none;
-            white-space: nowrap;
-            font-size: 18px;
-            font-weight: 900;
+            font-weight: 600;
         }
 
-        .tt-ol-submenu li a:hover {
-            /* background-color: #f0f0f0; */
-        }
+        
 
-        /* Show dropdown on hover */
+        /* Animate submenu in on hover */
         .tt-ol-submenu-trigger:hover .tt-ol-submenu {
             display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            /* move to natural position */
+        }
+
+        .tt-ol-submenu li a:hover{
+            color: #b9b8b8;
+        }
+
+
+        .footer-widget__links li {
+            display: flex;
+            /* Align icon and text in a line */
+            align-items: center;
+        }
+
+        .footer-widget__links li a {
+            text-decoration: none;
+            color: #fff;
+            /* Or your footer text color */
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            /* Space between icon and text */
+            line-height: 1.5;
+        }
+
+        .footer-widget__links li a::before {
+            content: none;
         }
     </style>
 </head>
@@ -126,21 +150,22 @@
                     </div>
                 </div>
 
-                <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count" style=" margin-top: 0;">
+                <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
                     <div class="tt-ol-menu-holder">
                         <div class="tt-ol-menu-inner tt-wrap">
                             <div class="tt-ol-menu-content">
                                 <!-- Begin menu list -->
                                 <ul class="tt-ol-menu-list">
                                     <li class="tt-ol-submenu-wrap active">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="/index.html">Home</a>
+                                        <div class="tt-ol-submenu-trigger ">
+                                            <a style="font-size: 24px;" href="/index.html">Home</a>
                                         </div>
                                     </li>
 
-                                     <li class="tt-ol-submenu-wrap">
+                                    <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="/about.html">About Us</a>
+                                            <a style="font-size: 24px;">About Us <i
+                                                    class="fa-solid fa-angle-down"></i></a>
                                             <ul class="tt-ol-submenu">
                                                 <li><a href="/about/team.html">Our Story</a></li>
                                                 <li><a href="/about/history.html">Mission & Vision </a></li>
@@ -150,7 +175,8 @@
 
                                     <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="/about.html">Services</a>
+                                            <a style="font-size: 24px;">Services <i
+                                                    class="fa-solid fa-angle-down"></i></a>
                                             <ul class="tt-ol-submenu">
                                                 <li><a href="/about/team.html">Molasses bulk Transport</a></li>
                                                 <li><a href="/about/history.html">Pan-India Operations</a></li>
@@ -159,19 +185,21 @@
                                         </div>
                                     </li>
 
-                                     <li class="tt-ol-submenu-wrap">
+                                    <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="/about.html">Fleet</a>
+                                            <a style="font-size: 24px;">Fleet <i class="fa-solid fa-angle-down"></i></a>
                                             <ul class="tt-ol-submenu">
                                                 <li><a href="/about/team.html">Types of Vehicles</a></li>
-                                                <li><a href="/about/history.html">Maintenance & Cleanliness Protocol</a></li>
+                                                <li><a href="/about/history.html">Maintenance & Cleanliness Protocol</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </li>
 
-                                     <li class="tt-ol-submenu-wrap">
+                                    <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="/about.html">Industries Served</a>
+                                            <a style="font-size: 24px;">Industries Served <i
+                                                    class="fa-solid fa-angle-down"></i></a>
                                             <ul class="tt-ol-submenu">
                                                 <li><a href="/about/team.html">Sugar Factories</a></li>
                                                 <li><a href="/about/history.html">Distilleries</a></li>
@@ -181,18 +209,18 @@
                                     </li>
 
 
-                                   
+
                                     <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="/gallery.html">Gallery</a>
+                                            <a style="font-size: 24px;" href="/gallery.html">Gallery</a>
                                         </div>
                                     </li>
                                     <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="">Testimonials</a>
+                                            <a style="font-size: 24px;" href="">Testimonials</a>
                                         </div>
                                     </li>
-                                    <li><a href="/contact.html">Contact US</a></li>
+                                    <li><a style="font-size: 24px;" href="/contact.html">Contact US</a></li>
                                 </ul>
                                 <!-- End menu list -->
                             </div>
@@ -347,8 +375,7 @@
             data-id="05748fe" data-element_type="widget" data-widget_type="cityride-about.default">
             <div class="elementor-widget-container">
                 <div class="about-four about-four--one section-space" id="about">
-                    <div class="about-four__bg"
-                        style="background-image: url(/images/aboutbg.png);">
+                    <div class="about-four__bg" style="background-image: url(/images/aboutbg.png);">
                     </div>
                     <!-- /.about-four__bg -->
                     <div class="container">
@@ -506,8 +533,8 @@
                         <!-- Slide 1 -->
                         <div class="testimonial-card">
                             <div class="card-header">
-                                <img src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                    alt="Company Logo" class="company-logo" />
+                                <!-- <img src="https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Company Logo" class="company-logo" /> -->
                                 <div class="company-info">
                                     <h4>Global<br><span>English Hub</span></h4>
                                     <div class="stars">★★★★★</div>
@@ -527,12 +554,12 @@
                             <div class="card-footer">
                                 <div class="person-info">
                                     <strong>Nasrullah M.</strong>
-                                    <div class="position">Founder</div>
+                                    <!-- <div class="position">Founder</div> -->
                                 </div>
-                                <div class="validated-by">
+                                <!-- <div class="validated-by">
                                     <span>VALIDATED BY</span>
                                     <img src="clutch-logo.png" alt="Clutch Logo" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -540,7 +567,7 @@
                         <div class="testimonial-card">
                             <!-- Your testimonial content here -->
                             <div class="card-header">
-                                <img src="logo.png" alt="Company Logo" class="company-logo" />
+                                <!-- <img src="logo.png" alt="Company Logo" class="company-logo" /> -->
                                 <div class="company-info">
                                     <h4>Global<br><span>English Hub</span></h4>
                                     <div class="stars">★★★★★</div>
@@ -560,12 +587,12 @@
                             <div class="card-footer">
                                 <div class="person-info">
                                     <strong>Nasrullah M.</strong>
-                                    <div class="position">Founder</div>
+                                    <!-- <div class="position">Founder</div> -->
                                 </div>
-                                <div class="validated-by">
+                                <!-- <div class="validated-by">
                                     <span>VALIDATED BY</span>
                                     <img src="clutch-logo.png" alt="Clutch Logo" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -573,7 +600,7 @@
                         <div class="testimonial-card">
                             <!-- Your testimonial content here -->
                             <div class="card-header">
-                                <img src="logo.png" alt="Company Logo" class="company-logo" />
+                                <!-- <img src="logo.png" alt="Company Logo" class="company-logo" /> -->
                                 <div class="company-info">
                                     <h4>Global<br><span>English Hub</span></h4>
                                     <div class="stars">★★★★★</div>
@@ -593,12 +620,12 @@
                             <div class="card-footer">
                                 <div class="person-info">
                                     <strong>Nasrullah M.</strong>
-                                    <div class="position">Founder</div>
+                                    <!-- <div class="position">Founder</div> -->
                                 </div>
-                                <div class="validated-by">
+                                <!-- <div class="validated-by">
                                     <span>VALIDATED BY</span>
                                     <img src="clutch-logo.png" alt="Clutch Logo" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -606,7 +633,7 @@
                         <div class="testimonial-card">
                             <!-- Your testimonial content here -->
                             <div class="card-header">
-                                <img src="logo.png" alt="Company Logo" class="company-logo" />
+                                <!-- <img src="logo.png" alt="Company Logo" class="company-logo" /> -->
                                 <div class="company-info">
                                     <h4>Global<br><span>English Hub</span></h4>
                                     <div class="stars">★★★★★</div>
@@ -626,12 +653,12 @@
                             <div class="card-footer">
                                 <div class="person-info">
                                     <strong>Nasrullah M.</strong>
-                                    <div class="position">Founder</div>
+                                    <!-- <div class="position">Founder</div> -->
                                 </div>
-                                <div class="validated-by">
+                                <!-- <div class="validated-by">
                                     <span>VALIDATED BY</span>
                                     <img src="clutch-logo.png" alt="Clutch Logo" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -639,7 +666,7 @@
                         <div class="testimonial-card">
                             <!-- Your testimonial content here -->
                             <div class="card-header">
-                                <img src="logo.png" alt="Company Logo" class="company-logo" />
+                                <!-- <img src="logo.png" alt="Company Logo" class="company-logo" /> -->
                                 <div class="company-info">
                                     <h4>Global<br><span>English Hub</span></h4>
                                     <div class="stars">★★★★★</div>
@@ -659,12 +686,12 @@
                             <div class="card-footer">
                                 <div class="person-info">
                                     <strong>Nasrullah M.</strong>
-                                    <div class="position">Founder</div>
+                                    <!-- <div class="position">Founder</div> -->
                                 </div>
-                                <div class="validated-by">
+                                <!-- <div class="validated-by">
                                     <span>VALIDATED BY</span>
                                     <img src="clutch-logo.png" alt="Clutch Logo" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -672,7 +699,7 @@
                         <div class="testimonial-card">
                             <!-- Your testimonial content here -->
                             <div class="card-header">
-                                <img src="logo.png" alt="Company Logo" class="company-logo" />
+                                <!-- <img src="logo.png" alt="Company Logo" class="company-logo" /> -->
                                 <div class="company-info">
                                     <h4>Global<br><span>English Hub</span></h4>
                                     <div class="stars">★★★★★</div>
@@ -692,12 +719,12 @@
                             <div class="card-footer">
                                 <div class="person-info">
                                     <strong>Nasrullah M.</strong>
-                                    <div class="position">Founder</div>
+                                    <!-- <div class="position">Founder</div> -->
                                 </div>
-                                <div class="validated-by">
+                                <!-- <div class="validated-by">
                                     <span>VALIDATED BY</span>
                                     <img src="clutch-logo.png" alt="Clutch Logo" />
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -1006,7 +1033,8 @@
                                                         data-wow-duration="1500ms" data-wow-delay="150ms">
                                                         <a href="https://bracketweb.com/cityridewp/taxi-booking/"
                                                             class="cityride-btn cityride-btn--border">
-                                                            <span class="cityride-btn__icon"><i class="fa-solid fa-car-rear"></i></span>
+                                                            <span class="cityride-btn__icon"><i
+                                                                    class="fa-solid fa-car-rear"></i></span>
                                                             <span>book now</span>
                                                         </a>
                                                     </div>
@@ -1057,8 +1085,7 @@
                         <div class="elementor-element elementor-element-cb2e830 elementor-widget elementor-widget-cityride-shape"
                             data-id="cb2e830" data-element_type="widget" data-widget_type="cityride-shape.default">
                             <div class="elementor-widget-container">
-                                <div class="main-footer__bg"
-                                    style="background-image: url(/images/footerbg.png);">
+                                <div class="main-footer__bg" style="background-image: url(/images/footerbg.png);">
                                 </div>
                             </div>
                         </div>
@@ -1081,16 +1108,18 @@
                                 <div class="elementor-widget-container">
                                     <div class="footer-widget footer-widget--about">
                                         <a href="https://bracketweb.com/cityridewp/"
-                                            class="footer-widget__logo logo-retina footer-logo"><img loading="lazy" decoding="async"
-                                                src="/images/Alaknanda Transport logo final.png"
+                                            class="footer-widget__logo logo-retina footer-logo"><img loading="lazy"
+                                                decoding="async" src="/images/Alaknanda Transport logo final.png"
                                                 width="103" height="55" alt="Cityride"></a>
                                         <p class="footer-widget__about-text">Phasellus ultricies aliquam volutpat
                                             ullamcorper laoreet neque, a lacinia curabitur lacinia mollis</p>
                                         <!-- /.footer-widget__about-text -->
                                         <div class="footer-widget__social">
-                                            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                                            <a href="https://www.facebook.com"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
                                             <a href="https://x.com"><i class="fa-brands fa-twitter"></i></a>
-                                            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                                            <a href="https://www.linkedin.com/"><i
+                                                    class="fa-brands fa-linkedin-in"></i></a>
                                             <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                                         </div>
                                         <!-- /.footer-widget__call -->
@@ -1104,33 +1133,23 @@
                             <div class="elementor-element elementor-element-9eceff4 elementor-widget elementor-widget-footer-nav-menu"
                                 data-id="9eceff4" data-element_type="widget" data-widget_type="footer-nav-menu.default">
                                 <div class="elementor-widget-container">
-                                    <div class="footer-widget footer-widget--links">
+                                    <div class="footer-widget footer-widget--links" style="">
                                         <h2 class="footer-widget__title">Quick Links</h2>
                                         <!-- /.footer-widget__title -->
                                         <div class="menu-quick-links-container">
-                                            <ul id="" class="list-unstyled footer-widget__links">
-                                                <li id=""
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom ">
-                                                    <a href="#">About Us</a>
+                                            <ul class="footer-widget__links">
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Home</a></li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a>
                                                 </li>
-                                                <li id="menu-item-841"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-841">
-                                                    <a href="#">Our
-                                                        Services</a>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Our Service</a>
                                                 </li>
-                                                <li id="menu-item-842"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-842">
-                                                    <a href="#">Gallery</a>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Testimonial</a>
                                                 </li>
-                                                <li id="menu-item-842"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-843">
-                                                    <a href="#">F&Q</a>
-                                                </li>
-                                                <li id="menu-item-844"
-                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-844">
-                                                    <a href="#">Contact Us</a>
-                                                </li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Contact</a></li>
+                                                <!-- <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a></li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a></li> -->
                                             </ul>
+
                                         </div>
                                     </div>
 
@@ -1159,13 +1178,10 @@
                                                 <!-- /.footer-widget__post__thumb -->
                                                 <div class="footer-widget__post__content">
                                                     <div class="footer-widget__post__meta">
-                                                        <a
-                                                            href="#"><i
-                                                                class="icon-calwnder"></i> 04 May, 25</a>
+                                                        <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
                                                     </div>
                                                     <!-- /.footer-widget__post__meta -->
-                                                    <h4 class="footer-widget__post__title"><a
-                                                            href="#">cupidatat
+                                                    <h4 class="footer-widget__post__title"><a href="#">cupidatat
                                                             nonproident, sunt in culpa qui</a></h4>
                                                     <!-- /.footer-widget__post__title -->
                                                 </div>
@@ -1185,13 +1201,10 @@
                                                 <!-- /.footer-widget__post__thumb -->
                                                 <div class="footer-widget__post__content">
                                                     <div class="footer-widget__post__meta">
-                                                        <a
-                                                            href="#"><i
-                                                                class="icon-calwnder"></i> 04 May, 25</a>
+                                                        <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
                                                     </div>
                                                     <!-- /.footer-widget__post__meta -->
-                                                    <h4 class="footer-widget__post__title"><a
-                                                            href="#">Big
+                                                    <h4 class="footer-widget__post__title"><a href="#">Big
                                                             Data. Are There Any Leftovers kitchen</a></h4>
                                                     <!-- /.footer-widget__post__title -->
                                                 </div>
@@ -1253,11 +1266,11 @@
                         </div>
                     </div>
                 </div>
-                
-                </div>
+
             </div>
         </div>
-        <!-- end of the loop -->
+    </div>
+    <!-- end of the loop -->
 
 
     </div>
