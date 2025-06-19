@@ -77,28 +77,27 @@
 
         .tt-ol-submenu {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #fff;
-            list-style: none;
+            list-style-type: circle; 
             padding: 0;
             margin: 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
+            z-index: 999; 
             min-width: 160px;
+            transition-duration: 2s;
         }
 
         .tt-ol-submenu li a {
             display: block;
             padding: 10px 15px;
-            color: #333;
+            color: #fff;
             text-decoration: none;
             white-space: nowrap;
+            font-size: 18px;
+            font-weight: 900;
         }
 
         .tt-ol-submenu li a:hover {
-            background-color: #f0f0f0;
+            /* background-color: #f0f0f0; */
         }
 
         /* Show dropdown on hover */
@@ -127,7 +126,7 @@
                     </div>
                 </div>
 
-                <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
+                <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count" style=" margin-top: 0;">
                     <div class="tt-ol-menu-holder">
                         <div class="tt-ol-menu-inner tt-wrap">
                             <div class="tt-ol-menu-content">
@@ -138,23 +137,51 @@
                                             <a href="/index.html">Home</a>
                                         </div>
                                     </li>
-                                    <li class="tt-ol-submenu-wrap">
+
+                                     <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
                                             <a href="/about.html">About Us</a>
                                             <ul class="tt-ol-submenu">
-                                                <li><a href="/about/team.html">Our Team</a></li>
-                                                <li><a href="/about/history.html">Our History</a></li>
-                                                <li><a href="/about/careers.html">Careers</a></li>
+                                                <li><a href="/about/team.html">Our Story</a></li>
+                                                <li><a href="/about/history.html">Mission & Vision </a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li class="tt-ol-submenu-wrap">
+                                        <div class="tt-ol-submenu-trigger">
+                                            <a href="/about.html">Services</a>
+                                            <ul class="tt-ol-submenu">
+                                                <li><a href="/about/team.html">Molasses bulk Transport</a></li>
+                                                <li><a href="/about/history.html">Pan-India Operations</a></li>
+                                                <li><a href="/about/history.html">Safety & Tracking Systems</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                     <li class="tt-ol-submenu-wrap">
+                                        <div class="tt-ol-submenu-trigger">
+                                            <a href="/about.html">Fleet</a>
+                                            <ul class="tt-ol-submenu">
+                                                <li><a href="/about/team.html">Types of Vehicles</a></li>
+                                                <li><a href="/about/history.html">Maintenance & Cleanliness Protocol</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                     <li class="tt-ol-submenu-wrap">
+                                        <div class="tt-ol-submenu-trigger">
+                                            <a href="/about.html">Industries Served</a>
+                                            <ul class="tt-ol-submenu">
+                                                <li><a href="/about/team.html">Sugar Factories</a></li>
+                                                <li><a href="/about/history.html">Distilleries</a></li>
+                                                <li><a href="/about/history.html">Biofuel & Chemical Units</a></li>
                                             </ul>
                                         </div>
                                     </li>
 
 
-                                    <li class="tt-ol-submenu-wrap">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="">Services</a>
-                                        </div>
-                                    </li>
+                                   
                                     <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
                                             <a href="/gallery.html">Gallery</a>
@@ -162,7 +189,7 @@
                                     </li>
                                     <li class="tt-ol-submenu-wrap">
                                         <div class="tt-ol-submenu-trigger">
-                                            <a href="">Other</a>
+                                            <a href="">Testimonials</a>
                                         </div>
                                     </li>
                                     <li><a href="/contact.html">Contact US</a></li>
