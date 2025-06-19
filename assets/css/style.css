@@ -620,53 +620,130 @@ body {
 
 
 /* Wrapper to hide overflow and set height */
-.road-strip-container {
+.road-container {
   width: 100%;
   height: 100px;
-  overflow: hidden;
-  background: black;
+  /* Fixed height for the road section */
+  background-color: #000;
+  /* Dark gray for the road surface */
   position: relative;
+  overflow: hidden;
+  /* Hide anything outside the road bounds */
+  box-sizing: border-box;
+  /* Include padding/border in total width/height */
 }
 
-.road-strip {
-  margin-top: 35px;
+
+
+/* Dashed white line in the middle of the road */
+.dashed-line {
+  position: absolute;
+  top: 50%;
+  /* Vertically center */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Thickness of the dashed line */
+  background-image: linear-gradient(to right, #ffffff 50%, transparent 50%);
+  /* Dashed effect */
+  background-size: 20px 4px;
+  /* Length of dash and gap */
+  animation: dash-animation 0.8s linear infinite;
+  /* Optional: animate the dashes */
+  z-index: 3;
+  /* Above everything else on the road */
 }
 
-.checker-road-1 {
-  width: 200%;
-  /* Double width for smooth animation */
-  height: 14px;
-  /* Height as per your image */
-  background-image:
-    repeating-linear-gradient(to right,
-      #FFD700 0 20px,
-      #111 20px 40px);
-  background-size: 80px 32px;
-  background-position: 0 0, 0 32px;
-  animation: moveStripe 3s linear infinite;
-}
-
-.checker-road-2 {
-  width: 200%;
-  /* Double width for smooth animation */
-  height: 14px;
-  /* Height as per your image */
-  background-image:
-    repeating-linear-gradient(to right,
-      #111 0px 20px,
-      #FFD700 20px 40px);
-  background-size: 80px 32px;
-  background-position: 0 0, 0 32px;
-  animation: moveStripe 3s linear infinite;
-}
-
-@keyframes moveStripe {
-  0% {
-    background-position: 0 0, 0 32px;
+/* Animation for the dashed line to simulate movement */
+@keyframes dash-animation {
+  from {
+    background-position-x: 0;
   }
 
-  100% {
-    background-position: 80px 0, 80px 32px;
+  to {
+    background-position-x: -20px;
+  }
+
+  /* Move one dash length to loop */
+}
+
+/* New styles for animated white lines on road edges */
+.animated-edge-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Thin white line */
+  background-image: linear-gradient(to right, #ffffff);
+  background-size: 80px 2px;
+  /* Length of the moving segment and line thickness */
+  animation: edge-line-animation 2s linear infinite;
+  z-index: 4;
+  /* Above dashed line for clarity */
+}
+
+.animated-edge-line.top-edge {
+  top: 5px;
+  /* Position right below the gray shoulder */
+}
+
+.animated-edge-line.bottom-edge {
+  bottom: 5px;
+  /* Position at the very bottom of the road surface */
+}
+
+/* Animation for the moving white lines on the edges */
+@keyframes edge-line-animation {
+  from {
+    background-position-x: 0;
+  }
+
+  to {
+    background-position-x: -80px;
+  }
+
+  /* Move one segment length to loop */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .road-container {
+    height: 200px;
+    /* Adjust height for mobile */
+  }
+
+  .dashed-line {
+    height: 3px;
+    /* Thinner dashed line */
+    background-size: 15px 3px;
+    /* Smaller dashes and gaps */
+  }
+
+  .road-container::before {
+    height: 8px;
+    /* Thinner green line */
+  }
+
+  .road-container::after {
+    top: 8px;
+    /* Adjust position based on new green line height */
+    height: 15px;
+    /* Thinner gray strip */
+  }
+
+  .animated-edge-line {
+    height: 1.5px;
+    /* Thinner edge lines on mobile */
+    background-size: 60px 1.5px;
+    /* Smaller segments */
+    animation-duration: 1.5s;
+    /* Faster animation on mobile */
+  }
+
+  .animated-edge-line.top-edge {
+    top: 23px;
+    /* Adjust top position for mobile */
   }
 }
 
@@ -740,14 +817,14 @@ body {
 .desc {
   font-size: 1rem;
   color: #555;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-left: 21px;
 }
 
 .slider-full-container {
   position: absolute;
   right: -10%;
-  top: 30%;
+  top: 25%;
   overflow-y: hidden;
 }
 
@@ -773,6 +850,7 @@ body {
   flex: 0 0 300px;
   /* Fixed width of 250px */
   width: 250px;
+  height: auto;
   /* Also set the width directly */
   background: #fff;
   padding: 20px;
@@ -788,6 +866,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  background-color: transparent;
 }
 
 .company-logo {
@@ -816,10 +895,9 @@ body {
 }
 
 .card-body {
-  margin: 15px 0;
   font-size: 14px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 .quote-icon {
@@ -833,6 +911,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
+  background-color: transparent;
 }
 
 .person-info {
@@ -1359,7 +1438,7 @@ body {
   padding: 50px 20px;
   box-sizing: border-box;
   height: 141vh;
-  margin-bottom: 350px;
+  margin-bottom: 400px;
   /* background-color: ; */
 }
 
@@ -1466,7 +1545,7 @@ body {
   flex-shrink: 0;
 }
 
-.feature-icon-circle img{
+.feature-icon-circle img {
   padding: 20px;
 }
 
@@ -1687,11 +1766,12 @@ body {
 }
 
 .service-title {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #222;
   margin: 0;
   line-height: 1.2;
+  width: 160px;
 }
 
 .service-chevrons {
@@ -1997,7 +2077,7 @@ body {
 }
 
 .footer-logo {
-  background-color: #e0a800;
+  /* background-color: #e0a800; */
   width: 200px;
   height: auto;
 }
@@ -2496,7 +2576,7 @@ body {
   position: absolute;
   bottom: 40px;
   right: 15%;
-  bottom:15%;
+  bottom: 15%;
   /* transform: translateX(-50%); */
   z-index: 10;
   width: 400px;
@@ -2506,18 +2586,22 @@ body {
   width: 100%;
   /* max-width: 700px; */
   filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.4));
-    animation: slideLeftRight 3s infinite ease-in-out alternate;
+  animation: slideLeftRight 3s infinite ease-in-out alternate;
 }
 
 @keyframes slideLeftRight {
   0% {
     transform: translateX(0);
   }
+
   50% {
-    transform: translateX(10px); /* move right */
+    transform: translateX(10px);
+    /* move right */
   }
+
   100% {
-    transform: translateX(-10px); /* back to left */
+    transform: translateX(-10px);
+    /* back to left */
   }
 }
 
