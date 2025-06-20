@@ -1437,8 +1437,8 @@ body {
   background-position: center;
   padding: 50px 20px;
   box-sizing: border-box;
-  height: 141vh;
-  margin-bottom: 150px;
+  height: 136.1vh;
+  margin-bottom: 160px;
   /* background-color: ; */
 }
 
@@ -1601,7 +1601,7 @@ body {
   color: white;
   position: relative;
   overflow: hidden;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 .services-container {
