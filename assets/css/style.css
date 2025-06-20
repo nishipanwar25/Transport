@@ -642,7 +642,7 @@ body {
   /* Vertically center */
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 0.5px;
   /* Thickness of the dashed line */
   background-image: linear-gradient(to right, #ffffff 50%, transparent 50%);
   /* Dashed effect */
@@ -733,7 +733,7 @@ body {
   }
 
   .animated-edge-line {
-    height: 1.5px;
+    height: 1px;
     /* Thinner edge lines on mobile */
     background-size: 60px 1.5px;
     /* Smaller segments */
