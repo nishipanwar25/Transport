@@ -2735,6 +2735,7 @@ body {
   transition: box-shadow 0.3s ease;
   position: relative;
   border-radius: 5px;
+  text-align: center;
 }
 
 /* Responsive card layout */
@@ -2827,7 +2828,7 @@ body {
 
 /* Card content */
 .service2-content {
-  padding: 40px 20px 20px 20px;
+  padding: 45px 20px 20px 20px;
   flex-grow: 1;
   position: relative;
   overflow: hidden;
