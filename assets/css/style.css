@@ -627,7 +627,7 @@ body {
   background-color: #000;
   /* Dark gray for the road surface */
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* Hide anything outside the road bounds */
   box-sizing: border-box;
   /* Include padding/border in total width/height */
@@ -639,33 +639,27 @@ body {
 .dashed-line {
   position: absolute;
   top: 50%;
-  /* Vertically center */
   left: 0;
   width: 100%;
-  height: 0.5px;
-  /* Thickness of the dashed line */
+  height: 1px;
   background-image: linear-gradient(to right, #ffffff 50%, transparent 50%);
-  /* Dashed effect */
   background-size: 20px 4px;
-  /* Length of dash and gap */
+  background-repeat: repeat-x;
   animation: dash-animation 0.8s linear infinite;
-  /* Optional: animate the dashes */
   z-index: 3;
-  /* Above everything else on the road */
 }
+
 
 /* Animation for the dashed line to simulate movement */
 @keyframes dash-animation {
   from {
     background-position-x: 0;
   }
-
   to {
     background-position-x: 20px;
   }
-
-  /* Move one dash length to loop */
 }
+
 
 /* New styles for animated white lines on road edges */
 .animated-edge-line {
