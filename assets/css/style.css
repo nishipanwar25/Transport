@@ -1438,7 +1438,7 @@ body {
   padding: 50px 20px;
   box-sizing: border-box;
   height: 136.1vh;
-  margin-bottom: 160px;
+  margin-bottom: 200px;
   /* background-color: ; */
 }
 
@@ -2917,3 +2917,157 @@ body {
 
 
 /* <!----------- End Services Sections ----------------> */
+
+
+.how-work-section {
+  width: 100wh;
+  height: 83vh;
+  background-color: #333 !important;
+  /* Dark background */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 100px;
+
+}
+
+.how-section-header {
+  /* margin-bottom: 50px; */
+  margin-top: 50px;
+}
+
+.how-section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.wave-path-container {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100wh;
+  height: auto;
+  /* Height to contain the wave and labels */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+/* No animation keyframes as lines are fixed */
+
+.process-point {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+  /* Keep text on one line */
+}
+
+
+
+
+/* Already existing styles */
+.process-point {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.point-label {
+  background-color: #555;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.point-label:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* NEW: Dropdown box */
+.point-content {
+  background: white;
+  color: #333;
+  padding: 16px;
+  width: 280px;
+  /* Increase width */
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  font-size: 0.9rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+
+.point-content h4 {
+  margin: 0 0 5px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.point-content p {
+  margin: 0 0 10px;
+  color: #555;
+  line-height: 1.4;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Show on hover */
+.process-point:hover .point-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+
+/* Specific positioning for each point - Adjusted based on new image */
+.point-discovery {
+  top: 20%;
+  left: 5%;
+}
+
+
+
+.point-communication {
+  left: 22%;
+  bottom: 26%;
+}
+
+.point-development {
+  top: 30%;
+  /* Aligned with the trough of the wave section */
+  left: 73%;
+}
+
+.point-graphic-design {
+  top: 40%;
+  /* Aligned with the trough of the wave section */
+  left: 43%;
+}
