@@ -12,11 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Libs and Plugins CSS -->
-  <link rel="stylesheet" href="https://www.gozoop.com/assets/css/helper.css?v20250529063536pm">
-  <link rel="stylesheet" href="https://www.gozoop.com/assets/css/theme.css?v20250529063536pm">
-  <link rel="stylesheet" href="https://www.gozoop.com/assets/css/revamp.css?v20250529063536pm">
   <!-- IcoFont CSS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.1/icofont.min.css">
 
@@ -50,62 +45,6 @@
 
 
   <style>
-    .tt-header-inner {
-      /* background-color: #fff !important; */
-      height: 100px !important;
-    }
-
-    .nav-logo img {
-      height: 80px;
-      width: auto;
-      display: block;
-      /* background-color: #fff !important; */
-      margin-bottom: 40px;
-    }
-
-    .main-menu {
-      display: flex;
-      gap: 20px;
-      /* Adjust spacing between items */
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      transition: display 2s ease;
-    }
-
-    .tt-ol-submenu {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(5px);
-      /* start slightly lower */
-      transition: all 2s ease;
-      list-style-type: disc;
-      min-width: 160px;
-    }
-
-    .tt-ol-submenu li a {
-      color: #f0f0f0;
-      display: block;
-      padding: 5px 0px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-
-
-    /* Animate submenu in on hover */
-    .tt-ol-submenu-trigger:hover .tt-ol-submenu {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-      /* move to natural position */
-    }
-
-    .tt-ol-submenu li a:hover {
-      color: #b9b8b8;
-    }
-
 
     .footer-widget__links li {
       display: flex;
@@ -121,7 +60,7 @@
     .footer-widget__links li a {
       text-decoration: none;
       color: #fff;
-      /* Or your footer text color */
+      /* Or your footer text color */ 
       font-size: 16px;
       display: flex;
       align-items: left;
@@ -138,108 +77,53 @@
 
 <body>
 
-  <header id="tt-header">
-    <div class="tt-header-inner">
-      <div class="tt-header-col nav-logo">
-        <!-- Begin logo 
-                ================ -->
-        <img src="/images/Alaknanda Transport logo final.png" alt="">
-        <!-- End logo -->
+    <nav class="navbar-container">
+      <a href="#" class="navbar-logo">
+        <!-- Placeholder for ALAKNANDA logo graphic -->
+        <img src="/images/Alaknanda Transport logo final.png" alt="ALAKNANDA Logo Graphic">
+      </a>
+
+      <div class="hamburger-menu-icon" id="hamburgerIcon">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <!-- /.tt-header-col -->
-      <div class="tt-header-col" style="position: absolute; right: 50px; top: 20px;">
-        <!-- Begin overlay menu toggle button -->
-        <div id="tt-ol-menu-toggle-btn-wrap">
-          <div class="tt-ol-menu-toggle-btn-holder">
-            <a href="#" class="tt-ol-menu-toggle-btn"><span></span></a>
-          </div>
-        </div>
+    </nav>
 
-        <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
-          <div class="tt-ol-menu-holder">
-            <div class="tt-ol-menu-inner tt-wrap">
-              <div class="tt-ol-menu-content">
-                <!-- Begin menu list -->
-                <ul class="tt-ol-menu-list">
-                  <li class="tt-ol-submenu-wrap active">
-                    <div class="tt-ol-submenu-trigger ">
-                      <a style="font-size: 24px;" href="/index.html">Home</a>
-                    </div>
-                  </li>
-
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a style="font-size: 24px; " href="/about.html">About Us </a>
-                    </div>
-                  </li>
-
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a style="font-size: 24px;">Services <i class="fa-solid fa-angle-down"></i></a>
-                      <ul class="tt-ol-submenu">
-                        <li><a href="/about/team.html">Molasses bulk Transport</a></li>
-                        <li><a href="/about/history.html">Pan-India Operations</a></li>
-                        <li><a href="/about/history.html">Safe and Secure</a></li>
-                        <li><a href="/about/history.html">GPS tracking system</a></li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a style="font-size: 24px;">Fleet <i class="fa-solid fa-angle-down"></i></a>
-                      <ul class="tt-ol-submenu">
-                        <li><a href="/about/team.html">Types of Vehicles</a></li>
-                        <li><a href="/about/history.html">Maintenance & Cleanliness Protocol</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a style="font-size: 24px;">Industries Served <i class="fa-solid fa-angle-down"></i></a>
-                      <ul class="tt-ol-submenu">
-                        <li><a href="/about/team.html">Sugar Factories</a></li>
-                        <li><a href="/about/history.html">Distilleries</a></li>
-                        <li><a href="/about/history.html">Biofuel & Chemical Units</a></li>
-                      </ul>
-                    </div>
-                  </li>
-
-
-
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a style="font-size: 24px;" href="/gallery.html">Gallery</a>
-                    </div>
-                  </li>
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a style="font-size: 24px;" href="">Testimonials</a>
-                    </div>
-                  </li>
-                  <li><a style="font-size: 24px;" href="/contact.html">Contact US</a></li>
-                </ul>
-                <!-- End menu list -->
-              </div>
-              <!-- /.tt-ol-menu-content -->
-            </div>
-            <!-- /.tt-ol-menu-inner -->
-          </div>
-          <!-- /.tt-ol-menu-holder -->
-          <!-- Begin noise background -->
-          <!-- <div class="bg-noise"></div> -->
-          <!-- End noise background -->
-        </nav>
-        <!-- End overlay menu -->
-      </div>
-      <!-- /.header-col -->
+    <!-- Full-screen Overlay Navigation Menu -->
+    <div class="overlay-menu" id="overlayMenu">
+      <ul class="overlay-menu-content" id="overlayMenuContent">
+        <li><span>01</span><a href="/index.html">HOME</a></li>
+        <li><span>02</span><a href="/about.html">ABOUT US</a></li>
+        <li class="has-submenu" id="servicesMenuItem">
+          <span>03</span><a href="#">SERVICES</a>
+          <ul>
+            <li><a href="/about/team.html">Molasses bulk Transport</a></li>
+            <li><a href="/about/history.html">Pan-India Operations</a></li>
+            <li><a href="/about/history.html">Safe and Secure</a></li>
+            <li><a href="/about/history.html">GPS tracking system</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu" id="fleetMenuItem">
+          <span>04</span><a href="#">FLEET</a>
+          <ul>
+            <li><a href="/about/team.html">Types of Vehicles</a></li>
+            <li><a href="/about/history.html">Maintenance & Cleanliness Protocol</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu" id="industriesMenuItem">
+          <span>05</span><a href="#">INDUSTRIES SERVED</a>
+          <ul>
+            <li><a href="/about/team.html">Sugar Factories</a></li>
+            <li><a href="/about/history.html">Distilleries</a></li>
+            <li><a href="/about/history.html">Biofuel & Chemical Units</a></li>
+          </ul>
+        </li>
+        <li><span>06</span><a href="/gallery.html">GALLERY</a></li>
+        <li><span>07</span><a href="#">TESTIMONIALS</a></li>
+        <li><span>08</span><a href="#">CONTACT US</a></li>
+      </ul>
     </div>
-    <!-- /.header-inner -->
-
-  </header>
-
   <!----------- Start Footer Sections ---------------->
 
   <!-- Hero Section -->
