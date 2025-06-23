@@ -17,57 +17,126 @@
   <link rel="stylesheet" href="https://www.gozoop.com/assets/css/helper.css?v20250529063536pm">
   <link rel="stylesheet" href="https://www.gozoop.com/assets/css/theme.css?v20250529063536pm">
   <link rel="stylesheet" href="https://www.gozoop.com/assets/css/revamp.css?v20250529063536pm">
+  <!-- IcoFont CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.1/icofont.min.css">
+
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <link rel='stylesheet' id='elementor-frontend-css'
+    href='https://bracketweb.com/cityridewp/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.28.4'
+    media='all' />
+
+  <link rel='stylesheet' id='owl-carousel-css'
+    href='https://bracketweb.com/cityridewp/wp-content/plugins/cityride-addon/assets/vendors/owl-carousel/owl.carousel.min.css?ver=1747058588'
+    media='all' />
+
+  <link rel='stylesheet' id='bootstrap-css'
+    href='https://bracketweb.com/cityridewp/wp-content/themes/cityride/assets/vendors/bootstrap/css/bootstrap.min.css?ver=5.0.0'
+    media='all' />
+
+  <link rel='stylesheet' id='cityride-style-css'
+    href='https://bracketweb.com/cityridewp/wp-content/themes/cityride/style.css?ver=1750152550' media='all' />
+
+
+  <script src="https://bracketweb.com/cityridewp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+    id="jquery-core-js"></script>
+
 
   <!------------- Main Style.css ----------->
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/about.css">
 
+
+
   <style>
-    .sidebar-menu {
+    .tt-header-inner {
+      /* background-color: #fff !important; */
+      height: 100px !important;
+    }
+
+    .nav-logo img {
+      height: 80px;
+      width: auto;
+      display: block;
+      /* background-color: #fff !important; */
+      margin-bottom: 40px;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 20px;
+      /* Adjust spacing between items */
       list-style: none;
       padding: 0;
       margin: 0;
-      width: 220px;
-      background-color: #fff;
-    }
-
-    .sidebar-menu li {
-      /* border-bottom: 1px solid #34495e; */
-    }
-
-    .sidebar-menu a {
-      display: block;
-      padding: 12px 20px;
-      color: #ecf0f1;
-      text-decoration: none;
-    }
-
-    .sidebar-menu a:hover {
-      background-color: transparent;
+      transition: display 2s ease;
     }
 
     .tt-ol-submenu {
-      display: none;
-      list-style: none;
-      background-color: tra;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(5px);
+      /* start slightly lower */
+      transition: all 2s ease;
+      list-style-type: disc;
+      min-width: 160px;
     }
 
     .tt-ol-submenu li a {
-      padding-left: 40px;
-      font-size: 14px;
+      color: #f0f0f0;
+      display: block;
+      padding: 5px 0px;
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    .tt-ol-submenu-wrap:hover .tt-ol-submenu {
+
+
+    /* Animate submenu in on hover */
+    .tt-ol-submenu-trigger:hover .tt-ol-submenu {
       display: block;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      /* move to natural position */
+    }
+
+    .tt-ol-submenu li a:hover {
+      color: #b9b8b8;
+    }
+
+
+    .footer-widget__links li {
+      display: flex;
+      /* Align icon and text in a line */
+      align-items: left;
+
+    }
+
+    .footer-widget__links li {
+      margin-left: 0;
+    }
+
+    .footer-widget__links li a {
+      text-decoration: none;
+      color: #fff;
+      /* Or your footer text color */
+      font-size: 16px;
+      display: flex;
+      align-items: left;
+      gap: 2px;
+      /* Space between icon and text */
+      line-height: 1.5;
+    }
+
+    .footer-widget__links li a::before {
+      content: none;
     }
   </style>
-
-
 </head>
 
-<body id="body" class="home-page tt-transition tt-boxed tt-magic-cursor">
+<body>
 
   <header id="tt-header">
     <div class="tt-header-inner">
@@ -78,11 +147,11 @@
         <!-- End logo -->
       </div>
       <!-- /.tt-header-col -->
-      <div class="tt-header-col">
+      <div class="tt-header-col" style="position: absolute; right: 50px; top: 20px;">
         <!-- Begin overlay menu toggle button -->
         <div id="tt-ol-menu-toggle-btn-wrap">
           <div class="tt-ol-menu-toggle-btn-holder">
-            <a href="#" class="tt-ol-menu-toggle-btn" style="color: black  !important; "><span></span></a>
+            <a href="#" class="tt-ol-menu-toggle-btn"><span></span></a>
           </div>
         </div>
 
@@ -93,42 +162,64 @@
                 <!-- Begin menu list -->
                 <ul class="tt-ol-menu-list">
                   <li class="tt-ol-submenu-wrap active">
-                    <div class="tt-ol-submenu-trigger">
-                      <a href="/index.html">Home</a>
-                    </div>
-                  </li>
-                  <li class="tt-ol-submenu-wrap active">
-                    <div class="tt-ol-submenu-trigger">
-                      <a href="/index.html"></a>
+                    <div class="tt-ol-submenu-trigger ">
+                      <a style="font-size: 24px;" href="/index.html">Home</a>
                     </div>
                   </li>
 
                   <li class="tt-ol-submenu-wrap">
                     <div class="tt-ol-submenu-trigger">
-                      <a href="">Services</a>
+                      <a style="font-size: 24px;">About Us </a>
+                    </div>
+                  </li>
+
+                  <li class="tt-ol-submenu-wrap">
+                    <div class="tt-ol-submenu-trigger">
+                      <a style="font-size: 24px;">Services <i class="fa-solid fa-angle-down"></i></a>
+                      <ul class="tt-ol-submenu">
+                        <li><a href="/about/team.html">Molasses bulk Transport</a></li>
+                        <li><a href="/about/history.html">Pan-India Operations</a></li>
+                        <li><a href="/about/history.html">Safe and Secure</a></li>
+                        <li><a href="/about/history.html">GPS tracking system</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="tt-ol-submenu-wrap">
+                    <div class="tt-ol-submenu-trigger">
+                      <a style="font-size: 24px;">Fleet <i class="fa-solid fa-angle-down"></i></a>
+                      <ul class="tt-ol-submenu">
+                        <li><a href="/about/team.html">Types of Vehicles</a></li>
+                        <li><a href="/about/history.html">Maintenance & Cleanliness Protocol</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+
+                  <li class="tt-ol-submenu-wrap">
+                    <div class="tt-ol-submenu-trigger">
+                      <a style="font-size: 24px;">Industries Served <i class="fa-solid fa-angle-down"></i></a>
+                      <ul class="tt-ol-submenu">
+                        <li><a href="/about/team.html">Sugar Factories</a></li>
+                        <li><a href="/about/history.html">Distilleries</a></li>
+                        <li><a href="/about/history.html">Biofuel & Chemical Units</a></li>
+                      </ul>
+                    </div>
+                  </li>
+
+
+
+                  <li class="tt-ol-submenu-wrap">
+                    <div class="tt-ol-submenu-trigger">
+                      <a style="font-size: 24px;" href="/gallery.html">Gallery</a>
                     </div>
                   </li>
                   <li class="tt-ol-submenu-wrap">
                     <div class="tt-ol-submenu-trigger">
-                      <a href="">Fleet</a>
+                      <a style="font-size: 24px;" href="">Testimonials</a>
                     </div>
                   </li>
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a href="">Industries Served</a>
-                    </div>
-                  </li>
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a href="">Testimonials</a>
-                    </div>
-                  </li>
-                  <li class="tt-ol-submenu-wrap">
-                    <div class="tt-ol-submenu-trigger">
-                      <a href="">Gallery</a>
-                    </div>
-                  </li>
-                  <li><a href="/contact.html">Contact US</a></li>
+                  <li><a style="font-size: 24px;" href="/contact.html">Contact US</a></li>
                 </ul>
                 <!-- End menu list -->
               </div>
@@ -165,303 +256,178 @@
   </div>
 
 
-  <div class="about-wrapper">
-    <h5>ABOUT WASHING CARE</h5>
-    <h1>The perfect dress that shows your success <br> includes a clean car.</h1>
+  <!----------- Start Why Choose Alaknanda Sections ---------------->
+  <section class="why-choose-alaknada">
+    <div class="why-choose-container">
 
-
-
-    <div class="content">
-      <div class="about-image">
-        <img src="/images/hero3.jpg" alt="Mechanic working on engine" />
+      <!-- Image Column -->
+      <div class="why-choose-image-column">
+        <div class="why-choose-image-bg-red-container"></div>
+        <img src="https://cdn.pixabay.com/photo/2018/03/09/06/21/transport-3210728_1280.jpg"
+          alt="Construction Engineer">
       </div>
 
-      <div class="text-box">
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-          in
-          some form, by injected humour, or randomised words which don’t look even slightly believable. If you are
-          going
-          to use a passage of Lorem Ipsum.</p>
-        <p>Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
-          predefined chunks as necessary.</p>
+      <!-- Content Column -->
+      <div class="why-choose-content-column">
+        <div class="why-choose-section-title2">
+          <h2>Why Choose Alaknanda <span style="color:#ff5722 ;">Transport?</span></h2>
+          <!-- <p>What sets BuildBes apart is our unwavering dedication to quality, innovation, and customer service. With a team of skilled professionals.</p> -->
+        </div>
 
-        <div class="signature">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2021/12/dsvy-sign-1.png"
-            alt="Signature" />
+        <div class="why-choose-features-list">
+
+          <!-- Feature Item 1 -->
+          <div class="why-choose-feature-item">
+            <div class="why-choose-feature-icon-wrapper2">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <div class="why-choose-feature-text">
+              <h3>Nationwide Coverage:</h3>
+              <p>We operate across India, ensuring molasses transport from production zones to remote
+                destinations.</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 2 -->
+          <div class="why-choose-feature-item">
+            <div class="why-choose-feature-icon-wrapper2">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="why-choose-feature-text">
+              <h3>Specialized Fleet:</h3>
+              <p>Our modern, hygienic, and certified tankers are designed specifically for liquid cargo
+                like molasses.</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 3 -->
+          <div class="why-choose-feature-item">
+            <div class="why-choose-feature-icon-wrapper2">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="why-choose-feature-text">
+              <h3>Safety & Compliance First:</h3>
+              <p>We strictly follow industry safety protocols and environmental regulations to prevent
+                spillage and contamination.</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 4 -->
+          <div class="why-choose-feature-item">
+            <div class="why-choose-feature-icon-wrapper2">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <div class="why-choose-feature-text">
+              <h3>Experienced Team:</h3>
+              <p>With years of domain expertise, our drivers, logistics managers, and support staff
+                deliver consistent excellence.</p>
+            </div>
+          </div>
+
+          <!-- Feature Item 5 -->
+          <div class="why-choose-feature-item">
+            <div class="why-choose-feature-icon-wrapper2">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <div class="why-choose-feature-text">
+              <h3>On-Time Delivery:</h3>
+              <p>We understand your time is valuable—our optimized routes and GPS-enabled vehicles ensure
+                punctuality every time.</p>
+            </div>
+          </div>
+
+          <!-- Summary Text -->
+          <div class="why-choose-feature-text">
+            <p style="margin-bottom: 0; font-size: 1rem; line-height: 1.4;">
+              At Alaknanda Transport Company, we don’t just move cargo—we build long-term partnerships
+              based on trust, service quality, and transparency. Whether it’s one load or a long-term
+              logistics contract, we are committed to being your dependable transport ally.
+            </p>
+            <h5 style="margin-bottom: 0; font-size: 1.5rem; color: black; margin-top: 10px; font-size: 900;">Let’s move
+              forward—together.</h5>
+          </div>
         </div>
       </div>
     </div>
 
+  </section>
+  <!----------- End Why Choose Alaknanda Sections ---------------->
 
-    <div class="features-wrapper">
-      <div class="feature-card">
-        <div class="icon-number">
-          <img src="https://placehold.co/40x40/d30000/ffffff?text=SVG" alt="Spray Icon" class="icon" />
-          <span class="number">01</span>
+
+
+  <section class="mission-vission-section">
+
+    <div class="mission-main-container">
+      <!-- Left Content Column -->
+      <div class="mission-content-column">
+        <h2>Our Vision</h2>
+        <p>To become India’s most reliable and efficient molasses and liquid cargo transportation company, committed to
+          safety, sustainability, and service excellence.</p>
+        <h2>Our Mission</h2>
+        <div class="vision-buttons">
+          <p>To deliver high-quality, professional transportation solutions that support our clients' operations,
+            promote industry compliance, and contribute to India’s growing supply chain ecosystem.</p>
         </div>
-        <h3>Modern<br>Workshop</h3>
-        <p>Risus commodo viverra<br>maecenas accumsan lacus</p>
-        <div class="corner-fold"></div>
       </div>
 
-      <div class="feature-card">
-        <div class="icon-number">
-          <img src="https://placehold.co/40x40/d30000/ffffff?text=SVG" alt="Spray Icon" class="icon" />
-          <span class="number">02</span>
-        </div>
-        <h3>Modern<br>Workshop</h3>
-        <p>Risus commodo viverra<br>maecenas accumsan lacus</p>
-        <div class="corner-fold"></div>
+      <!-- Right Image Column -->
+      <!-- <div class="image-column-line"> -->
+      <div class="image-column">
+        <img src="https://cdn.pixabay.com/photo/2016/11/21/14/03/woman-1845572_1280.jpg" alt="Team Photo">
       </div>
-
-      <div class="feature-card">
-        <div class="icon-number">
-          <img src="https://placehold.co/40x40/d30000/ffffff?text=SVG" alt="Spray Icon" class="icon" />
-          <span class="number">03</span>
-        </div>
-        <h3>Modern<br>Workshop</h3>
-        <p>Risus commodo viverra<br>maecenas accumsan lacus</p>
-        <div class="corner-fold"></div>
-      </div>
-
-      <div class="feature-card">
-        <div class="icon-number">
-          <img src="https://placehold.co/40x40/d30000/ffffff?text=SVG" alt="Spray Icon" class="icon" />
-          <span class="number">04</span>
-        </div>
-        <h3>Modern<br>Workshop</h3>
-        <p>Risus commodo viverra<br>maecenas accumsan lacus</p>
-        <div class="corner-fold"></div>
-      </div>
+      <!-- </div> -->
     </div>
-  </div>
+
+  </section>
+  <!----------- End Why Choose Alaknanda Sections ---------------->
 
 
 
-
-
-  <!-- 
-  <div class="main-background-container">
-    <div class="overlay"></div>
-
-    <div class="content-wrapper">
-
-      <div class="badge-container">
-        <img src="https://placehold.co/120x120/gold/white?text=BEST%0AAWARD" alt="Best Award Badge" class="badge-image">
+  <section class="fleet-section">
+    <div class="our-fleet-container">
+      <div class="our-fleet-section-header">
+        <span class="our-fleet-subtitle">GET TO KNOW US</span>
+        <h2>Our Fleet Highlights</h2>
+        <p>We are so excited and proud of our business. It's really easy to create a landing page for your awesome
+          business.</p>
       </div>
 
-      <div class="text-content">
-        <h1>
-          We have a 100% carvax happiness guarantee!
-          <svg class="sparkle-svg sparkle-animation" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M10 2a1 1 0 011 1v1.447l.458-.229a1 1 0 011.084 1.79l-.458.229.229.458a1 1 0 01-1.79 1.084l-.229-.458-1.447 1.447a1 1 0 01-1.414-1.414L8.553 11l-.458-.229a1 1 0 01-1.084-1.79l.458-.229-.229-.458a1 1 0 011.79-1.084l.229.458L10 2zM5.5 14.5a1 1 0 011 1v1.447l.458-.229a1 1 0 011.084 1.79l-.458.229.229.458a1 1 0 01-1.79 1.084l-.229-.458-1.447 1.447a1 1 0 01-1.414-1.414L4.553 17l-.458-.229a1 1 0 01-1.084-1.79l.458-.229-.229-.458a1 1 0 011.79-1.084l.229.458L5.5 14.5zM14.5 5.5a1 1 0 011 1v1.447l.458-.229a1 1 0 011.084 1.79l-.458.229.229.458a1 1 0 01-1.79 1.084l-.229-.458-1.447 1.447a1 1 0 01-1.414-1.414L13.553 8l-.458-.229a1 1 0 01-1.084-1.79l.458-.229-.229-.458a1 1 0 011.79-1.084l.229.458L14.5 5.5z"
-              clip-rule="evenodd"></path>
-          </svg>
-          <svg class="sparkle-svg sparkle-animation" fill="currentColor" viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M10 2a1 1 0 011 1v1.447l.458-.229a1 1 0 011.084 1.79l-.458.229.229.458a1 1 0 01-1.79 1.084l-.229-.458-1.447 1.447a1 1 0 01-1.414-1.414L8.553 11l-.458-.229a1 1 0 01-1.084-1.79l.458-.229-.229-.458a1 1 0 011.79-1.084l.229.458L10 2zM5.5 14.5a1 1 0 011 1v1.447l.458-.229a1 1 0 011.084 1.79l-.458.229.229.458a1 1 0 01-1.79 1.084l-.229-.458-1.447 1.447a1 1 0 01-1.414-1.414L4.553 17l-.458-.229a1 1 0 01-1.084-1.79l.458-.229-.229-.458a1 1 0 011.79-1.084l.229.458L5.5 14.5zM14.5 5.5a1 1 0 011 1v1.447l.458-.229a1 1 0 011.084 1.79l-.458.229.229.458a1 1 0 01-1.79 1.084l-.229-.458-1.447 1.447a1 1 0 01-1.414-1.414L13.553 8l-.458-.229a1 1 0 01-1.084-1.79l.458-.229-.229-.458a1 1 0 011.79-1.084l.229.458L14.5 5.5z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </h1>
-        <p>
-          There are many variations of passages of Lorem Ipsum available, but the majority
-          have suffered alteration in some form injected.
-        </p>
-      </div>
-    </div>
-  </div> -->
-
-
-
-
-  <section class="staff-container">
-    <div class="container">
-      <div class="header">
-        <h4>MEET OUR STAFF</h4>
-        <h1>A genuine solution to<br>vehicle problems</h1>
-      </div>
-
-      <div class="staff-cards-container">
-        <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2020/01/team_01-600x770.jpg"
-            alt="Aaron Nunez">
-          <div class="social-icons-overlay">
-            <div class="social-icon facebook">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
+      <div class="our-fleet-features-wrapper">
+        <div class="our-fleet-features-grid">
+          <!-- Feature Card 1 -->
+          <div class="our-fleet-feature-card">
+            <div class="our-fleet-icon-wrapper">
+              <i class="fas fa-search"></i>
             </div>
-            <div class="social-icon twitter">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-              </svg>
-            </div>
-            <div class="social-icon instagram">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </div>
-            <div class="social-icon youtube">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33A29 29 0 0 0 22.54 6.42zM9.75 15.02V9.02l5.35 3z" />
-              </svg>
-            </div>
+            <p class="our-fleet-feature-description">Stainless steel and mild steel tankers</p>
+            <a href="#" class="our-fleet-read-more-link">Read More</a>
           </div>
-          <div class="staff-info">
-            <h3>Aaron Nunez</h3>
-            <p>Technicians</p>
-            <span class="share-icon">
-              <svg class="share-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-            </span>
-          </div>
-        </div>
 
-        <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2020/01/team02-600x770.jpg"
-            alt="Dustin Mock">
-          <div class="social-icons-overlay">
-            <div class="social-icon facebook">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
+          <!-- Feature Card 2 -->
+          <div class="our-fleet-feature-card">
+            <div class="our-fleet-icon-wrapper">
+              <i class="fas fa-desktop"></i>
             </div>
-            <div class="social-icon twitter">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-              </svg>
-            </div>
-            <div class="social-icon instagram">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </div>
-            <div class="social-icon youtube">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33A29 29 0 0 0 22.54 6.42zM9.75 15.02V9.02l5.35 3z" />
-              </svg>
-            </div>
+            <p class="our-fleet-feature-description">Leak-proof valves and lids</p>
+            <a href="#" class="our-fleet-read-more-link">Read More</a>
           </div>
-          <div class="staff-info">
-            <h3>Dustin Mock</h3>
-            <p>Operator</p>
-            <span class="share-icon">
-              <svg class="share-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-            </span>
-          </div>
-        </div>
 
-        <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2019/05/team03-600x770.jpg"
-            alt="Dianna Smiley">
-          <div class="social-icons-overlay">
-            <div class="social-icon facebook">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
+          <!-- Feature Card 3 -->
+          <div class="our-fleet-feature-card">
+            <div class="our-fleet-icon-wrapper">
+              <i class="fas fa-mobile-alt"></i>
             </div>
-            <div class="social-icon twitter">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-              </svg>
-            </div>
-            <div class="social-icon instagram">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </div>
-            <div class="social-icon youtube">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33A29 29 0 0 0 22.54 6.42zM9.75 15.02V9.02l5.35 3z" />
-              </svg>
-            </div>
+            <p class="our-fleet-feature-description">Real-time GPS tracking system</p>
+            <a href="#" class="our-fleet-read-more-link">Read More</a>
           </div>
-          <div class="staff-info">
-            <h3>Dianna Smiley</h3>
-            <p>Manager</p>
-            <span class="share-icon">
-              <svg class="share-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-            </span>
-          </div>
-        </div>
 
-        <div class="staff-card">
-          <img src="https://karzo-demo.pbminfotech.com/demo3/wp-content/uploads/sites/4/2019/05/team04-600x770.jpg"
-            alt="Edward Willey">
-          <div class="social-icons-overlay">
-            <div class="social-icon facebook">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
+          <!-- Feature Card 4 -->
+          <div class="our-fleet-feature-card">
+            <div class="our-fleet-icon-wrapper">
+              <i class="fas fa-cogs"></i>
             </div>
-            <div class="social-icon twitter">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-              </svg>
-            </div>
-            <div class="social-icon instagram">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </div>
-            <div class="social-icon youtube">
-              <svg class="social-icon-svg" viewBox="0 0 24 24">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33A29 29 0 0 0 22.54 6.42zM9.75 15.02V9.02l5.35 3z" />
-              </svg>
-            </div>
-          </div>
-          <div class="staff-info">
-            <h3>Edward Willey</h3>
-            <p>Mechanic</p>
-            <span class="share-icon">
-              <svg class="share-icon-svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="18" cy="5" r="3"></circle>
-                <circle cx="6" cy="12" r="3"></circle>
-                <circle cx="18" cy="19" r="3"></circle>
-                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-              </svg>
-            </span>
+            <p class="our-fleet-feature-description">Regularly maintained and certified by transport authorities.</p>
+            <a href="#" class="our-fleet-read-more-link">Read More</a>
           </div>
         </div>
       </div>
@@ -471,151 +437,270 @@
 
 
 
-
-
-  <section class="guarantee-section">
-    <div class="guarantee-overlay"></div>
-    <div class="guarantee-content">
-      <img src="https://placehold.co/100x100/ffd700/000000?text=Award" alt="Best Car Award" class="award-badge">
-      <div class="text-content">
-        <h2>We have a 100% carvax<br>happiness guarantee!</h2>
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
-          some form injected.</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-  <section class="testimonial-container">
-    <div class="testimonial-main">
-      <div class="testimonial-content">
-        <h5>TESTIMONIALS</h5>
-        <h2>What's Client's Say?</h2>
-        <div style="display: flex; justify-content: left; gap: 220px;">
-          <div class="star-rating">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <div class="quote-icon" style="font-size: 2rem; margin-top: 1px;"><i class="fa-solid fa-quote-right"></i>
-          </div>
-        </div>
-
-        <p class="testimonial-text">
-          "If you're looking for a rewarding career and the chance to make an Impact, you've come to the
-          right place. We will transform your business through our techniques."
-        </p>
-        <div style="display:flex; align-items:center; justify-content:space-between; width:400px;">
-          <div class="author-info">
-            <img src="https://placehold.co/60x60/e74c3c/ffffff?text=EH" alt="Eliana Hernandez" class="author-avatar">
-            <div class="author-details">
-              <h4>Eliana Hernandez</h4>
-              <p>CEO & Founder</p>
-            </div>
-          </div>
-          <div class="testimonial-navigation">
-            <button class="nav-arrow prev-arrow"><span>&lt;</span></button>
-            <button class="nav-arrow next-arrow"><span>&gt;</span></button>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-image">
-        <img src="/images/Aboutus.avif" alt="Mechanic working on car">
-      </div>
-    </div>
-
-    <div class="statistics-section">
-      <div class="stat-item">
-        <div class="progress-circle" data-progress="85">
-          <span class="progress-text">85%</span>
-        </div>
-        <span class="stat-label">Our Satisfied customer</span>
-      </div>
-      <div class="stat-item">
-        <div class="progress-circle" data-progress="75">
-          <span class="progress-text">75%</span>
-        </div>
-        <span class="stat-label">Projects are completed</span>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!----------- End Footer Sections ---------------->
 
 
   <!----------- Start Footer Sections ---------------->
 
-  <footer class="footer">
 
-    <!--  -->
-    <div class="flogo">
-      <img src="/images/Alaknanda Transport logo final.png" alt="">
-    </div>
-    <div class="footer-top">
-      <div class="footer-col">
-        <h3>Contact Us</h3>
-        <div class="contact-info">
-          <div class="contact-row">
-            <img src="https://www.bloomsindia.net/images/icon-location.svg" alt="">
-            <span>Near Azad Cement, 100 Foot Road,<br> Ghitorni, Delhi - 110030, India</span>
-          </div>
-          <div class="contact-row">
-            <img src="https://www.bloomsindia.net/images/icon-phone.svg" alt="">
-            <span>+91 9211511597</span>
-          </div>
-          <div class="contact-row">
-            <img src="https://www.bloomsindia.net/images/icon-mail.svg" alt="">
-            <span>info@bloomsindia.net</span>
+  <div class="footer-wrapper" style="margin-top: 200px;">
+    <!-- the loop -->
+    <div data-elementor-type="wp-post" data-elementor-id="835" class="elementor elementor-835">
+      <div class="elementor-element elementor-element-1963468 e-flex e-con-boxed e-con e-parent" data-id="1963468"
+        data-element_type="container">
+        <div class="e-con-inner">
+          <div
+            class="elementor-element elementor-element-e896b7e elementor-widget elementor-widget-cityride-call-to-action"
+            data-id="e896b7e" data-element_type="widget" data-widget_type="cityride-call-to-action.default">
+            <div class="elementor-widget-container">
+
+              <section class="cta-one">
+                <div class="container">
+                  <div class="cta-one__inner">
+                    <div class="cta-one__inner__bg" style="background-image: url(/images/footer-book-banner.png);">
+                    </div>
+                    <!-- /.cta-one__inner__bg -->
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="cta-one__content">
+                          <div class="sec-title ">
+                            <div class="sec-title__top wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">
+                              <div class="sec-title__shape"></div>
+                              <!-- /.sec-title__shape -->
+                              <h6 class="sec-title__tagline">Contact now</h6>
+                              <!-- /.sec-title__tagline -->
+                            </div>
+                            <!-- /.sec-title__top -->
+                            <h3 class="sec-title__title wow fadeInUp">Your journey starts
+                              with ease and ends with satisfaction.</h3>
+                            <!-- /.sec-title__title -->
+                          </div>
+                          <!-- /.sec-title -->
+                          <div class="cta-one__content__btn wow fadeInUp" data-wow-duration="1500ms"
+                            data-wow-delay="150ms">
+                            <a href="#" class="cityride-btn cityride-btn--border">
+                              <span class="cityride-btn__icon"><i class="fa-solid fa-phone-volume"></i></span>
+                              <span style="margin-left: 5px;">Contact now</span>
+                            </a>
+                          </div>
+                          <!-- /.cta-one__content__btn -->
+                        </div>
+                        <!-- /.cta-one__content -->
+                      </div>
+                      <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="cta-one__inner__image">
+                      <img decoding="async"
+                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/taxi-booking-car-2-1.png"
+                        alt="taxi-booking-car-2-1" title="taxi-booking-car-2-1">
+                    </div>
+                    <!-- /.cta-one__inner__image -->
+                    <div class="cta-one__inner__box">
+                      <div class="cta-one__inner__box__bg"
+                        style="background-image: url(https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/ta-shape-2-1.png);">
+                      </div>
+                      <!-- /.cta-one__inner__box__bg -->
+                      <div class="cta-one__inner__box__one"></div>
+                      <!-- /.cta-one__inner__box__one -->
+                      <div class="cta-one__inner__box__two"></div>
+                      <!-- /.cta-one__inner__box__two -->
+                    </div>
+                    <!-- /.cta-one__inner__box -->
+                    <div class="cta-one__inner__item-one"></div>
+                    <!-- /.cta-one__inner__item -->
+                    <div class="cta-one__inner__item-two"></div>
+                    <!-- /.cta-one__inner__item -->
+                  </div>
+                  <!-- /.cta-one__inner -->
+                </div>
+                <!-- /.container -->
+              </section>
+              <!-- /.cta-one -->
+
+            </div>
           </div>
         </div>
       </div>
+      <div class="elementor-element elementor-element-efcaf2a e-con-full main-footer__inner e-flex e-con e-parent"
+        data-id="efcaf2a" data-element_type="container">
+        <div class="elementor-element elementor-element-a71829f e-flex e-con-boxed e-con e-child" data-id="a71829f"
+          data-element_type="container">
+          <div class="e-con-inner">
+            <div class="elementor-element elementor-element-cb2e830 elementor-widget elementor-widget-cityride-shape"
+              data-id="cb2e830" data-element_type="widget" data-widget_type="cityride-shape.default">
+              <div class="elementor-widget-container">
+                <div class="main-footer__bg" style="background-image: url(/images/footerbg.png);">
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-6949d40 elementor-widget elementor-widget-cityride-shape"
+              data-id="6949d40" data-element_type="widget" data-widget_type="cityride-shape.default">
+              <div class="elementor-widget-container">
+                <div class="main-footer__top__element">
+                  <img decoding="async"
+                    src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/footer-shape.png"
+                    alt="footer-shape" title="footer-shape">
+                </div>
+                <!-- /.main-footer__top__element -->
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-0b03015 e-con-full e-flex e-con e-child" data-id="0b03015"
+              data-element_type="container">
+              <div
+                class="elementor-element elementor-element-69d2541 elementor-widget elementor-widget-footer-about-two"
+                data-id="69d2541" data-element_type="widget" data-widget_type="footer-about-two.default">
+                <div class="elementor-widget-container">
+                  <div class="footer-widget footer-widget--about">
+                    <a href="#" class="footer-widget__logo logo-retina footer-logo"><img loading="lazy" decoding="async"
+                        src="/images/Alaknanda Transport logo final.png" width="103" height="55" alt="Cityride"></a>
+                    <p class="footer-widget__about-text">Phasellus ultricies aliquam volutpat
+                      ullamcorper laoreet neque, a lacinia curabitur lacinia mollis</p>
+                    <!-- /.footer-widget__about-text -->
+                    <div class="footer-widget__social">
+                      <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="https://x.com"><i class="fa-brands fa-twitter"></i></a>
+                      <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <!-- /.footer-widget__call -->
+                  </div>
+                  <!-- /.footer-widget -->
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-5094946 e-con-full e-flex e-con e-child" data-id="5094946"
+              data-element_type="container">
+              <div class="elementor-element elementor-element-9eceff4 elementor-widget elementor-widget-footer-nav-menu"
+                data-id="9eceff4" data-element_type="widget" data-widget_type="footer-nav-menu.default">
+                <div class="elementor-widget-container">
+                  <div class="footer-widget footer-widget--links" style="margin-right: 50px;">
+                    <h2 class="footer-widget__title" style="margin-left: 10px;">Quick Links</h2>
+                    <!-- /.footer-widget__title -->
+                    <div class="menu-quick-links-container">
+                      <ul class="footer-widget__links">
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Home</a></li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Our Service</a>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Fleet</a>
+                        </li>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Testimonial</a>
+                        </li>
+                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Contact</a></li>
+                        <!-- <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a></li> -->
+                      </ul>
 
+                    </div>
+                  </div>
 
-      <div class="footer-col">
-        <h3>Share With Us</h3>
-        <p>Special offers on social networks</p>
-        <div class="social-icons">
-          <a href="#"><img src="https://www.bloomsindia.net/newimg/instagram.png" alt="logo"></a>
-          <a href="#"><img src="https://www.bloomsindia.net/newimg/facebook.png" alt="logo"></a>
-          <a href="#"><img src="https://www.bloomsindia.net/newimg/twitter.png" alt="logo"></a>
-          <a href="#"><img src="https://www.bloomsindia.net/newimg/youtube-icon.png" alt="logo"></a>
-          <a href="#"><img src="https://www.bloomsindia.net/newimg/linkedin.png" alt="logo"></a>
-        </div>
-      </div>
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-e3d7c85 e-con-full e-flex e-con e-child" data-id="e3d7c85"
+              data-element_type="container">
+              <div class="elementor-element elementor-element-df227f4 elementor-widget elementor-widget-footer-news"
+                data-id="df227f4" data-element_type="widget" data-widget_type="footer-news.default">
+                <div class="elementor-widget-container">
 
+                  <div class="footer-widget footer-widget--post">
+                    <h2 class="footer-widget__title">Recent Posts</h2>
+                    <!-- /.footer-widget__title -->
+                    <div class="footer-widget__post">
+                      <div class="footer-widget__post__item">
+                        <div class="footer-widget__post__thumb">
+                          <img loading="lazy" decoding="async" width="1920" height="1080"
+                            src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png"
+                            class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image" alt=""
+                            srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-570x321.png 570w"
+                            sizes="(max-width: 1920px) 100vw, 1920px" />
+                        </div>
+                        <!-- /.footer-widget__post__thumb -->
+                        <div class="footer-widget__post__content">
+                          <div class="footer-widget__post__meta">
+                            <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
+                          </div>
+                          <!-- /.footer-widget__post__meta -->
+                          <h4 class="footer-widget__post__title"><a href="#">cupidatat
+                              nonproident, sunt in culpa qui</a></h4>
+                          <!-- /.footer-widget__post__title -->
+                        </div>
+                        <!-- /.footer-widget__post__content -->
+                      </div>
+                      <!-- /.footer-widget__post__item -->
 
-      <div class="footer-col">
-        <h3>Newsletter</h3>
-        <p>Subscribe our newsletter</p>
-        <div class="newsletter-section" style="display: none;">
-          <div class="newsletter-input">
-            <input type="email" placeholder="Email Address" required>
-            <button type="submit">Subscribe</button>
+                      <div class="footer-widget__post__item">
+                        <div class="footer-widget__post__thumb">
+                          <img loading="lazy" decoding="async" width="1920" height="1080"
+                            src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png"
+                            class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image" alt=""
+                            srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-570x321.png 570w"
+                            sizes="(max-width: 1920px) 100vw, 1920px" />
+                        </div>
+                        <!-- /.footer-widget__post__thumb -->
+                        <div class="footer-widget__post__content">
+                          <div class="footer-widget__post__meta">
+                            <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
+                          </div>
+                          <!-- /.footer-widget__post__meta -->
+                          <h4 class="footer-widget__post__title"><a href="#">Big
+                              Data. Are There Any Leftovers kitchen</a></h4>
+                          <!-- /.footer-widget__post__title -->
+                        </div>
+                        <!-- /.footer-widget__post__content -->
+                      </div>
+                      <!-- /.footer-widget__post__item -->
+
+                    </div>
+                    <!-- /.footer-widget__post -->
+                  </div>
+                  <!-- /.footer-widget -->
+                </div>
+              </div>
+            </div>
+            <div class="elementor-element elementor-element-60bcc0b e-con-full e-flex e-con e-child" data-id="60bcc0b"
+              data-element_type="container" style="margin-left: 20px;">
+              <div class="elementor-element elementor-element-51deedd elementor-widget elementor-widget-footer-contact"
+                data-id="51deedd" data-element_type="widget" data-widget_type="footer-contact.default">
+                <div class="elementor-widget-container">
+                  <div class="footer-widget footer-widget--contact">
+                    <h2 class="footer-widget__title">office address</h2>
+                    <!-- /.footer-widget__title -->
+                    <ul class="list-unstyled footer-widget__info ml-0">
+                      <li>
+                        <span class="footer-widget__info__icon">
+                          <i class="fa-solid fa-envelope"></i> </span>
+                        <!-- /.footer-widget__info__icon -->
+                        <a href="">needhelp@company.com</a>
+                      </li>
+                      <li>
+                        <span class="footer-widget__info__icon">
+                          <i class="fa-solid fa-phone-volume"></i> </span>
+                        <!-- /.footer-widget__info__icon -->
+                        <a href="">+91 7417 827 633</a>
+                      </li>
+                    </ul>
+                    <!-- /.list-unstyled -->
+
+                    <!-- /.footer-widget__newsletter mc-form -->
+                    <div class="mc-form__response"></div>
+                    <!-- /.mc-form__response -->
+                  </div>
+                  <!-- /.footer-widget -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
-
-    <div class="footer-bottom" style="display: none;">
-      <div class="bottom-links">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">E-Catalogue</a>
-        <a href="#">Contact</a>
-      </div>
-      <div>
-        <p>Copyright © 2024 All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
+  </div>
+  <!-- end of the loop -->
 
 
+  </div>
+  <!-- /.footer-wrapper -->
 
 
 
@@ -640,125 +725,8 @@
   <!-- server is down -->
   <script src="https://cdn.jsdelivr.net/npm/split-type"></script>
 
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Function to update progress circles with animation
-      function updateProgressCircles() {
-        document.querySelectorAll('.progress-circle').forEach(circle => {
-          const targetProgress = parseInt(circle.dataset.progress);
-          const progressTextElement = circle.querySelector('.progress-text');
-
-          // Set initial state to 0%
-          progressTextElement.textContent = '0%';
-          circle.style.background = `conic-gradient(#e74c3c 0%, #add8e6 0%)`;
-
-          let currentProgress = 0;
-          const duration = 2000; // 2 seconds for animation
-          const startTime = performance.now();
-
-          function animateProgress(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            const progressRatio = Math.min(elapsedTime / duration, 1); // Ensure it doesn't go over 1
-
-            currentProgress = Math.floor(progressRatio * targetProgress);
-
-            // Update text
-            progressTextElement.textContent = `${currentProgress}%`;
-
-            // Update circle gradient
-            const gradient = `conic-gradient(#e74c3c ${currentProgress}%, #add8e6 ${currentProgress}%)`;
-            circle.style.background = gradient;
-
-            if (progressRatio < 1) {
-              requestAnimationFrame(animateProgress);
-            }
-          }
-
-          // Start the animation after a small delay to ensure initial 0% is rendered
-          setTimeout(() => {
-            requestAnimationFrame(animateProgress);
-          }, 100);
-        });
-      }
-
-      // Testimonial Slider (Basic functionality)
-      const testimonials = [{
-        quote: "We don't take ourselves too seriously, but seriously enough to ensure we're creating the best product and experience for our customers. I feel like Help Scout does the same.",
-        author: "Lusicca Williams",
-        designation: "CEO & Founder",
-        avatar: "https://placehold.co/60x60/e74c3c/ffffff?text=LW"
-      }, {
-        quote: "Outstanding service and highly skilled technicians! My car has never run better. They truly provide a genuine solution to vehicle problems.",
-        author: "John Doe",
-        designation: "Happy Customer",
-        avatar: "https://placehold.co/60x60/3498db/ffffff?text=JD"
-      }, {
-        quote: "A fantastic team that delivers on their promises. The attention to detail and customer care is exceptional. Highly recommend their services!",
-        author: "Jane Smith",
-        designation: "Local Business Owner",
-        avatar: "https://placehold.co/60x60/2ecc71/ffffff?text=JS"
-      },];
-
-      let currentIndex = 0;
-      const testimonialText = document.querySelector('.testimonial-text');
-      const authorName = document.querySelector('.author-details h4');
-      const authorDesignation = document.querySelector('.author-details p');
-      const authorAvatar = document.querySelector('.author-avatar');
-      const prevArrow = document.querySelector('.prev-arrow');
-      const nextArrow = document.querySelector('.next-arrow');
-
-      function updateTestimonial() {
-        const current = testimonials[currentIndex];
-        testimonialText.textContent = current.quote;
-        authorName.textContent = current.author;
-        authorDesignation.textContent = current.designation;
-        authorAvatar.src = current.avatar;
-      }
-
-      // Function to advance to the next testimonial
-      function showNextTestimonial() {
-        currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
-        updateTestimonial();
-      }
-
-      // Automatic testimonial change every 5 seconds
-      let autoSlideInterval = setInterval(showNextTestimonial, 5000); // Change every 5 seconds
-
-      // Reset interval on manual navigation
-      prevArrow.addEventListener('click', () => {
-        clearInterval(autoSlideInterval); // Stop current interval
-        currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
-        updateTestimonial();
-        autoSlideInterval = setInterval(showNextTestimonial, 5000); // Restart interval
-      });
-
-      nextArrow.addEventListener('click', () => {
-        clearInterval(autoSlideInterval); // Stop current interval
-        showNextTestimonial(); // Show next immediately
-        autoSlideInterval = setInterval(showNextTestimonial, 5000); // Restart interval
-      });
-
-      // Intersection Observer for statistics-section animation
-      const statisticsSection = document.querySelector('.statistics-section');
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            updateProgressCircles(); // Trigger animation when section is in view
-            observer.disconnect(); // Disconnect observer after animation is triggered once
-          }
-        });
-      }, {
-        threshold: 0.5 // Trigger when 50% of the section is visible
-      });
-
-      observer.observe(statisticsSection);
-
-      // Initial testimonial load
-      updateTestimonial();
-    });
-  </script>
-
+  <link rel='stylesheet' id='elementor-post-835-css'
+    href='https://bracketweb.com/cityridewp/wp-content/uploads/elementor/css/post-835.css?ver=1748005501' media='all' />
 
 </body>
 
