@@ -1,0 +1,842 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f8f9fa;
+    /* Light background for the overall page */
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.distilleries-trust-section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.distilleries-trust-section-header {
+    margin-bottom: 60px;
+}
+
+.distilleries-trust-section-header .distilleries-trust-subtitle {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1e90ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.distilleries-trust-section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1a1e2b;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.distilleries-trust-section-header h2 span {
+    color: #1e90ff;
+}
+
+.distilleries-trust-section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1e90ff;
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.distilleries-trust-services-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+@media (min-width: 640px) {
+    .distilleries-trust-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .distilleries-trust-services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.distilleries-trust-service-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.distilleries-trust-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom right, #1e90ff, #2ecc71);
+}
+
+.distilleries-trust-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn.pixabay.com/photo/2018/03/08/14/58/usa-3208827_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.distilleries-trust-service-card:hover::before {
+    opacity: 0.2;
+}
+
+.distilleries-trust-service-card>* {
+    position: relative;
+    z-index: 1;
+}
+
+.distilleries-trust-service-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.distilleries-trust-service-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: #1e90ff;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.distilleries-trust-service-card:hover .distilleries-trust-service-icon-wrapper {
+    background-color: #ff8c00;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.distilleries-trust-service-icon-wrapper img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: invert(100%);
+    transition: filter 0.3s ease;
+    color: #1a1e2b;
+}
+
+.distilleries-trust-service-card:hover .distilleries-trust-service-icon-wrapper img {
+    filter: invert(0%) brightness(0);
+}
+
+.distilleries-trust-service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #212529;
+    line-height: 1.3;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.distilleries-trust-service-card:hover .distilleries-trust-service-title {
+    color: #ffffff;
+}
+
+.distilleries-trust-service-card-underline {
+    width: 100%;
+    height: 2px;
+    background-color: #2ecc71;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-radius: 1px;
+    opacity: 0.8;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.distilleries-trust-service-card:hover .distilleries-trust-service-card-underline {
+    background-color: #ffffff;
+    opacity: 1;
+}
+
+.distilleries-trust-service-description {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 0;
+    transition: color 0.3s ease;
+}
+
+.distilleries-trust-service-card:hover .distilleries-trust-service-description {
+    color: #f0f0f0;
+}
+
+@media (max-width: 767px) {
+    .distilleries-trust-section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .distilleries-trust-section-header p {
+        font-size: 0.95rem;
+    }
+
+    .distilleries-trust-service-card {
+        padding: 25px;
+    }
+
+    .distilleries-trust-service-icon-wrapper {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
+
+    .distilleries-trust-service-icon-wrapper img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .distilleries-trust-service-title {
+        font-size: 1.2rem;
+    }
+
+    .distilleries-trust-service-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+.sugar-service-section {
+    padding: 40px 20px;
+    background-color: #2c3e50;
+    /* Dark background as in the image */
+    color: #f0f0f0;
+    /* Light text for readability */
+    line-height: 1.6;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.sugar-service-section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.sugar-service-section-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .sugar-service-section-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.sugar-service-header-left {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .sugar-service-header-left {
+        flex: 1;
+        margin-right: 50px;
+        margin-bottom: 0;
+    }
+}
+
+.sugar-service-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e67e22;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sugar-service-main-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.sugar-service-main-title span {
+    color: #2ecc71;
+}
+
+.sugar-service-header-right {
+    flex: 1;
+    font-size: 1rem;
+    color: #bdc3c7;
+    line-height: 1.7;
+}
+
+.sugar-service-process-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+@media (min-width: 640px) {
+    .sugar-service-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .sugar-service-process-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.sugar-service-process-step {
+    padding: 30px 10px;
+    text-align: left;
+    position: relative;
+}
+
+.sugar-service-icon-number-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #e67e22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sugar-service-step-number-circle {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sugar-service-step-number-circle.green {
+    background-color: #2ecc71;
+}
+
+.sugar-service-step-number-circle.orange {
+    background-color: #e67e22;
+}
+
+.sugar-service-step-number-circle.teal {
+    background-color: #1abc9c;
+}
+
+.sugar-service-step-number-circle.blue {
+    background-color: #3498db;
+}
+
+.sugar-service-step-icon {
+    width: 40px;
+    height: 40px;
+    filter: invert(50%) sepia(100%) saturate(2000%) hue-rotate(330deg) brightness(100%) contrast(100%);
+}
+
+.sugar-service-step-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.sugar-service-step-description {
+    font-size: 0.95rem;
+    color: #bdc3c7;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .sugar-service-main-title {
+        font-size: 2.2rem;
+    }
+
+    .sugar-service-header-right {
+        font-size: 0.9rem;
+    }
+
+    .sugar-service-process-step {
+        padding: 25px;
+    }
+
+    .sugar-service-icon-number-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .sugar-service-step-number-circle {
+        width: 25px;
+        height: 25px;
+        font-size: 0.7rem;
+        top: -4px;
+        left: -4px;
+    }
+
+    .sugar-service-step-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .sugar-service-step-title {
+        font-size: 1.1rem;
+    }
+
+    .sugar-service-step-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Keyframe Animations */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulseBorder {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+
+@keyframes backgroundPan {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes imageZoomPan {
+    0% {
+        transform: scale(1) translateX(0);
+    }
+
+    50% {
+        transform: scale(1.05) translateX(5px);
+    }
+
+    100% {
+        transform: scale(1) translateX(0);
+    }
+}
+
+.about-section-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #1a1e2b;
+    /* border-radius: 12px; */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    /* Stack on small screens */
+    overflow: hidden;
+    /* Ensures border-radius applies correctly */
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    padding: 50px 0;
+}
+
+/* Animated background pattern */
+.about-section-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, rgba(46, 204, 113, 0.05) 25%, transparent 25%, transparent 50%, rgba(46, 204, 113, 0.05) 50%, rgba(46, 204, 113, 0.05) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    z-index: 0;
+    animation: backgroundPan 30s linear infinite;
+}
+
+@media (min-width: 992px) {
+    .about-section-container {
+        flex-direction: row;
+        /* Side-by-side on large screens */
+        align-items: center;
+        /* Vertically align items in the middle */
+    }
+}
+
+/* Left Column: Image */
+.image-column2 {
+    flex: 1;
+    min-width: 300px;
+    /* Minimum width for the image column */
+    height: 350px;
+    /* Fixed height for image on smaller screens */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    /* Ensure image is above background pattern */
+}
+
+@media (min-width: 992px) {
+    .image-column2 {
+        height: auto;
+        /* Let height adjust to content on large screens */
+        flex: 1;
+        /* Take equal space on large screens */
+    }
+}
+
+.image-column2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cover the area, cropping if necessary */
+    display: block;
+    animation: imageZoomPan 10s ease-in-out infinite alternate;
+    /* Image animation */
+}
+
+/* Right Column: Content */
+.content-column2 {
+    flex: 1;
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    /* Ensure content is above background pattern */
+}
+
+@media (max-width: 991px) {
+    .content-column {
+        padding: 30px;
+        /* Smaller padding on small screens */
+    }
+}
+
+.subtitle2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2ecc71;
+    /* Green subtitle */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+    opacity: 0;
+    /* Hidden initially for animation */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.main-title2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    /* Dark text */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    opacity: 0;
+    /* Hidden initially for animation */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+@media (min-width: 768px) {
+    .main-title2 {
+        font-size: 2.8rem;
+    }
+}
+
+.description-paragraph2 {
+    font-size: 1rem;
+    color: #6c757d;
+    /* Medium gray text */
+    margin-bottom: 25px;
+    line-height: 1.7;
+    opacity: 0;
+    /* Hidden initially for animation */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.highlight-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2ecc71;
+    /* Green highlight */
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    /* Hidden initially for animation */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+.highlight-text img {
+    width: 24px;
+    height: 24px;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* Single column on small screens */
+    gap: 15px;
+    /* Space between list items */
+    margin-top: 25px;
+}
+
+@media (min-width: 640px) {
+    .feature-list {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on larger screens */
+    }
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    opacity: 0;
+    /* Hidden initially for animation */
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+.feature-item:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.feature-item:nth-child(2) {
+    animation-delay: 1.1s;
+}
+
+.feature-item:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.feature-item:nth-child(4) {
+    animation-delay: 1.3s;
+}
+
+.feature-item .icon {
+    color: #2ecc71;
+    /* Green icon */
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    margin-top: 3px;
+    /* Align with text */
+    animation: pulseBorder 2s infinite;
+    /* Pulse animation for icons */
+}
+
+
+.specialized {
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #f8f8fa;
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.specialized-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.specialized-section-header {
+    margin-bottom: 60px;
+}
+
+.specialized-section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.specialized-section-header p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.specialized-services-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+@media (min-width: 640px) {
+    .specialized-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .specialized-services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.specialized-service-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.specialized-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.specialized-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: #e0f2fe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+.specialized-icon-wrapper i {
+    font-size: 32px;
+    color: #3b82f6;
+}
+
+.specialized-service-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.specialized-service-description {
+    font-size: 0.95rem;
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .specialized-section-header h2 {
+        font-size: 2rem;
+    }
+    .specialized-service-card {
+        padding: 25px;
+    }
+    .specialized-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    .specialized-icon-wrapper i {
+        font-size: 28px;
+    }
+    .specialized-service-title {
+        font-size: 1.2rem;
+    }
+    .specialized-service-description {
+        font-size: 0.9rem;
+    }
+}
