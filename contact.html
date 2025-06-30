@@ -12,240 +12,477 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- IcoFont CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.1/icofont.min.css">
 
-    <!-- Libs and Plugins CSS -->
-    <link rel="stylesheet" href="https://www.gozoop.com/assets/css/helper.css?v20250529063536pm">
-    <link rel="stylesheet" href="https://www.gozoop.com/assets/css/theme.css?v20250529063536pm">
-    <link rel="stylesheet" href="https://www.gozoop.com/assets/css/revamp.css?v20250529063536pm">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
+    <link rel='stylesheet' id='elementor-frontend-css'
+        href='https://bracketweb.com/cityridewp/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.28.4'
+        media='all' />
+
+    <link rel='stylesheet' id='owl-carousel-css'
+        href='https://bracketweb.com/cityridewp/wp-content/plugins/cityride-addon/assets/vendors/owl-carousel/owl.carousel.min.css?ver=1747058588'
+        media='all' />
+
+    <link rel='stylesheet' id='bootstrap-css'
+        href='https://bracketweb.com/cityridewp/wp-content/themes/cityride/assets/vendors/bootstrap/css/bootstrap.min.css?ver=5.0.0'
+        media='all' />
+
+    <link rel='stylesheet' id='cityride-style-css'
+        href='https://bracketweb.com/cityridewp/wp-content/themes/cityride/style.css?ver=1750152550' media='all' />
+
+
+    <script src="https://bracketweb.com/cityridewp/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"
+        id="jquery-core-js"></script>
+
+
     <!------------- Main Style.css ----------->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/Woah.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
 
 
 
     <style>
+        .footer-widget__links li {
+            display: flex;
+            /* Align icon and text in a line */
+            align-items: left;
 
-        body{
-            background-color: #fff !important;
         }
 
-        .tt-header-inner{
-            /* background-color: #fff !important; */
-            height: 100px !important;
+        .footer-widget__links li {
+            margin-left: 0;
         }
 
-        .nav-logo img {
-            height: 80px;
-            width: auto;
-            display: block;
-            /* background-color: #fff !important; */
-            margin-bottom: 40px;
-            z-index: 100 !important;
+        .footer-widget__links li a {
+            text-decoration: none;
+            color: #fff;
+            /* Or your footer text color */
+            font-size: 16px;
+            display: flex;
+            align-items: left;
+            gap: 2px;
+            /* Space between icon and text */
+            line-height: 1.5;
+        }
 
+        .footer-widget__links li a::before {
+            content: none;
         }
     </style>
 </head>
 
-<body id="body" class="home-page tt-transition tt-boxed tt-magic-cursor">
+<body>
+    <nav class="navbar-container">
+        <a href="#" class="navbar-logo">
+            <!-- Placeholder for ALAKNANDA logo graphic -->
+            <img src="/images/Alaknanda Transport logo final.png" alt="ALAKNANDA Logo Graphic">
+        </a>
 
-    <header id="tt-header">
-        <div class="tt-header-inner">
-            <div class="tt-header-col nav-logo">
-                <!-- Begin logo 
-                ================ -->
-                <img src="/images/Alaknanda Transport logo final.png" alt="logo">
-                <!-- End logo -->
-            </div>
-            <!-- /.tt-header-col -->
-            <div class="tt-header-col" >
-                <!-- Begin overlay menu toggle button -->
-                <div id="tt-ol-menu-toggle-btn-wrap" >
-                    <div class="tt-ol-menu-toggle-btn-holder" >
-                        <a href="#" class="tt-ol-menu-toggle-btn" style="color: black  !important; "><span></span></a>
-                    </div>
-                </div>
-
-                <nav class="tt-overlay-menu tt-ol-menu-center tt-ol-menu-count">
-                    <div class="tt-ol-menu-holder">
-                        <div class="tt-ol-menu-inner tt-wrap">
-                            <div class="tt-ol-menu-content">
-                                <!-- Begin menu list -->
-                                <ul class="tt-ol-menu-list">
-                                    <li class="tt-ol-submenu-wrap active">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="/index.html">Home</a>
-                                        </div>
-                                    </li>
-                                    <li class="tt-ol-submenu-wrap">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="/about.html">About Us</a>
-                                        </div>
-                                    </li>
-                                    <li class="tt-ol-submenu-wrap">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="https://www.gozoop.com/culture">services</a>
-                                        </div>
-                                    </li>
-                                    <li class="tt-ol-submenu-wrap">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="/contact.html">Contact US</a>
-                                        </div>
-                                    </li>
-                                    <li class="tt-ol-submenu-wrap">
-                                        <div class="tt-ol-submenu-trigger">
-                                            <a href="https://www.gozoop.com/services">services</a>
-                                        </div>
-                                    </li>
-                                    <li><a href="https://www.gozoop.com/contact-us">GET IN TOUCH</a></li>
-                                </ul>
-                                <!-- End menu list -->
-                            </div>
-                            <!-- /.tt-ol-menu-content -->
-                        </div>
-                        <!-- /.tt-ol-menu-inner -->
-                    </div>
-                    <!-- /.tt-ol-menu-holder -->
-                    <!-- Begin noise background -->
-                    <!-- <div class="bg-noise"></div> -->
-                    <!-- End noise background -->
-                </nav>
-                <!-- End overlay menu -->
-            </div>
-            <!-- /.header-col -->
+        <div class="hamburger-menu-icon" id="hamburgerIcon">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <!-- /.header-inner -->
+    </nav>
 
-    </header>
-
-     <!----------- Start Footer Sections ---------------->
-  <section class="contact-section">
-    <div style="margin-bottom: 250px;">
-
-
-      <h2>Contact Us</h2>
-      <p>Any question or remarks? Just write us a message!</p>
-
-      <div class="form-container">
-        <input type="text" placeholder="Enter your Name" name="name">
-        <input type="email" placeholder="Enter a valid email address" name="email">
-      </div>
-
-      <button class="submit-btn">Submit</button>
+    <!-- Full-screen Overlay Navigation Menu -->
+    <div class="overlay-menu" id="overlayMenu">
+        <ul class="overlay-menu-content" id="overlayMenuContent">
+            <li><span>01</span><a href="/index.html">HOME</a></li>
+            <li><span>02</span><a href="/about.html">ABOUT US</a></li>
+            <li class="has-submenu" id="servicesMenuItem">
+                <span>03</span><a href="#">SERVICES <i class="fa-solid fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="/molasses-bulk.html">Molasses bulk Transport</a></li>
+                    <li><a href="/pan-india.html">Pan-India Operations</a></li>
+                    <li><a href="/safe&secure.html">Safe and Secure</a></li>
+                    <li><a href="/gps-tracking.html">GPS tracking system</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu" id="fleetMenuItem">
+                <span>04</span><a href="#">FLEET <i class="fa-solid fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="/typesOfVehicles.html">Types of Vehicles</a></li>
+                    <li><a href="/maintenance&cleanliness.html">Maintenance & Cleanliness Protocol</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu" id="industriesMenuItem">
+                <span>05</span><a href="#">INDUSTRIES SERVED <i class="fa-solid fa-angle-down"></i></a>
+                <ul>
+                    <li><a href="/sugarFactories.html">Sugar Factories</a></li>
+                    <li><a href="/distilleries.html">Distilleries</a></li>
+                </ul>
+            </li>
+            <li><span>06</span><a href="/gallery.html">GALLERY</a></li>
+            <li><span>07</span><a href="/contact.html">CONTACT US</a></li>
+        </ul>
     </div>
+    <!----------- Start Footer Sections ---------------->
 
-
-    <!-- Info Section -->
-    <div class="info-section">
-
-      <div class="info-boxes">
-
-        <div class="info-box">
-          <div class="info-box-details">
-            <div class="info-icon"><i class="fas fa-running"></i></div>
-            <h3>ABOUT CLUB</h3>
-            <p>Running Guide<br>Workouts</p>
-          </div>
-
-        </div>
-
-        <div class="info-box">
-          <div class="info-box-details">
-            <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-            <h3>PHONE(LANDLINE)</h3>
-            <p>+999661123<br>+778899789</p>
-          </div>
-        </div>
-
-        <div class="info-box">
-          <div class="info-box-details">
-            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <h3>OUR OFFICE LOCATION</h3>
-            <p>The Interior Design Studio Company<br>
-              The Courtyard, Al Quoz 1, Colorado,<br>
-              USA
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-    <!----------- End Footer Sections ---------------->
-
-
-     <!----------- Start Footer Sections ---------------->
-
-    <footer class="footer">
-
-        <!--  -->
-        <div class="flogo">
-            <img src="/images/Alaknanda Transport logo final.png" alt="">
-        </div>
-        <div class="footer-top">
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <div class="contact-info">
-                    <div class="contact-row">
-                        <img src="https://www.bloomsindia.net/images/icon-location.svg" alt="">
-                        <span>Near Azad Cement, 100 Foot Road,<br> Ghitorni, Delhi - 110030, India</span>
-                    </div>
-                    <div class="contact-row">
-                        <img src="https://www.bloomsindia.net/images/icon-phone.svg" alt="">
-                        <span>+91 9211511597</span>
-                    </div>
-                    <div class="contact-row">
-                        <img src="https://www.bloomsindia.net/images/icon-mail.svg" alt="">
-                        <span>info@bloomsindia.net</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="footer-col">
-                <h3>Share With Us</h3>
-                <p>Special offers on social networks</p>
-                <div class="social-icons">
-                    <a href="#"><img src="https://www.bloomsindia.net/newimg/instagram.png" alt="logo"></a>
-                    <a href="#"><img src="https://www.bloomsindia.net/newimg/facebook.png" alt="logo"></a>
-                    <a href="#"><img src="https://www.bloomsindia.net/newimg/twitter.png" alt="logo"></a>
-                    <a href="#"><img src="https://www.bloomsindia.net/newimg/youtube-icon.png" alt="logo"></a>
-                    <a href="#"><img src="https://www.bloomsindia.net/newimg/linkedin.png" alt="logo"></a>
-                </div>
-            </div>
-
-
-            <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Subscribe our newsletter</p>
-                <div class="newsletter-section" style="display: none;">
-                    <div class="newsletter-input">
-                        <input type="email" placeholder="Email Address" required>
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="footer-bottom" style="display: none;">
-            <div class="bottom-links">
+     <div class="contact-hero">
+        <div class="hero-content">
+            <h1>Contact</h1>
+            <div class="breadcrumb">
                 <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">E-Catalogue</a>
-                <a href="#">Contact</a>
-            </div>
-            <div>
-                <p>Copyright © 2024 All Rights Reserved.</p>
+                <span class="separator">&rarr;</span>
+                <span>Contact</span>
             </div>
         </div>
-    </footer>
+    </div>
 
 
-    
+
+    <section class="contact-contact-section">
+
+        <div class="contact-contact-container">
+            <!-- Left Column: Contact Information -->
+            <div class="contact-contact-info-column">
+                <div class="contact-info-header">
+                    <span class="contact-subtitle">GET A QUOTE</span>
+                    <h2>Get in Touch And We'll Help Your Business</h2>
+                </div>
+
+                <!-- Call Us Card -->
+                <div class="contact-contact-card">
+                    <div class="contact-contact-icon-wrapper">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-contact-details">
+                        <h3>Call Us 24/7</h3>
+                        <p>(+91) 7417 827 633</p>
+                    </div>
+                </div>
+
+                <!-- Make A Quote Card -->
+                <div class="contact-contact-card">
+                    <div class="contact-contact-icon-wrapper">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-contact-details">
+                        <h3>Make A Quote</h3>
+                        <p>Envato@gmail.com</p>
+                    </div>
+                </div>
+
+                <!-- Service Station Card -->
+                <div class="contact-contact-card">
+                    <div class="contact-contact-icon-wrapper">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-contact-details">
+                        <h3>Service Station</h3>
+                        <p>66 broklyn golden street<br>600 New York. USA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div class="contact-contact-form-column">
+                <div class="contact-form-header">
+                    <span class="contact-subtitle">CONTACT FOR SERVICES</span>
+                    <h2>Feel Free to Write Our Logistics Services Experts</h2>
+                </div>
+
+                <form>
+                    <div class="contact-form-grid">
+                        <div class="contact-form-group">
+                            <input type="text" class="contact-form-input" placeholder="Name" required>
+                        </div>
+                        <div class="contact-form-group">
+                            <input type="email" class="contact-form-input" placeholder="Email address" required>
+                        </div>
+                        <div class="contact-form-group">
+                            <input type="tel" class="contact-form-input" placeholder="Phone number">
+                        </div>
+                        <div class="contact-form-group">
+                            <input type="text" class="contact-form-input" placeholder="Subject">
+                        </div>
+                        <div class="contact-form-group">
+                            <textarea class="contact-form-textarea" placeholder="Write message" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="contact-send-message-button">Send a message</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!----------- Start Footer Sections ---------------->
+
+
+    <div class="footer-wrapper" style="margin-top: 200px;">
+        <!-- the loop -->
+        <div data-elementor-type="wp-post" data-elementor-id="835" class="elementor elementor-835">
+            <div class="elementor-element elementor-element-1963468 e-flex e-con-boxed e-con e-parent" data-id="1963468"
+                data-element_type="container">
+                <div class="e-con-inner">
+                    <div class="elementor-element elementor-element-e896b7e elementor-widget elementor-widget-cityride-call-to-action"
+                        data-id="e896b7e" data-element_type="widget" data-widget_type="cityride-call-to-action.default">
+                        <div class="elementor-widget-container">
+
+                            <section class="cta-one">
+                                <div class="container">
+                                    <div class="cta-one__inner">
+                                        <div class="cta-one__inner__bg"
+                                            style="background-image: url(/images/footer-book-banner.png);">
+                                        </div>
+                                        <!-- /.cta-one__inner__bg -->
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="cta-one__content">
+                                                    <div class="sec-title ">
+                                                        <div class="sec-title__top wow fadeInUp"
+                                                            data-wow-duration="1500ms" data-wow-delay="150ms">
+                                                            <div class="sec-title__shape"></div>
+                                                            <!-- /.sec-title__shape -->
+                                                            <h6 class="sec-title__tagline">Contact now</h6>
+                                                            <!-- /.sec-title__tagline -->
+                                                        </div>
+                                                        <!-- /.sec-title__top -->
+                                                        <h3 class="sec-title__title wow fadeInUp">Your journey starts
+                                                            with ease and ends with satisfaction.</h3>
+                                                        <!-- /.sec-title__title -->
+                                                    </div>
+                                                    <!-- /.sec-title -->
+                                                    <div class="cta-one__content__btn wow fadeInUp"
+                                                        data-wow-duration="1500ms" data-wow-delay="150ms">
+                                                        <a href="#" class="cityride-btn cityride-btn--border">
+                                                            <span class="cityride-btn__icon"><i
+                                                                    class="fa-solid fa-phone-volume"></i></span>
+                                                            <span style="margin-left: 5px;">Contact now</span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- /.cta-one__content__btn -->
+                                                </div>
+                                                <!-- /.cta-one__content -->
+                                            </div>
+                                            <!-- /.col-lg-6 -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <div class="cta-one__inner__image">
+                                            <img decoding="async"
+                                                src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/taxi-booking-car-2-1.png"
+                                                alt="taxi-booking-car-2-1" title="taxi-booking-car-2-1">
+                                        </div>
+                                        <!-- /.cta-one__inner__image -->
+                                        <div class="cta-one__inner__box">
+                                            <div class="cta-one__inner__box__bg"
+                                                style="background-image: url(https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/ta-shape-2-1.png);">
+                                            </div>
+                                            <!-- /.cta-one__inner__box__bg -->
+                                            <div class="cta-one__inner__box__one"></div>
+                                            <!-- /.cta-one__inner__box__one -->
+                                            <div class="cta-one__inner__box__two"></div>
+                                            <!-- /.cta-one__inner__box__two -->
+                                        </div>
+                                        <!-- /.cta-one__inner__box -->
+                                        <div class="cta-one__inner__item-one"></div>
+                                        <!-- /.cta-one__inner__item -->
+                                        <div class="cta-one__inner__item-two"></div>
+                                        <!-- /.cta-one__inner__item -->
+                                    </div>
+                                    <!-- /.cta-one__inner -->
+                                </div>
+                                <!-- /.container -->
+                            </section>
+                            <!-- /.cta-one -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="elementor-element elementor-element-efcaf2a e-con-full main-footer__inner e-flex e-con e-parent"
+                data-id="efcaf2a" data-element_type="container">
+                <div class="elementor-element elementor-element-a71829f e-flex e-con-boxed e-con e-child"
+                    data-id="a71829f" data-element_type="container">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-cb2e830 elementor-widget elementor-widget-cityride-shape"
+                            data-id="cb2e830" data-element_type="widget" data-widget_type="cityride-shape.default">
+                            <div class="elementor-widget-container">
+                                <div class="main-footer__bg" style="background-image: url(/images/footerbg.png);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-6949d40 elementor-widget elementor-widget-cityride-shape"
+                            data-id="6949d40" data-element_type="widget" data-widget_type="cityride-shape.default">
+                            <div class="elementor-widget-container">
+                                <div class="main-footer__top__element">
+                                    <img decoding="async"
+                                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/footer-shape.png"
+                                        alt="footer-shape" title="footer-shape">
+                                </div>
+                                <!-- /.main-footer__top__element -->
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-0b03015 e-con-full e-flex e-con e-child"
+                            data-id="0b03015" data-element_type="container">
+                            <div class="elementor-element elementor-element-69d2541 elementor-widget elementor-widget-footer-about-two"
+                                data-id="69d2541" data-element_type="widget"
+                                data-widget_type="footer-about-two.default">
+                                <div class="elementor-widget-container">
+                                    <div class="footer-widget footer-widget--about">
+                                        <a href="#" class="footer-widget__logo logo-retina footer-logo"><img
+                                                loading="lazy" decoding="async"
+                                                src="/images/Alaknanda Transport logo final.png" width="103" height="55"
+                                                alt="Cityride"></a>
+                                        <p class="footer-widget__about-text">Phasellus ultricies aliquam volutpat
+                                            ullamcorper laoreet neque, a lacinia curabitur lacinia mollis</p>
+                                        <!-- /.footer-widget__about-text -->
+                                        <div class="footer-widget__social">
+                                            <a href="https://www.facebook.com"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
+                                            <a href="https://x.com"><i class="fa-brands fa-twitter"></i></a>
+                                            <a href="https://www.linkedin.com/"><i
+                                                    class="fa-brands fa-linkedin-in"></i></a>
+                                            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                                        </div>
+                                        <!-- /.footer-widget__call -->
+                                    </div>
+                                    <!-- /.footer-widget -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-5094946 e-con-full e-flex e-con e-child"
+                            data-id="5094946" data-element_type="container">
+                            <div class="elementor-element elementor-element-9eceff4 elementor-widget elementor-widget-footer-nav-menu"
+                                data-id="9eceff4" data-element_type="widget" data-widget_type="footer-nav-menu.default">
+                                <div class="elementor-widget-container">
+                                    <div class="footer-widget footer-widget--links" style="margin-right: 50px;">
+                                        <h2 class="footer-widget__title" style="margin-left: 10px;">Quick Links</h2>
+                                        <!-- /.footer-widget__title -->
+                                        <div class="menu-quick-links-container">
+                                            <ul class="footer-widget__links">
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Home</a></li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a>
+                                                </li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Our Service</a>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Fleet</a>
+                                                </li>
+                                                </li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Testimonial</a>
+                                                </li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Contact</a></li>
+                                                <!-- <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a></li> -->
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-e3d7c85 e-con-full e-flex e-con e-child"
+                            data-id="e3d7c85" data-element_type="container">
+                            <div class="elementor-element elementor-element-df227f4 elementor-widget elementor-widget-footer-news"
+                                data-id="df227f4" data-element_type="widget" data-widget_type="footer-news.default">
+                                <div class="elementor-widget-container">
+
+                                    <div class="footer-widget footer-widget--post">
+                                        <h2 class="footer-widget__title">Recent Posts</h2>
+                                        <!-- /.footer-widget__title -->
+                                        <div class="footer-widget__post">
+                                            <div class="footer-widget__post__item">
+                                                <div class="footer-widget__post__thumb">
+                                                    <img loading="lazy" decoding="async" width="1920" height="1080"
+                                                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png"
+                                                        class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image"
+                                                        alt=""
+                                                        srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-570x321.png 570w"
+                                                        sizes="(max-width: 1920px) 100vw, 1920px" />
+                                                </div>
+                                                <!-- /.footer-widget__post__thumb -->
+                                                <div class="footer-widget__post__content">
+                                                    <div class="footer-widget__post__meta">
+                                                        <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
+                                                    </div>
+                                                    <!-- /.footer-widget__post__meta -->
+                                                    <h4 class="footer-widget__post__title"><a href="#">cupidatat
+                                                            nonproident, sunt in culpa qui</a></h4>
+                                                    <!-- /.footer-widget__post__title -->
+                                                </div>
+                                                <!-- /.footer-widget__post__content -->
+                                            </div>
+                                            <!-- /.footer-widget__post__item -->
+
+                                            <div class="footer-widget__post__item">
+                                                <div class="footer-widget__post__thumb">
+                                                    <img loading="lazy" decoding="async" width="1920" height="1080"
+                                                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png"
+                                                        class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image"
+                                                        alt=""
+                                                        srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-570x321.png 570w"
+                                                        sizes="(max-width: 1920px) 100vw, 1920px" />
+                                                </div>
+                                                <!-- /.footer-widget__post__thumb -->
+                                                <div class="footer-widget__post__content">
+                                                    <div class="footer-widget__post__meta">
+                                                        <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
+                                                    </div>
+                                                    <!-- /.footer-widget__post__meta -->
+                                                    <h4 class="footer-widget__post__title"><a href="#">Big
+                                                            Data. Are There Any Leftovers kitchen</a></h4>
+                                                    <!-- /.footer-widget__post__title -->
+                                                </div>
+                                                <!-- /.footer-widget__post__content -->
+                                            </div>
+                                            <!-- /.footer-widget__post__item -->
+
+                                        </div>
+                                        <!-- /.footer-widget__post -->
+                                    </div>
+                                    <!-- /.footer-widget -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-60bcc0b e-con-full e-flex e-con e-child"
+                            data-id="60bcc0b" data-element_type="container" style="margin-left: 20px;">
+                            <div class="elementor-element elementor-element-51deedd elementor-widget elementor-widget-footer-contact"
+                                data-id="51deedd" data-element_type="widget" data-widget_type="footer-contact.default">
+                                <div class="elementor-widget-container">
+                                    <div class="footer-widget footer-widget--contact">
+                                        <h2 class="footer-widget__title">office address</h2>
+                                        <!-- /.footer-widget__title -->
+                                        <ul class="list-unstyled footer-widget__info ml-0">
+                                            <li>
+                                                <span class="footer-widget__info__icon">
+                                                    <i class="fa-solid fa-envelope"></i> </span>
+                                                <!-- /.footer-widget__info__icon -->
+                                                <a href="">needhelp@company.com</a>
+                                            </li>
+                                            <li>
+                                                <span class="footer-widget__info__icon">
+                                                    <i class="fa-solid fa-phone-volume"></i> </span>
+                                                <!-- /.footer-widget__info__icon -->
+                                                <a href="">+91 7417 827 633</a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.list-unstyled -->
+
+                                        <!-- /.footer-widget__newsletter mc-form -->
+                                        <div class="mc-form__response"></div>
+                                        <!-- /.mc-form__response -->
+                                    </div>
+                                    <!-- /.footer-widget -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of the loop -->
+
+
+    <!-- /.footer-wrapper -->
+
 
 
     <!----------- End Footer Sections ---------------->
@@ -269,6 +506,9 @@
     <!-- server is down -->
     <script src="https://cdn.jsdelivr.net/npm/split-type"></script>
 
+    <link rel='stylesheet' id='elementor-post-835-css'
+        href='https://bracketweb.com/cityridewp/wp-content/uploads/elementor/css/post-835.css?ver=1748005501'
+        media='all' />
 
 </body>
 
