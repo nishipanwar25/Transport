@@ -434,19 +434,20 @@ body {
 /* ================ Start About Section ===================== */
 
 .about-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
   /* background-color: #f8f9fa; */
-  background: linear-gradient(#efefebe7), url('/images/aboutbg.png');
+  background: linear-gradient(#efefebdf), url('/images/aboutbg.png');
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;
+  height: auto;
 }
 
 .zikzak-image {
   position: absolute;
-  right: -3%;
+  right: -10%;
   top: 50%;
   z-index: -100;
   animation: floatUpDown 2.5s ease-in-out infinite;
@@ -483,7 +484,7 @@ body {
 
 .main-image {
   width: 400px;
-  height: auto;
+  height: 500px;
   border-radius: 20px;
   margin-left: 40px;
 }
@@ -497,7 +498,7 @@ body {
   padding: 15px 20px;
   display: flex;
   align-items: center;
-  border-left: 2px solid #FFD700;
+  border-left: 2px solid #7C1D1D;
   animation: floatUpDown 2.5s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
@@ -517,9 +518,9 @@ body {
 }
 
 .clients-box i {
-  font-size: 28px;
+  font-size: 34px;
   margin-right: 10px;
-  color: #FFD700;
+  color: #7C1D1D;
 }
 
 .clients-box-text {
@@ -529,7 +530,7 @@ body {
 }
 
 .clients-box-subtext {
-  font-size: 12px;
+  font-size: 16px;
   color: #888;
 }
 
@@ -666,7 +667,7 @@ body {
 .call-box {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   font-family: 'Arial', sans-serif;
   cursor: pointer;
 }
@@ -689,10 +690,10 @@ body {
   position: absolute;
   bottom: -5px;
   right: -5px;
-  background-color: #ffd700;
-  color: #000;
-  width: 24px;
-  height: 24px;
+  background-color: #7C1D1D;
+  color: #fff;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -722,9 +723,10 @@ body {
 }
 
 .call-info .call-subtitle {
-  font-size: 13px;
+  font-size: 14px;
+  font-size: 900;
   color: #888;
-  margin-bottom: 3px;
+  margin-top: 10px;
 }
 
 .call-info .call-number {
@@ -732,22 +734,28 @@ body {
   display: inline-block;
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: #7C1D1D;
   /* yellow color from image */
   cursor: pointer;
   transition: color 0.2s;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.call-number a{
+  color: #7C1D1D;
 }
 
 /* Underline animation effect */
 .call-info .call-number::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 8px;
   left: 0;
-  height: 1px;
+  height: 2px;
   width: 100%;
   /* adjust underline length */
-  background-color: #ffc800;
+  background-color: #7C1D1D;
   transform: scaleX(0);
   transform-origin: left;
   /* start from right side */
@@ -760,12 +768,12 @@ body {
 .call-info .call-number:hover::after {
   transform: scaleX(1);
   /* grow full */
-  color: #ffc800;
+  color: #7C1D1D;
 }
 
 /* Hover effects */
 .call-info .call-number:hover {
-  color: #ffc800;
+  color: #7C1D1D;
 }
 
 
@@ -775,8 +783,8 @@ body {
   display: flex;
   align-items: baseline;
   position: relative;
-  background-color: #ffc800;
-  color: #000;
+  background-color: #7C1D1D;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   padding: 12px 30px;
@@ -785,6 +793,8 @@ body {
   transition: 0.3s;
   border: none;
   margin-left: 50px;
+  z-index: 100;
+  /* overflow: hidden; */
 }
 
 .skew-button .icon,
@@ -793,6 +803,8 @@ body {
   /* Unskew content */
   display: inline-block;
   vertical-align: middle;
+  position: relative;
+  z-index: 2;
 }
 
 .skew-button .icon {
@@ -800,8 +812,9 @@ body {
   font-size: 14px;
 }
 
+
 /* Optional back border layer */
-.skew-button::before {
+.skew-button::after {
   content: "";
   position: absolute;
   top: 6px;
@@ -809,16 +822,34 @@ body {
   width: 100%;
   height: 100%;
   background-color: transparent;
-  border: 2px solid #ffc800;
+  border: 2px solid #7C1D1D ;
   /* transform: skewX(35deg); */
   z-index: -10;
   transition: transform 0.5s ease;
+  overflow: hidden;
 }
 
+/* Create top-to-bottom sliding effect using ::before */
+/* .skew-button::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  transition: top 0.4s ease-in-out;
+} */
+
+/* On hover, slide black background down */
+/* .skew-button:hover::before {
+  top: 0;
+} */
+
+/* Optional: change text color on hover */
 /* .skew-button:hover {
-                background-color: #000;
-                color: #FFD700;
-            } */
+  color: #f4c20d; /* or white, or anything visible on black */
 
 
 @media (max-width: 768px) {
@@ -1712,7 +1743,7 @@ body {
   width: 100%;
   max-width: 1200px;
   height: 250px;
-  border: 2px solid #ffc800;
+  border: 2px solid #7C1D1D;
   position: absolute;
   margin-top: 50px;
   margin-left: 90px;
@@ -1757,7 +1788,7 @@ body {
 }
 
 .feature-icon-circle {
-  background-color: #FFD700;
+  background-color: #7C1D1D;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -1888,7 +1919,7 @@ body {
 }
 
 .arrow-button {
-  background-color: #ffc107;
+  background-color: #7C1D1D;
   border: none;
   width: 55px;
   height: 45px;
@@ -1897,7 +1928,7 @@ body {
   align-items: center;
   cursor: pointer;
   transform: skew(25deg);
-  color: #111;
+  color: #fff;
 }
 
 .arrow-button:hover {
@@ -1907,7 +1938,7 @@ body {
 
 .arrow-button i {
   font-size: 1.2rem;
-  color: #111;
+  color: #fff;
 }
 
 .services-slider-viewport {
@@ -1970,7 +2001,7 @@ body {
 }
 
 .service-icon {
-  background-color: #e0a800;
+  background-color: #7C1D1D;
   padding: 20px;
 }
 
@@ -1981,7 +2012,7 @@ body {
 
 .service-icon-wrapper i {
   font-size: 1.5rem;
-  color: #333;
+  color: #fff;
 }
 
 .service-title-group {
@@ -2085,7 +2116,7 @@ body {
 }
 
 .explore-link:hover {
-  color: #e0a800;
+  color: #7C1D1D;
 }
 
 .explore-link i {
@@ -2101,7 +2132,7 @@ body {
 }
 
 .service-card:hover .service-number {
-  color: #e0a800;
+  color: #7C1D1D;
 }
 
 
@@ -3010,7 +3041,7 @@ body {
   left: 0;
   width: 100%;
   height: 0;
-  background-color: rgba(231, 76, 60, 0.5);
+  background-color: #7c1d1db0;
   transition: height 0.5s ease-out;
   z-index: 10;
 }
@@ -3044,7 +3075,7 @@ body {
 /* Hover badge effect */
 .service2-card:hover .service2-number-circle {
   background-color: #ffffff;
-  color: #e74c3c;
+  color: #7C1D1D;
   transform: scale(1.1) translate(-50%, -50%);
 }
 
@@ -3067,7 +3098,7 @@ body {
   left: 0;
   right: 0;
   height: 0;
-  background-color: #e74c3c;
+  background-color: #7C1D1D;
   transition: height 0.5s ease-out;
   z-index: -1;
 
@@ -3116,7 +3147,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #e74c3c;
+  color:#7C1D1D;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
