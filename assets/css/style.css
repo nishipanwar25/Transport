@@ -1028,9 +1028,10 @@ body {
 
 .testimonial-img {
   flex: 1;
-  background: linear-gradient(rgba(72, 6, 6, 0.656)), url('https://images.pexels.com/photos/3961932/pexels-photo-3961932.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background: linear-gradient(rgba(72, 6, 6, 0.656)), url('/images/trstimonial.png');
   background-size: cover;
   background-position: center;
+  /* background-repeat: no-repeat; */
   width: 500px;
   border-top-right-radius: 1.5rem;
 }
