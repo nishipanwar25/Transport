@@ -434,7 +434,7 @@ body {
 /* ================ Start About Section ===================== */
 
 .about-section {
-  padding: 80px 20px;
+  padding: 60px 20px 40px;
   position: relative;
   overflow: hidden;
   /* background-color: #f8f9fa; */
@@ -448,7 +448,7 @@ body {
 .zikzak-image {
   position: absolute;
   right: -10%;
-  top: 50%;
+  top: 60%;
   z-index: -100;
   animation: floatUpDown 2.5s ease-in-out infinite;
   transition: transform 0.3s ease;
@@ -722,11 +722,13 @@ body {
   }
 }
 
+
 .call-info .call-subtitle {
   font-size: 14px;
-  font-size: 900;
-  color: #888;
+  font-weight: 900;
+  color: #000;
   margin-top: 10px;
+  width: auto;
 }
 
 .call-info .call-number {
@@ -778,7 +780,6 @@ body {
 
 
 
-
 .skew-button {
   display: flex;
   align-items: baseline;
@@ -800,7 +801,6 @@ body {
 .skew-button .icon,
 .skew-button .text {
   transform: skewX(-25deg);
-  /* Unskew content */
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -1995,7 +1995,7 @@ body {
 
 .service-details {
   padding: 0 20px 20px;
-  background-color: #ffffff;
+  background-color: #7b0f1d;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -2003,7 +2003,7 @@ body {
 }
 
 .service-icon {
-  background-color: #7C1D1D;
+  background-color: #000;
   padding: 20px;
 }
 
@@ -2027,7 +2027,7 @@ body {
 .service-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #fff;
   margin: 0;
   line-height: 1.2;
   width: 160px;
