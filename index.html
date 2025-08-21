@@ -46,16 +46,23 @@
     <!------------- Main Style.css ----------->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/Woah.css">
+    
 
     <style>
         .tt-header-inner {
             /* background-color: #fff !important; */
             height: 100px !important;
         }
+        #main-video {
+  visibility: hidden;
+}
+#main-video.ready {
+  visibility: visible;
+}
 
         .nav-logo img {
-            height: 80px;
-            width: auto;
+           height: 80px;
+            width: 350px;
             display: block;
             /* background-color: #fff !important; */
             margin-bottom: 40px;
@@ -70,6 +77,16 @@
             margin: 0;
             transition: display 2s ease;
         }
+      .tt-header-col.nav-logo img {
+   width: 480px;
+   height: 100px;
+   display: block;
+   opacity: 0;
+   transition: opacity 0.5s ease;
+}
+.tt-header-col.nav-logo img.loaded {
+  opacity: 1;
+}
 
         .tt-ol-submenu {
             opacity: 0;
@@ -141,7 +158,7 @@
             <div class="tt-header-col nav-logo">
                 <!-- Begin logo 
                 ================ -->
-                <img src="/images/Alaknanda Transport logo final.png" alt="">
+                <img src="./images/icons/Alaknanda Transport logo final.svg" alt="">
                 <!-- End logo -->
             </div>
             <!-- /.tt-header-col -->
@@ -232,7 +249,6 @@
             <!-- /.header-col -->
         </div>
         <!-- /.header-inner -->
-
     </header>
 
 
@@ -245,7 +261,7 @@
                         <div class="toscroll"></div>
                         <div class="container-video">
 
-                            <video id="main-video" autoplay loop muted playsinline webkit-playsinline preload="auto"
+                            <video id="main-video" autoplay loop muted playsinline webkit-playsinline preload="none"
                                 poster="">
                                 <!-- old loader - https://gozoop.com/uploads/media/source/bxmvgBICdjPB_preloader.gif -->
                                 <source src="/video/herovideo.mp4" type="video/mp4">
@@ -1498,6 +1514,34 @@
             setupClones(); // Call to set up clones and initial position
             startAutoSlide(); // Start auto slide
         });
+        const video = document.getElementById("main-video");
+  video.addEventListener("loadeddata", () => {
+    video.classList.add("ready");
+  });
+  const logo = document.querySelector('.tt-header-col.nav-logo img');
+  if (logo.complete) {
+    logo.classList.add('loaded');
+  } else {
+    logo.addEventListener('load', () => {
+      logo.classList.add('loaded');
+    });
+  }
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  const logo = document.querySelector(".tt-header-col.nav-logo img");
+  if (logo.complete) {
+    logo.classList.add("is-visible");
+  } else {
+    logo.addEventListener("load", () => {
+      logo.classList.add("is-visible");
+    });
+  }
+});
+
+
+  
+  
+
     </script>
 
 
