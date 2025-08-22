@@ -43,6 +43,7 @@
         id="jquery-core-js"></script>
 
 
+
     <!------------- Main Style.css ----------->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/Woah.css">
@@ -87,6 +88,20 @@
 .tt-header-col.nav-logo img.loaded {
   opacity: 1;
 }
+#hero .titleUp,
+#hero .titleDown,
+#hero .inline-block.space,
+#hero video {
+  visibility: hidden;
+}
+.navbar-logo {
+  width: 220px !important;   /* set desired width */
+  height: auto !important;   /* keep proportions */
+  flex-shrink: 0 !important; /* don't let flexbox shrink it */
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;       /* makes sure image doesn't distort */
+}
 
         .tt-ol-submenu {
             opacity: 0;
@@ -105,6 +120,12 @@
             text-decoration: none;
             font-weight: 600;
         }
+.hero-text {
+  visibility: hidden;
+}
+body.fonts-loaded .hero-text {
+  visibility: visible;
+}
 
 
 
@@ -148,7 +169,10 @@
         .footer-widget__links li a::before {
             content: none;
         }
+       
+
     </style>
+    
 </head>
 
 <body id="body" class="home-page tt-transition tt-boxed tt-magic-cursor">
@@ -158,7 +182,7 @@
             <div class="tt-header-col nav-logo">
                 <!-- Begin logo 
                 ================ -->
-                <img src="./images/icons/Alaknanda Transport logo final.svg" alt="">
+                <img src="./images/icons/Alaknanda Transport logo final.svg" alt="" class="navbar-logo">
                 <!-- End logo -->
             </div>
             <!-- /.tt-header-col -->
@@ -262,7 +286,7 @@
                         <div class="container-video">
 
                             <video id="main-video" autoplay loop muted playsinline webkit-playsinline preload="none"
-                                poster="">
+                                poster="/images/herovideo-poster.jpg">
                                 <!-- old loader - https://gozoop.com/uploads/media/source/bxmvgBICdjPB_preloader.gif -->
                                 <source src="/video/herovid.mp4" type="video/mp4">
                             </video>
@@ -1536,8 +1560,16 @@ document.addEventListener("DOMContentLoaded", function() {
       logo.classList.add("is-visible");
     });
   }
+
 });
 
+
+
+window.addEventListener('load', () => {
+  document.querySelectorAll(
+    "#hero .titleUp, #hero .titleDown, #hero .inline-block.space, #hero video"
+  ).forEach(el => el.style.visibility = 'visible');
+});
 
   
   
