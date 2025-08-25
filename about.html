@@ -45,33 +45,129 @@
 
 
   <style>
-    .footer-widget__links li {
-      display: flex;
-      /* Align icon and text in a line */
-      align-items: left;
+        .tt-header-inner {
+            /* background-color: #fff !important; */
+            height: 100px !important;
+        }
+        #main-video {
+  visibility: hidden;
+}
+#main-video.ready {
+  visibility: visible;
+}
 
-    }
+        .nav-logo img {
+           height: 80px;
+            width: 350px;
+            display: block;
+            /* background-color: #fff !important; */
+            margin-bottom: 40px;
+        }
 
-    .footer-widget__links li {
-      margin-left: 0;
-    }
+        .main-menu {
+            display: flex;
+            gap: 20px;
+            /* Adjust spacing between items */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transition: display 2s ease;
+        }
+      .tt-header-col.nav-logo img {
+   width: 480px;
+   height: 100px;
+   display: block;
+   opacity: 0;
+   transition: opacity 0.5s ease;
+}
+.tt-header-col.nav-logo img.loaded {
+  opacity: 1;
+}
+#hero .titleUp,
+#hero .titleDown,
+#hero .inline-block.space,
+#hero video {
+  visibility: hidden;
+}
+.navbar-logo {
+  width: 220px !important;   /* set desired width */
+  height: auto !important;   /* keep proportions */
+  flex-shrink: 0 !important; /* don't let flexbox shrink it */
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;       /* makes sure image doesn't distort */
+}
 
-    .footer-widget__links li a {
-      text-decoration: none;
-      color: #fff;
-      /* Or your footer text color */
-      font-size: 16px;
-      display: flex;
-      align-items: left;
-      gap: 2px;
-      /* Space between icon and text */
-      line-height: 1.5;
-    }
+        .tt-ol-submenu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(5px);
+            /* start slightly lower */
+            transition: all 2s ease;
+            list-style-type: disc;
+            min-width: 160px;
+        }
 
-    .footer-widget__links li a::before {
-      content: none;
-    }
-  </style>
+        .tt-ol-submenu li a {
+            color: #f0f0f0;
+            display: block;
+            padding: 5px 0px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+.hero-text {
+  visibility: hidden;
+}
+body.fonts-loaded .hero-text {
+  visibility: visible;
+}
+
+
+
+        /* Animate submenu in on hover */
+        .tt-ol-submenu-trigger:hover .tt-ol-submenu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            /* move to natural position */
+        }
+
+        .tt-ol-submenu li a:hover {
+            color: #b9b8b8;
+        }
+
+
+        .footer-widget__links li {
+            display: flex;
+            /* Align icon and text in a line */
+            align-items: left;
+
+        }
+
+        .footer-widget__links li {
+            margin-left: 0;
+        }
+
+        .footer-widget__links li a {
+            text-decoration: none;
+            color: #fff;
+            /* Or your footer text color */
+            font-size: 16px;
+            display: flex;
+            align-items: left;
+            gap: 2px;
+            /* Space between icon and text */
+            line-height: 1.5;
+        }
+
+        .footer-widget__links li a::before {
+            content: none;
+        }
+       
+
+    </style>
+    
 </head>
 
 <body>
@@ -121,7 +217,7 @@
             <li><span>07</span><a href="/contact.html">CONTACT US</a></li>
         </ul>
     </div>
-  <!----------- Start Footer Sections ---------------->
+  
 
   <!-- Hero Section -->
   <div class="about-section">
@@ -150,7 +246,7 @@
       <!-- Content Column -->
       <div class="about-content-column">
         <div class="about-section-title2">
-          <h1>About <span style="color:#ff5722 ;">Us</span></h1>
+          <h1>About <span style="color:#860606 ;">Us</span></h1>
           <h2 style="font-size: 2rem;">Driving India's Growth – One Load at a Time</h2>
           <p>Alaknanda Transport Company is a trusted leader in the transportation of molasses and liquid bulk cargo
             across India. With a strong legacy built on integrity, safety, and efficiency, we have been at the forefront
@@ -163,7 +259,7 @@
         </div>
 
         <div class="about-features-list">
-          <h4 style="font-size: 2rem;">Why Choose Alaknanda Transport?</h4>
+          <h4 style="font-size: 2rem; color: #860606;">Why Choose Alaknanda Transport?</h4>
           <!-- Feature Item 1 -->
           <div class="about-feature-item">
             <div class="about-feature-icon-wrapper2">
@@ -417,7 +513,7 @@
           <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
           <path d="M2 17l10 5 10-5"></path>
           <path d="M2 12l10 5 10-5"></path>
-          <circle cx="12" cy="12" r="3"></circle>
+          <!-- <circle cx="12" cy="12" r="3"></circle> -->
         </svg>
         <h3 class="what-we-feature-title">✅ Custom Liquid Bulk Logistics</h3>
         <p class="what-we-feature-description">
@@ -443,278 +539,275 @@
       </div>
     </div>
   </div>
+   
 
 
+    <div class="footer-wrapper">
+        <!-- the loop -->
+        <div data-elementor-type="wp-post" data-elementor-id="835" class="elementor elementor-835">
+            <div class="elementor-element elementor-element-1963468 e-flex e-con-boxed e-con e-parent" data-id="1963468"
+                data-element_type="container">
+                <div class="e-con-inner">
+                    <div class="elementor-element elementor-element-e896b7e elementor-widget elementor-widget-cityride-call-to-action"
+                        data-id="e896b7e" data-element_type="widget" data-widget_type="cityride-call-to-action.default">
+                        <div class="elementor-widget-container">
 
+                            <section class="cta-one">
+                                <div class="container">
+                                    <div class="cta-one__inner">
+                                        <!-- <div class="cta-one__inner__bg"
+                                            style="background-image: url(/images/footer-book-banner.png);">
+                                        </div> -->
+                                        <!-- /.cta-one__inner__bg -->
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="cta-one__content">
+                                                    <div class="sec-title ">
+                                                        
+                                                        <!-- /.sec-title__top -->
+                                                        <h3 class="sec-title__title wow fadeInUp">Your journey starts
+                                                            with ease and ends with satisfaction.</h3>
+                                                        <!-- /.sec-title__title -->
+                                                    </div>
+                                                    <!-- /.sec-title -->
+                                                    <div class="cta-one__content__btn wow fadeInUp"
+                                                        data-wow-duration="1500ms" data-wow-delay="150ms">
+                                                        <a href="/contact.html"
+                                                            class="cityride-btn cityride-btn--border">
+                                                            <span class="cityride-btn__icon"><i
+                                                                    class="fa-solid fa-phone-volume"></i></span>
+                                                            <span style="margin-left: 5px;">Contact now</span>
+                                                        </a>
+                                                    </div>
+                                                    <!-- /.cta-one__content__btn -->
+                                                </div>
+                                                <!-- /.cta-one__content -->
+                                            </div>
+                                            <!-- /.col-lg-6 -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <div class="cta-one__inner__image">
+                                            <img style="width:500px;  padding-left: 100px;" decoding="async"
+                                                src="/images/ChatGPT Image Jul 3, 2025, 04_43_13 PM.png"
+                                                alt="taxi-booking-car-2-1" title="taxi-booking-car-2-1">
+                                        </div>
+                                        <!-- /.cta-one__inner__image -->
+                                        <div class="cta-one__inner__box">
+                                            <div class="cta-one__inner__box__bg"
+                                                style="background-image: url(https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/ta-shape-2-1.png);">
+                                            </div>
+                                            <!-- /.cta-one__inner__box__bg -->
+                                            <div class="cta-one__inner__box__one"></div>
+                                            <!-- /.cta-one__inner__box__one -->
+                                            <div class="cta-one__inner__box__two"></div>
+                                            <!-- /.cta-one__inner__box__two -->
+                                        </div>
+                                        <!-- /.cta-one__inner__box -->
+                                        <div class="cta-one__inner__item-one"></div>
+                                        <!-- /.cta-one__inner__item -->
+                                        <div class="cta-one__inner__item-two"></div>
+                                        <!-- /.cta-one__inner__item -->
+                                    </div>
+                                    <!-- /.cta-one__inner -->
+                                </div>
+                                <!-- /.container -->
+                            </section>
+                            <!-- /.cta-one -->
 
-
-
-  <!----------- Start Footer Sections ---------------->
-
-
-  <div class="footer-wrapper" style="margin-top: 200px;">
-    <!-- the loop -->
-    <div data-elementor-type="wp-post" data-elementor-id="835" class="elementor elementor-835">
-      <div class="elementor-element elementor-element-1963468 e-flex e-con-boxed e-con e-parent" data-id="1963468"
-        data-element_type="container">
-        <div class="e-con-inner">
-          <div
-            class="elementor-element elementor-element-e896b7e elementor-widget elementor-widget-cityride-call-to-action"
-            data-id="e896b7e" data-element_type="widget" data-widget_type="cityride-call-to-action.default">
-            <div class="elementor-widget-container">
-
-              <section class="cta-one">
-                <div class="container">
-                  <div class="cta-one__inner">
-                    <div class="cta-one__inner__bg" style="background-image: url(/images/footer-book-banner.png);">
+                        </div>
                     </div>
-                    <!-- /.cta-one__inner__bg -->
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <div class="cta-one__content">
-                          <div class="sec-title ">
-                            <div class="sec-title__top wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">
-                              <div class="sec-title__shape"></div>
-                              <!-- /.sec-title__shape -->
-                              <h6 class="sec-title__tagline">Contact now</h6>
-                              <!-- /.sec-title__tagline -->
+                </div>
+            </div>
+            <div class="elementor-element elementor-element-efcaf2a e-con-full main-footer__inner e-flex e-con e-parent"
+                data-id="efcaf2a" data-element_type="container">
+                <div class="elementor-element elementor-element-a71829f e-flex e-con-boxed e-con e-child"
+                    data-id="a71829f" data-element_type="container">
+                    <div class="e-con-inner"
+                        style="width: 100%; display: flex; justify-content: flex-start; gap: 40px; ">
+                        <div class="elementor-element elementor-element-cb2e830 elementor-widget elementor-widget-cityride-shape"
+                            data-id="cb2e830" data-element_type="widget" data-widget_type="cityride-shape.default">
+                            <div class="elementor-widget-container">
+                                <div class="main-footer__bg" style="background-image: url(/images/footerbg.png);">
+                                </div>
                             </div>
-                            <!-- /.sec-title__top -->
-                            <h3 class="sec-title__title wow fadeInUp">Your journey starts
-                              with ease and ends with satisfaction.</h3>
-                            <!-- /.sec-title__title -->
-                          </div>
-                          <!-- /.sec-title -->
-                          <div class="cta-one__content__btn wow fadeInUp" data-wow-duration="1500ms"
-                            data-wow-delay="150ms">
-                            <a href="#" class="cityride-btn cityride-btn--border">
-                              <span class="cityride-btn__icon"><i class="fa-solid fa-phone-volume"></i></span>
-                              <span style="margin-left: 5px;">Contact now</span>
-                            </a>
-                          </div>
-                          <!-- /.cta-one__content__btn -->
                         </div>
-                        <!-- /.cta-one__content -->
-                      </div>
-                      <!-- /.col-lg-6 -->
+                        <div class="elementor-element elementor-element-6949d40 elementor-widget elementor-widget-cityride-shape"
+                            data-id="6949d40" data-element_type="widget" data-widget_type="cityride-shape.default">
+                            <div class="elementor-widget-container">
+                                <div class="main-footer__top__element">
+                                    <img decoding="async"
+                                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/footer-shape.png"
+                                        alt="footer-shape" title="footer-shape">
+                                </div>
+                                <!-- /.main-footer__top__element -->
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-0b03015 e-con-full e-flex e-con e-child"
+                            data-id="0b03015" data-element_type="container">
+                            <div class="elementor-element elementor-element-69d2541 elementor-widget elementor-widget-footer-about-two"
+                                data-id="69d2541" data-element_type="widget"
+                                data-widget_type="footer-about-two.default">
+                                <div class="elementor-widget-container">
+                                    <div class="footer-widget footer-widget--about">
+                                        <a href="#" class="footer-widget__logo logo-retina footer-logo"><img
+                                                loading="lazy" decoding="async"
+                                                src="/images/Alaknanda Transport logo final.png" width="103" height="55"
+                                                alt="Cityride"></a>
+                                        <p class="footer-widget__about-text">Alaknanda Transport: Your reliable partner in pan-India molasses and bulk logistics. With GPS-enabled fleet management, strict safety standards, and transparent 24/7 service, we ensure every delivery is smooth, secure, and stress-free.</p>
+                                        <!-- /.footer-widget__about-text -->
+                                        <div class="footer-widget__social">
+                                            <a href="https://www.facebook.com"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
+                                            <!-- <a href="https://x.com"><i class="fa-brands fa-twitter"></i></a> -->
+                                            <a href="https://www.instagram.com/"><i
+                                                    class="fa-brands fa-square-instagram"></i> </a>
+                                            <!-- <a style="margin-left: 10px;" href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a> -->
+                                        </div>
+                                        <!-- /.footer-widget__call -->
+                                    </div>
+                                    <!-- /.footer-widget -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-5094946 e-con-full e-flex e-con e-child"
+                            data-id="5094946" data-element_type="container">
+                            <div class="elementor-element elementor-element-9eceff4 elementor-widget elementor-widget-footer-nav-menu"
+                                data-id="9eceff4" data-element_type="widget" data-widget_type="footer-nav-menu.default">
+                                <div class="elementor-widget-container">
+                                    <div class="footer-widget footer-widget--links" style="margin-right: 50px;">
+                                        <h2 class="footer-widget__title" style="margin-left: 10px;">Quick Links</h2>
+                                        <!-- /.footer-widget__title -->
+                                        <div class="menu-quick-links-container">
+                                            <ul class="footer-widget__links">
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Home</a></li>
+                                                <li><a href="/about.html"><i class="fa-solid fa-angles-right"></i>About
+                                                        Us</a>
+                                                </li>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Our Service</a>
+                                                <li><a href="#"><i class="fa-solid fa-angles-right"></i>Fleet</a>
+                                                </li>
+                                                <li><a href="/gallery.html"><i
+                                                            class="fa-solid fa-angles-right"></i>Gallery</a>
+                                                </li>
+                                                <li><a href="/contact.html"><i
+                                                            class="fa-solid fa-angles-right"></i>Contact</a></li>
+                                                <!-- <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a></li> -->
+                                            </ul>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-e3d7c85 e-con-full e-flex e-con e-child"
+                            data-id="e3d7c85" data-element_type="container" style="display: none;">
+                            <div class="elementor-element elementor-element-df227f4 elementor-widget elementor-widget-footer-news"
+                                data-id="df227f4" data-element_type="widget" data-widget_type="footer-news.default">
+                                <div class="elementor-widget-container">
+
+                                    <div class="footer-widget footer-widget--post">
+                                        <h2 class="footer-widget__title">Recent Posts</h2>
+                                        <!-- /.footer-widget__title -->
+                                        <div class="footer-widget__post">
+                                            <div class="footer-widget__post__item">
+                                                <div class="footer-widget__post__thumb">
+                                                    <img loading="lazy" decoding="async" width="1920" height="1080"
+                                                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png"
+                                                        class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image"
+                                                        alt=""
+                                                        srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-570x321.png 570w"
+                                                        sizes="(max-width: 1920px) 100vw, 1920px" />
+                                                </div>
+                                                <!-- /.footer-widget__post__thumb -->
+                                                <div class="footer-widget__post__content">
+                                                    <div class="footer-widget__post__meta">
+                                                        <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
+                                                    </div>
+                                                    <!-- /.footer-widget__post__meta -->
+                                                    <h4 class="footer-widget__post__title"><a href="#">cupidatat
+                                                            nonproident, sunt in culpa qui</a></h4>
+                                                    <!-- /.footer-widget__post__title -->
+                                                </div>
+                                                <!-- /.footer-widget__post__content -->
+                                            </div>
+                                            <!-- /.footer-widget__post__item -->
+
+                                            <div class="footer-widget__post__item">
+                                                <div class="footer-widget__post__thumb">
+                                                    <img loading="lazy" decoding="async" width="1920" height="1080"
+                                                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png"
+                                                        class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image"
+                                                        alt=""
+                                                        srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-570x321.png 570w"
+                                                        sizes="(max-width: 1920px) 100vw, 1920px" />
+                                                </div>
+                                                <!-- /.footer-widget__post__thumb -->
+                                                <div class="footer-widget__post__content">
+                                                    <div class="footer-widget__post__meta">
+                                                        <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
+                                                    </div>
+                                                    <!-- /.footer-widget__post__meta -->
+                                                    <h4 class="footer-widget__post__title"><a href="#">Big
+                                                            Data. Are There Any Leftovers kitchen</a></h4>
+                                                    <!-- /.footer-widget__post__title -->
+                                                </div>
+                                                <!-- /.footer-widget__post__content -->
+                                            </div>
+                                            <!-- /.footer-widget__post__item -->
+
+                                        </div>
+                                        <!-- /.footer-widget__post -->
+                                    </div>
+                                    <!-- /.footer-widget -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-60bcc0b e-con-full e-flex e-con e-child"
+                            data-id="60bcc0b" data-element_type="container" style="margin-left: 20px;">
+                            <div class="elementor-element elementor-element-51deedd elementor-widget elementor-widget-footer-contact"
+                                data-id="51deedd" data-element_type="widget" data-widget_type="footer-contact.default">
+                                <div class="elementor-widget-container">
+                                    <div class="footer-widget footer-widget--contact">
+                                        <h2 class="footer-widget__title">office address</h2>
+                                        <!-- /.footer-widget__title -->
+                                        <ul class="list-unstyled footer-widget__info ml-0">
+                                            <li>
+                                                <span class="footer-widget__info__icon">
+                                                    <i class="fa-solid fa-envelope"></i> </span>
+                                                <!-- /.footer-widget__info__icon -->
+                                                <a
+                                                    href="mailto:alaknandatransport@gmail.com">alaknandatransport@gmail.com</a>
+                                            </li>
+                                            <li>
+                                                <span class="footer-widget__info__icon">
+                                                    <i class="fa-solid fa-phone-volume"></i> </span>
+                                                <!-- /.footer-widget__info__icon -->
+                                                <a href="tel: +91 7417 827 633">+91 7417 827 633</a>
+                                            </li>
+                                        </ul>
+                                        <!-- /.list-unstyled -->
+
+                                        <!-- /.footer-widget__newsletter mc-form -->
+                                        <div class="mc-form__response"></div>
+                                        <!-- /.mc-form__response -->
+                                    </div>
+                                    <!-- /.footer-widget -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- /.row -->
-                    <div class="cta-one__inner__image">
-                      <img decoding="async"
-                        src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/taxi-booking-car-2-1.png"
-                        alt="taxi-booking-car-2-1" title="taxi-booking-car-2-1">
-                    </div>
-                    <!-- /.cta-one__inner__image -->
-                    <div class="cta-one__inner__box">
-                      <div class="cta-one__inner__box__bg"
-                        style="background-image: url(https://bracketweb.com/cityridewp/wp-content/uploads/2025/04/ta-shape-2-1.png);">
-                      </div>
-                      <!-- /.cta-one__inner__box__bg -->
-                      <div class="cta-one__inner__box__one"></div>
-                      <!-- /.cta-one__inner__box__one -->
-                      <div class="cta-one__inner__box__two"></div>
-                      <!-- /.cta-one__inner__box__two -->
-                    </div>
-                    <!-- /.cta-one__inner__box -->
-                    <div class="cta-one__inner__item-one"></div>
-                    <!-- /.cta-one__inner__item -->
-                    <div class="cta-one__inner__item-two"></div>
-                    <!-- /.cta-one__inner__item -->
-                  </div>
-                  <!-- /.cta-one__inner -->
                 </div>
-                <!-- /.container -->
-              </section>
-              <!-- /.cta-one -->
 
             </div>
-          </div>
         </div>
-      </div>
-      <div class="elementor-element elementor-element-efcaf2a e-con-full main-footer__inner e-flex e-con e-parent"
-        data-id="efcaf2a" data-element_type="container">
-        <div class="elementor-element elementor-element-a71829f e-flex e-con-boxed e-con e-child" data-id="a71829f"
-          data-element_type="container">
-          <div class="e-con-inner">
-            <div class="elementor-element elementor-element-cb2e830 elementor-widget elementor-widget-cityride-shape"
-              data-id="cb2e830" data-element_type="widget" data-widget_type="cityride-shape.default">
-              <div class="elementor-widget-container">
-                <div class="main-footer__bg" style="background-image: url(/images/footerbg.png);">
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-6949d40 elementor-widget elementor-widget-cityride-shape"
-              data-id="6949d40" data-element_type="widget" data-widget_type="cityride-shape.default">
-              <div class="elementor-widget-container">
-                <div class="main-footer__top__element">
-                  <img decoding="async"
-                    src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/footer-shape.png"
-                    alt="footer-shape" title="footer-shape">
-                </div>
-                <!-- /.main-footer__top__element -->
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-0b03015 e-con-full e-flex e-con e-child" data-id="0b03015"
-              data-element_type="container">
-              <div
-                class="elementor-element elementor-element-69d2541 elementor-widget elementor-widget-footer-about-two"
-                data-id="69d2541" data-element_type="widget" data-widget_type="footer-about-two.default">
-                <div class="elementor-widget-container">
-                  <div class="footer-widget footer-widget--about">
-                    <a href="#" class="footer-widget__logo logo-retina footer-logo"><img loading="lazy" decoding="async"
-                        src="/images/Alaknanda Transport logo final.png" width="103" height="55" alt="Cityride"></a>
-                    <p class="footer-widget__about-text">Phasellus ultricies aliquam volutpat
-                      ullamcorper laoreet neque, a lacinia curabitur lacinia mollis</p>
-                    <!-- /.footer-widget__about-text -->
-                    <div class="footer-widget__social">
-                      <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-                      <a href="https://x.com"><i class="fa-brands fa-twitter"></i></a>
-                      <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
-                      <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                    <!-- /.footer-widget__call -->
-                  </div>
-                  <!-- /.footer-widget -->
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-5094946 e-con-full e-flex e-con e-child" data-id="5094946"
-              data-element_type="container">
-              <div class="elementor-element elementor-element-9eceff4 elementor-widget elementor-widget-footer-nav-menu"
-                data-id="9eceff4" data-element_type="widget" data-widget_type="footer-nav-menu.default">
-                <div class="elementor-widget-container">
-                  <div class="footer-widget footer-widget--links" style="margin-right: 50px;">
-                    <h2 class="footer-widget__title" style="margin-left: 10px;">Quick Links</h2>
-                    <!-- /.footer-widget__title -->
-                    <div class="menu-quick-links-container">
-                      <ul class="footer-widget__links">
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Home</a></li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a>
-                        </li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Our Service</a>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Fleet</a>
-                        </li>
-                        </li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Testimonial</a>
-                        </li>
-                        <li><a href="#"><i class="fa-solid fa-angles-right"></i>Contact</a></li>
-                        <!-- <li><a href="#"><i class="fa-solid fa-angles-right"></i>About Us</a></li> -->
-                      </ul>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-e3d7c85 e-con-full e-flex e-con e-child" data-id="e3d7c85"
-              data-element_type="container">
-              <div class="elementor-element elementor-element-df227f4 elementor-widget elementor-widget-footer-news"
-                data-id="df227f4" data-element_type="widget" data-widget_type="footer-news.default">
-                <div class="elementor-widget-container">
-
-                  <div class="footer-widget footer-widget--post">
-                    <h2 class="footer-widget__title">Recent Posts</h2>
-                    <!-- /.footer-widget__title -->
-                    <div class="footer-widget__post">
-                      <div class="footer-widget__post__item">
-                        <div class="footer-widget__post__thumb">
-                          <img loading="lazy" decoding="async" width="1920" height="1080"
-                            src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png"
-                            class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image" alt=""
-                            srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-01-570x321.png 570w"
-                            sizes="(max-width: 1920px) 100vw, 1920px" />
-                        </div>
-                        <!-- /.footer-widget__post__thumb -->
-                        <div class="footer-widget__post__content">
-                          <div class="footer-widget__post__meta">
-                            <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
-                          </div>
-                          <!-- /.footer-widget__post__meta -->
-                          <h4 class="footer-widget__post__title"><a href="#">cupidatat
-                              nonproident, sunt in culpa qui</a></h4>
-                          <!-- /.footer-widget__post__title -->
-                        </div>
-                        <!-- /.footer-widget__post__content -->
-                      </div>
-                      <!-- /.footer-widget__post__item -->
-
-                      <div class="footer-widget__post__item">
-                        <div class="footer-widget__post__thumb">
-                          <img loading="lazy" decoding="async" width="1920" height="1080"
-                            src="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png"
-                            class="attachment-cityride_brand_70X70 size-cityride_brand_70X70 wp-post-image" alt=""
-                            srcset="https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02.png 1920w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-300x169.png 300w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1024x576.png 1024w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-768x432.png 768w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-1536x864.png 1536w, https://bracketweb.com/cityridewp/wp-content/uploads/2025/05/blog-02-570x321.png 570w"
-                            sizes="(max-width: 1920px) 100vw, 1920px" />
-                        </div>
-                        <!-- /.footer-widget__post__thumb -->
-                        <div class="footer-widget__post__content">
-                          <div class="footer-widget__post__meta">
-                            <a href="#"><i class="icon-calwnder"></i> 04 May, 25</a>
-                          </div>
-                          <!-- /.footer-widget__post__meta -->
-                          <h4 class="footer-widget__post__title"><a href="#">Big
-                              Data. Are There Any Leftovers kitchen</a></h4>
-                          <!-- /.footer-widget__post__title -->
-                        </div>
-                        <!-- /.footer-widget__post__content -->
-                      </div>
-                      <!-- /.footer-widget__post__item -->
-
-                    </div>
-                    <!-- /.footer-widget__post -->
-                  </div>
-                  <!-- /.footer-widget -->
-                </div>
-              </div>
-            </div>
-            <div class="elementor-element elementor-element-60bcc0b e-con-full e-flex e-con e-child" data-id="60bcc0b"
-              data-element_type="container" style="margin-left: 20px;">
-              <div class="elementor-element elementor-element-51deedd elementor-widget elementor-widget-footer-contact"
-                data-id="51deedd" data-element_type="widget" data-widget_type="footer-contact.default">
-                <div class="elementor-widget-container">
-                  <div class="footer-widget footer-widget--contact">
-                    <h2 class="footer-widget__title">office address</h2>
-                    <!-- /.footer-widget__title -->
-                    <ul class="list-unstyled footer-widget__info ml-0">
-                      <li>
-                        <span class="footer-widget__info__icon">
-                          <i class="fa-solid fa-envelope"></i> </span>
-                        <!-- /.footer-widget__info__icon -->
-                        <a href="">needhelp@company.com</a>
-                      </li>
-                      <li>
-                        <span class="footer-widget__info__icon">
-                          <i class="fa-solid fa-phone-volume"></i> </span>
-                        <!-- /.footer-widget__info__icon -->
-                        <a href="">+91 7417 827 633</a>
-                      </li>
-                    </ul>
-                    <!-- /.list-unstyled -->
-
-                    <!-- /.footer-widget__newsletter mc-form -->
-                    <div class="mc-form__response"></div>
-                    <!-- /.mc-form__response -->
-                  </div>
-                  <!-- /.footer-widget -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
-  </div>
-  <!-- end of the loop -->
-
-
-  </div>
-  <!-- /.footer-wrapper -->
 
 
 
-  <!----------- End Footer Sections ---------------->
+
+
+
 
   <!-- main JS -->
   <script src="/assets/js/main.js"></script>
