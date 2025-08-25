@@ -621,7 +621,7 @@ body {
   font-weight: 800;
   color: #212529;
   /* Dark text */
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   line-height: 1.2;
 }
 
@@ -1492,7 +1492,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  text-align: right;
+  
   padding: 20px;
   height: 50%;
 }
@@ -2348,6 +2348,7 @@ body {
   background-color: #fff;
   padding: 5px;
   border-radius: 10px;
+  width: 160px;
 }
 
 .footer-animation-image {
