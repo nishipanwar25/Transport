@@ -181,7 +181,7 @@ body {
   right: 35px;
   width: 400px;
   height: 800px;
-  border: 1px solid #ff5722;
+  border: 1px solid #7a0505;
   border-radius: 12px;
   transform: translate(15px, 15px);
   z-index: -1;
@@ -193,7 +193,7 @@ body {
   position: absolute;
   width: 400px;
   height: 400px;
-  background-color: #ff5722;
+  background-color:#7a0505;
   z-index: -1;
   border-radius: 10px;
   bottom: 20px;
@@ -252,7 +252,7 @@ body {
   width: 40px;
   height: 40px;
   font-size: 16px;
-  background-color: #333;
+  background-color: #a24141;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,7 +355,7 @@ body {
   width: 100%;
   max-width: 100%;
   height: 400px;
-  background-color: #26263A;
+  background-color: #a50c0c;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -408,7 +408,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  background-color: #503986;
+  background-color:black;
   padding-left: 20px;
   clip-path: ellipse(90% 70% at 90% 50%);
   overflow: hidden;
@@ -591,7 +591,7 @@ body {
 .our-fleet-icon-wrapper {
   width: 70px;
   height: 70px;
-  background-color: #f0e6ff;
+  background-color: whitesmoke;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -601,7 +601,7 @@ body {
 
 .our-fleet-icon-wrapper i {
   font-size: 32px;
-  color: #7b68ee;
+  color: #780707;
 }
 
 .our-fleet-feature-title {
@@ -621,7 +621,7 @@ body {
 
 .our-fleet-read-more-link {
   display: inline-block;
-  color: #7b68ee;
+  color: black;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -711,7 +711,7 @@ body {
 }
 
 .why-main-heading span {
-  color: #d1306d;
+  color: #9f1212;
 }
 
 .why-description-paragraph {
@@ -853,15 +853,15 @@ body {
 }
 
 .what-we-icon-product-scope {
-  stroke: #4A90E2;
+  stroke:rgb(160, 13, 13);
 }
 
 .what-we-icon-ai-dev {
-  stroke: #9B59B6;
+  stroke:rgb(160, 13, 13);
 }
 
 .what-we-icon-mvp-builder {
-  stroke: #F4D03F;
+  stroke: rgb(160, 13, 13);
 }
 
 .what-we-icon-custom-software {
