@@ -164,7 +164,52 @@ body.fonts-loaded .hero-text {
         .footer-widget__links li a::before {
             content: none;
         }
-       
+       .footer-logo {
+  /* background-color: #e0a800; */
+  width: 200px;
+  height: auto;
+}
+
+.footer-logo img {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  width: 160px;
+}
+
+.footer-animation-image {
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  z-index: 1;
+  animation: moveRight 5s linear infinite;
+  /* transition: transform 0.3s ease; */
+}
+.footer-widget__about-text {
+  text-align: justify;
+  line-height: 1.6;   /* improves readability */
+  word-spacing: 1px;  /* gives better alignment */
+}
+.our-fleet-feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* pushes "Read More" to bottom */
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.our-fleet-feature-description {
+  flex: 1;   /* makes description stretch equally */
+  display: flex;
+  align-items: center;   /* keeps text vertically centered */
+  justify-content: center;
+  text-align: center;
+}
+
+.our-fleet-read-more-link {
+  margin-top: 15px;
+}
 
     </style>
     
@@ -427,27 +472,27 @@ body.fonts-loaded .hero-text {
           Why Alaknanda <span style="text-decoration: underline;">Transport?</span>
         </h2>
         <p class="why-description-paragraph">
-          <strong>🛡 Safety-First Approach</strong>
+          <strong> Safety-First Approach</strong>
           We maintain strict safety protocols to ensure that every shipment is protected from contamination,
           leakage, and damage. Our tankers are regularly sanitized and inspected.
         </p>
         <p class="why-description-paragraph">
-          <strong>⏱ Timely Delivery, Every Time</strong>
+          <strong> Timely Delivery, Every Time</strong>
           We understand how critical time is in your production cycle. Our team ensures that delivery
           schedules are met without delays through optimized logistics and trained drivers.
         </p>
         <p class="why-description-paragraph">
-          <strong>🚛 Modern & Certified Tanker Fleet</strong>
+          <strong> Modern & Certified Tanker Fleet</strong>
           Our vehicles are specially built and approved for carrying molasses. Equipped with GPS tracking,
           pressure seals, and anti-corrosion interiors, they ensure safe and compliant delivery.
         </p>
         <p class="why-description-paragraph">
-          <strong>📞 24/7 Support & Transparency</strong>
+          <strong> 24/7 Support & Transparency</strong>
           We believe in open communication. Our logistics coordinators provide real-time updates and
           round-the-clock customer support.
         </p>
         <p class="why-description-paragraph">
-          <strong>🌱 Eco-Conscious Operations</strong>
+          <strong> Eco-Conscious Operations</strong>
           We adhere to environmental regulations to minimize carbon footprints, avoid spillage, and protect
           ecosystems during transit.
         </p>
@@ -492,13 +537,14 @@ body.fonts-loaded .hero-text {
     <div class="what-we-features-grid">
       <!-- Feature Card 1: Product Scope -->
       <div class="what-we-feature-card">
-        <svg class="what-we-icon-svg what-we-icon-product-scope" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        <!-- <svg class="what-we-icon-svg what-we-icon-product-scope" viewBox="0 0 24 24" fill="none" stroke="currentColor"
           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
           <path d="M2 17l10 5 10-5"></path>
           <path d="M2 12l10 5 10-5"></path>
-        </svg>
-        <h3 class="what-we-feature-title">✅ Molasses Transportation</h3>
+        </svg> -->
+        <img src="./images/molesis.png" alt="" class="what-we-icon-svg what-we-icon-product-scope" viewBox="0 0 24 24" >
+        <h3 class="what-we-feature-title"> Molasses Transportation</h3>
         <p class="what-we-feature-description">
           Our core service is the bulk transport of molasses—a byproduct of sugar production—used primarily by
           distilleries and cattle feed industries. We handle full truckload shipments across long distances with safety,
@@ -508,14 +554,8 @@ body.fonts-loaded .hero-text {
 
       <!-- Feature Card 2: AI Development & Enablement -->
       <div class="what-we-feature-card">
-        <svg class="what-we-icon-svg what-we-icon-ai-dev" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
-          <!-- <circle cx="12" cy="12" r="3"></circle> -->
-        </svg>
-        <h3 class="what-we-feature-title">✅ Custom Liquid Bulk Logistics</h3>
+       <img src="./images/custom.png" alt="" class="what-we-icon-svg what-we-icon-product-scope" viewBox="0 0 24 24">
+        <h3 class="what-we-feature-title"> Custom Liquid Bulk Logistics</h3>
         <p class="what-we-feature-description">
           We offer custom-designed logistics solutions for other compatible liquid materials that require specialized
           handling and transport methods.
@@ -524,14 +564,8 @@ body.fonts-loaded .hero-text {
 
       <!-- Feature Card 3: MVP Builder -->
       <div class="what-we-feature-card">
-        <svg class="what-we-icon-svg what-we-icon-mvp-builder" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
-          <polyline points="2 7 12 12 22 7"></polyline>
-        </svg>
-        <h3 class="what-we-feature-title">✅ Pan-India Transport Network</h3>
+<img src="./images/india.png" alt="" class="what-we-icon-svg what-we-icon-product-scope" viewBox="0 0 24 24">
+        <h3 class="what-we-feature-title">Pan-India Transport Network</h3>
         <p class="what-we-feature-description">
           From Uttar Pradesh to Tamil Nadu, Maharashtra to Assam—we cover every corner of India. Our network is
           optimized for fast route planning, real-time tracking, and seamless load management.
@@ -542,6 +576,7 @@ body.fonts-loaded .hero-text {
    
 
 
+ 
     <div class="footer-wrapper">
         <!-- the loop -->
         <div data-elementor-type="wp-post" data-elementor-id="835" class="elementor elementor-835">
@@ -559,7 +594,7 @@ body.fonts-loaded .hero-text {
                                             style="background-image: url(/images/footer-book-banner.png);">
                                         </div> -->
                                         <!-- /.cta-one__inner__bg -->
-                                        <div class="row">
+                                        <div class="row" style="margin-top: 170px;">
                                             <div class="col-lg-6">
                                                 <div class="cta-one__content">
                                                     <div class="sec-title ">
@@ -651,7 +686,7 @@ body.fonts-loaded .hero-text {
                                     <div class="footer-widget footer-widget--about">
                                         <a href="#" class="footer-widget__logo logo-retina footer-logo"><img
                                                 loading="lazy" decoding="async"
-                                                src="/images/Alaknanda Transport logo final.png" width="103" height="55"
+                                                src="/images/Alaknanda Transport logo final.png" 
                                                 alt="Cityride"></a>
                                         <p class="footer-widget__about-text">Alaknanda Transport: Your reliable partner in pan-India molasses and bulk logistics. With GPS-enabled fleet management, strict safety standards, and transparent 24/7 service, we ensure every delivery is smooth, secure, and stress-free.</p>
                                         <!-- /.footer-widget__about-text -->
@@ -802,7 +837,6 @@ body.fonts-loaded .hero-text {
             </div>
         </div>
     </div>
-
 
 
 
