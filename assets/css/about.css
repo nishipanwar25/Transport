@@ -355,7 +355,7 @@ body {
   width: 100%;
   max-width: 100%;
   height: 400px;
-  background-color: #a50c0c;
+  background-color: #6a0707;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -512,7 +512,7 @@ body {
 .our-fleet-section-header .our-fleet-subtitle {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #7b68ee;
+  color: #780707;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -847,8 +847,9 @@ body {
 
 .what-we-icon-svg {
   width: 48px;
-  height: 48px;
+  height: 50px;
   margin-bottom: 20px;
+  margin-left: 40px;
   flex-shrink: 0;
 }
 
