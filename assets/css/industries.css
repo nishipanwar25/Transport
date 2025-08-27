@@ -45,7 +45,7 @@ body {
 }
 
 .distilleries-trust-section-header h2 span {
-    color: #1e90ff;
+    color: rgb(119, 7, 7);
 }
 
 .distilleries-trust-section-header h2::after {
@@ -53,7 +53,7 @@ body {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #1e90ff;
+    background-color: rgb(106, 4, 4);
     margin: 20px auto 0;
     border-radius: 2px;
 }
@@ -90,7 +90,7 @@ body {
 .distilleries-trust-service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    background-image: linear-gradient(to bottom right, #1e90ff, #2ecc71);
+    background-image: linear-gradient(to bottom right, #82080e, #e4e80a);
 }
 
 .distilleries-trust-service-card::before {
@@ -126,7 +126,7 @@ body {
 .distilleries-trust-service-icon-wrapper {
     width: 70px;
     height: 70px;
-    background-color: #1e90ff;
+    background-color: rgb(102, 6, 6);
     color: black;
     border-radius: 10px;
     display: flex;
@@ -298,7 +298,7 @@ body {
 }
 
 .sugar-service-main-title span {
-    color: #2ecc71;
+    color: black;
 }
 
 .sugar-service-header-right {
@@ -338,7 +338,7 @@ body {
     height: 80px;
     border-radius: 50%;
     background-color: #ffffff;
-    border: 2px solid #e67e22;
+    border: 2px solid darkred;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -363,19 +363,19 @@ body {
 }
 
 .sugar-service-step-number-circle.green {
-    background-color: #2ecc71;
+    background-color: black;
 }
 
 .sugar-service-step-number-circle.orange {
-    background-color: #e67e22;
+    background-color: black;
 }
 
 .sugar-service-step-number-circle.teal {
-    background-color: #1abc9c;
+    background-color: black;
 }
 
 .sugar-service-step-number-circle.blue {
-    background-color: #3498db;
+    background-color: black;
 }
 
 .sugar-service-step-icon {
@@ -595,7 +595,7 @@ body {
 .subtitle2 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #2ecc71;
+    color: darkred;
     /* Green subtitle */
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -791,7 +791,7 @@ body {
 .specialized-icon-wrapper {
     width: 70px;
     height: 70px;
-    background-color: #e0f2fe;
+    background-color: rgb(140, 22, 22);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -802,7 +802,7 @@ body {
 
 .specialized-icon-wrapper i {
     font-size: 32px;
-    color: #3b82f6;
+    color: black;
 }
 
 .specialized-service-title {
@@ -862,7 +862,7 @@ body {
 .serve-section-header .subtitle {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #4CAF50;
+    color: darkred;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -872,7 +872,7 @@ body {
 .serve-section-header h2 {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #4CAF50;
+    color: darkred;
     margin-bottom: 15px;
     line-height: 1.2;
 }
@@ -943,7 +943,7 @@ body {
 
 .serve-icon-box i {
     font-size: 38px;
-    color: #4CAF50;
+    color: darkred;
 }
 
 .serve-service-title {
