@@ -98,14 +98,14 @@ body {
 
 .about-logistics-subtitle {
     font-style: italic;
-    color: #b30026;
+    color: black;
     font-weight: 600;
 }
 
 .about-logistics-title {
     font-size: 2.5rem;
     font-weight: 800;
-    color: #003366;
+    color:  rgb(160, 13, 13);
     margin: 10px 0 20px;
 }
 
@@ -217,7 +217,7 @@ body {
 .main-title {
     font-size: 2.8rem;
     font-weight: 800;
-    color: #003366;
+    color: #7C1D1D;
     /* Dark blue color for title */
     line-height: 1.2;
     margin: 0;
@@ -340,7 +340,7 @@ body {
 
 
 .safety-charter-section {
-    background-color: #1a1e2b;
+    background-color: black;
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -381,8 +381,8 @@ body {
 }
 
 .safety-feature-card {
-    background-color: #262c3e;
-    border: 1px solid #3c445c;
+    background-color: rgb(122, 1, 1);
+    border: 1px solid #000000;
     border-radius: 8px;
     padding: 30px;
     display: flex;
@@ -395,7 +395,7 @@ body {
 
 .safety-feature-card:hover {
     transform: translateY(-5px);
-    border-color: #3b82f6;
+    border-color: #000000;
 }
 
 .safety-feature-icon {
@@ -514,7 +514,7 @@ body {
 }
 
 .why-choose-subtitle {
-    color: #3b82f6;
+    color: #7c0505;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -537,7 +537,7 @@ body {
 }
 
 .why-choose-box {
-    background-color: #1e2230;
+    background-color: #610505;
     border-radius: 20px;
     padding: 30px;
     display: flex;
@@ -976,6 +976,7 @@ body {
     margin-bottom: 20px;
     display: block;
     margin: auto;
+    /* border: darkred; */
 }
 
 .industry-title {
@@ -1045,7 +1046,7 @@ body {
 .states-heading {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #7C1D1D;
     margin-top: 40px;
     margin-bottom: 20px;
 }
@@ -1075,7 +1076,7 @@ body {
 .states-list li {
     font-size: 1rem;
     color: #374151;
-    background-color: #e0f2fe;
+    background-color: whitesmoke;
     padding: 10px 15px;
     border-radius: 8px;
     display: flex;
