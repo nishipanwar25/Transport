@@ -19,10 +19,10 @@ body {
 .gallery-hero {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.779)), url('https://images.pexels.com/photos/192364/pexels-photo-192364.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background: linear-gradient(whitesmoke), url('https://images.pexels.com/photos/192364/pexels-photo-192364.jpeg?auto=compress&cs=tinysrgb&w=600');
     background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
+    color: rgb(100, 8, 8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,10 +35,12 @@ body {
 }
 
 .gallery-hero h1 {
-    color: #fff;
-    margin-top: 100px;
-    font-weight: 900;
+    color: rgb(100, 8, 8);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 950;
     text-transform: uppercase;
+    
 }
 
 .gallery-hero p {
