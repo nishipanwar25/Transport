@@ -25,7 +25,7 @@ body {
     justify-content: flex-start;
     padding-left: 10%;
     box-sizing: border-box;
-    background-image: url('/images/contact.png');
+    background-image: url('/images/contacct.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -38,7 +38,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4.2rem;
+    font-size: 4.8rem;
     font-weight: 900;
     margin: 0 0 10px 0;
     color: #000;
@@ -175,7 +175,7 @@ body {
 .contact-contact-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-3px);
-    background-color: #c0392b;
+    background-color: #721308;
     color: #ffffff;
 }
 
