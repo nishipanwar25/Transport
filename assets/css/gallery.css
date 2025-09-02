@@ -19,7 +19,8 @@ body {
 .gallery-hero {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(whitesmoke), url('https://images.pexels.com/photos/192364/pexels-photo-192364.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background: linear-gradient(whitesmoke), url('/images/gallery2.png');
+    /* background-image: url(/images/gallery2.png); */
     background-repeat: no-repeat;
     background-size: cover;
     color: rgb(100, 8, 8);
