@@ -138,7 +138,182 @@
 body.fonts-loaded .hero-text {
   visibility: visible;
 }
-
+.why-section-unique {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, rdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bg-decor-bottom-left {
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #8B4513, #CD853F);
+    border-radius: 50%;
+    opacity: 0.08;
+    z-index: 0;
+  }
+  .why-main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .why-title-area {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+  }
+  .why-title-area h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: black;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+  .why-title-area h2 span:nth-child(1) {
+    color: maroon;
+    position: relative;
+  }
+  .why-title-area h2 span:nth-child(1) span {
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    border-radius: 2px;
+  }
+  .features-grid {
+    display: grid;
+    gap: 60px;
+    position: relative;
+  }
+  .feature-left,
+  .feature-right,
+  .feature-left-offset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .feature-left {
+    margin-left: 0;
+  }
+  .feature-right {
+    margin-right: 0;
+  }
+  .feature-left-offset {
+    margin-left: 100px;
+  }
+  .feature-box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.1);
+    position: relative;
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+  }
+  .feature-box:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  .feature-box.rotate-1-5deg {
+    transform: rotate(1.5deg);
+  }
+  .feature-box.rotate-1-5deg:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  .feature-box.rotate-1deg {
+    transform: rotate(1deg);
+  }
+  .feature-box.rotate-1deg:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  .feature-box.rotate-neg-1deg {
+    transform: rotate(-1deg);
+  }
+  .feature-box.rotate-neg-1deg:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  .feature-box.rotate-2deg {
+    transform: rotate(2deg);
+  }
+  .feature-box.rotate-2deg:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .icon-brown1 {
+      background: linear-gradient(45deg, #540a05, #e91e12);;
+  }
+  .icon-brown2 {
+       background: linear-gradient(45deg, #540a05, #e91e12);
+  }
+  .icon-brown3 {
+       background: linear-gradient(45deg, #540a05, #e91e12);
+  }
+  .icon-brown4 {
+       background: linear-gradient(45deg, #540a05, #e91e12);
+  }
+  .feature-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: maroon;
+    margin: 0 0 15px 0;
+  }
+  .feature-desc {
+    color: #6c757d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .feature-desc-small {
+    font-size: 1rem;
+  }
+  .feature-image-container {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(139, 69, 19, 0.2);
+  }
+  .feature-image-container.rotate-neg-1deg {
+    transform: rotate(-1deg);
+  }
+  .feature-image-container.rotate-2deg {
+    transform: rotate(2deg);
+  }
+  .feature-image-container.rotate-2deg-large {
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(139, 69, 19, 0.2);
+    transform: scale(1.1);
+    overflow: hidden;
+  }
+  .feature-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .combined-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: stretch;
+    margin-top: 40px;
+  }
 
 
         /* Animate submenu in on hover */
@@ -321,7 +496,7 @@ body.fonts-loaded .hero-text {
         </div>
 
         <div class="about-features-list">
-          <h4 style="font-size: 2rem; color: #860606;">Why Choose Alaknanda Transport?</h4>
+          <h4 style="font-size: 2rem; color: black;">Why Choose <span class="why-underline"  style="color: rgb(92, 8, 8);">Alaknanda Transport? </span></h4>
           <!-- Feature Item 1 -->
           <div class="about-feature-item">
             <div class="about-feature-icon-wrapper2">
@@ -334,13 +509,13 @@ body.fonts-loaded .hero-text {
             </div>
           </div>
 
-          <!-- Feature Item 2 -->
+          <!-- Feature Item 2 --> 
           <div class="about-feature-item">
             <div class="about-feature-icon-wrapper2">
               <i class="fas fa-lightbulb"></i>
             </div>
             <div class="about-feature-text">
-              <h3>Specialized Fleet:</h3>
+              <h3>Specialized Fleet</h3>
               <p>Our modern, hygienic, and certified tankers are designed specifically for liquid cargo
                 like molasses.</p>
             </div>
@@ -405,10 +580,10 @@ body.fonts-loaded .hero-text {
     <div class="mission-main-container">
       <!-- Left Content Column -->
       <div class="mission-content-column">
-        <h2>Our Vision</h2>
+        <h2>Our <span class="why-underline" style="color: black;">Vision</span></h2>
         <p>To become India’s most reliable and efficient molasses and liquid cargo transportation company, committed to
           safety, sustainability, and service excellence.</p>
-        <h2>Our Mission</h2>
+        <h2> Our <span class="why-underline" style="color: black;"> Mission </span> </h2>
         <div class="vision-buttons">
           <p>To deliver high-quality, professional transportation solutions that support our clients' operations,
             promote industry compliance, and contribute to India’s growing supply chain ecosystem.</p>
@@ -441,7 +616,7 @@ body.fonts-loaded .hero-text {
           <!-- Feature Card 1 -->
           <div class="our-fleet-feature-card">
             <div class="our-fleet-icon-wrapper">
-              <i class=""><img src="./images/fleet1.png" alt=""></i>
+              <i class=""><img src="./images/flet1.png" alt=""></i>
             </div>
             <p class="our-fleet-feature-description">Stainless steel and mild steel tankers</p>
             <a href="#" class="our-fleet-read-more-link">Read More</a>
@@ -450,7 +625,7 @@ body.fonts-loaded .hero-text {
           <!-- Feature Card 2 -->
           <div class="our-fleet-feature-card">
             <div class="our-fleet-icon-wrapper">
-              <i class=""><img src="./images/fleet2.png" alt=""></i>
+              <i class=""><img src="./images/fleeet2.png" alt=""></i>
             </div>
             <p class="our-fleet-feature-description">Leak-proof valves and lids</p>
             <a href="#" class="our-fleet-read-more-link">Read More</a>
@@ -468,7 +643,7 @@ body.fonts-loaded .hero-text {
           <!-- Feature Card 4 -->
           <div class="our-fleet-feature-card">
             <div class="our-fleet-icon-wrapper">
-              <i class=""><img src="./images/fleet4.png" alt=""></i>
+              <i class=""><img src="./images/flet4.png" alt=""></i>
             </div>
             <p class="our-fleet-feature-description">Regularly maintained and certified by transport authorities.</p>
             <a href="#" class="our-fleet-read-more-link">Read More</a>
@@ -481,84 +656,105 @@ body.fonts-loaded .hero-text {
   <!------------------- End Our Fleet Section ------------------->
 
   <!------------------- Start Why Alaknanda Section ------------------->
-   <section class="why-section-unique">
-  <div class="why-bg-overlay"></div>
+    <section class="why-section-unique">
+  <div class="bg-decor-top-right"></div>
+  <div class="bg-decor-bottom-left"></div>
   <div class="why-main-container">
-    <!-- Title -->
     <div class="why-title-area">
-      <h2 class="why-main-heading-unique">
-        Why Alaknanda <span class="why-underline">Transport?</span>
+      <h2>
+        Why Alaknanda <span>Transport<span></span></span>?
+        <span></span>
       </h2>
-      <!-- <p class="why-subheading">The trusted choice for molasses logistics</p> -->
     </div>
-    <!-- Feature Cards & Images Grid -->
-    <div class="why-content-flex">
-      <!-- Cards Column -->
-      <div class="why-feature-cards">
-        <div class="why-card">
-         <svg width="56" height="56" fill="none" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="18" cy="18" r="16" stroke="black" stroke-width="2" fill="none"/>
-  <path d="M18 8l8 4v7.5c0 5-3.3 9.7-8 11.5-4.7-1.8-8-6.5-8-11.5V12l8-4z" stroke="black" stroke-width="2" fill="none"/>
-  <path d="M18 17v6m0 0l3-3m-3 3l-3-3" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
 
-
-          <h3>Safety-First Approach</h3>
-          <p>Strict protocols, regular sanitization, and inspections keep every shipment protected from contamination, leakage, and damage.</p>
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-left">
+        <div class="feature-box" style="transform: rotate(-2deg);" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(-2deg) scale(1)'">
+          <div class="icon-container icon-brown1">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2l8 4v7.5c0 5-3.3 9.7-8 11.5-4.7-1.8-8-6.5-8-11.5V6l8-4z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Safety-First Approach</h3>
+          <p class="feature-desc">We maintain strict safety protocols to ensure that every shipment is protected from contamination, leakage, and damage. Our tankers are regularly sanitized and inspected.</p>
         </div>
-        <div class="why-card">
-         <svg width="56" height="56" fill="none" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="18" cy="18" r="16" stroke="black" stroke-width="2" fill="none"/>
-  <circle cx="18" cy="18" r="8" stroke="black" stroke-width="2" fill="none"/>
-  <path d="M18 13v7l5 3" stroke="black" stroke-width="2" stroke-linecap="round"/>
-</svg>
-
-          <h3>Timely Delivery, Every Time</h3>
-          <p>Optimized logistics, skilled drivers, and proactive scheduling ensure zero delays in your production cycle.</p>
-        </div>
-        <div class="why-card">
-     <svg width="56" height="56" fill="none" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="7" y="15" width="22" height="10" rx="2" stroke="black" stroke-width="2" fill="none"/>
-  <rect x="10" y="19" width="5" height="5" rx="1" stroke="black" stroke-width="2" fill="none"/>
-  <rect x="21" y="19" width="5" height="5" rx="1" stroke="black" stroke-width="2" fill="none"/>
-  <circle cx="11" cy="25" r="2" stroke="black" stroke-width="2" fill="none"/>
-  <circle cx="25" cy="25" r="2" stroke="black" stroke-width="2" fill="none"/>
-</svg>
-
-
-          <h3>Modern & Certified Fleet</h3>
-          <p>GPS tracking, pressure seals, and anti-corrosion interiors provide safe, compliant delivery every time.</p>
-        </div>
-        <div class="why-card">
-        <svg width="56" height="56" fill="none" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="18" cy="18" r="16" stroke="black" stroke-width="2" fill="none"/>
-  <circle cx="18" cy="18" r="8" stroke="black" stroke-width="2" fill="none"/>
-  <path d="M18 12v6h6" stroke="black" stroke-width="2" stroke-linecap="round"/>
-  <path d="M11 29c5.5 2.5 14.5 2.5 19 0" stroke="black" stroke-width="2" fill="none"/>
-</svg>
-
-          <h3>24/7 Support & Transparency</h3>
-          <p>Round-the-clock coordination and real-time updates keep you informed at every step.</p>
-        </div>
-        <div class="why-card">
-         <svg width="56" height="56" fill="none" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="18" cy="18" r="16" stroke="black" stroke-width="2" fill="none"/>
-  <path d="M18 27c6-6 6-12 0-17 0 0-7 7 0 17z" stroke="black" stroke-width="2" fill="none"/>
-  <path d="M13 11c3.5 2.5 7.5 7 9 10" stroke="black" stroke-width="2" stroke-linecap="round"/>
-</svg>
-
-          <h3>Eco-Conscious Operations</h3>
-          <p>Environmental compliance minimizes carbon impact and protects local ecosystems.</p>
+        <div class="feature-image-container rotate-2deg">
+          <img src="./images/truck1.png" alt="Safety Transport" class="feature-image" />
         </div>
       </div>
-      <!-- Images Column -->
-     <div class="why-image-grid-2x2">
-  <img src="./images/truck1.png" class="why-img-grid" alt="Tanker 1">
-  <img src="./images/truck2.png" class="why-img-grid" alt="Tanker 2">
-  <img src="./images/truck3.png" class="why-img-grid" alt="Tanker 3">
-  <img src="https://cdn.pixabay.com/photo/2022/03/21/18/58/truck-7083763_1280.jpg" class="why-img-grid" alt="Tanker 4">
-</div>
 
+      <!-- Feature 2 -->
+      <div class="feature-right">
+        <div class="feature-image-container rotate-neg-1deg" style="order: 1;">
+          <img src="./images/truck2.png" alt="Timely Delivery" class="feature-image" />
+        </div>
+        <div class="feature-box rotate-1-5deg" style="order: 2;" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(1.5deg) scale(1)'">
+          <div class="icon-container icon-brown2">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Timely Delivery, Every Time</h3>
+          <p class="feature-desc">We understand how critical time is in your production cycle. Our team ensures that delivery schedules are met without delays through optimized logistics and trained drivers.</p>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-left-offset">
+        <div class="feature-box rotate-neg-1deg" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(-1deg) scale(1)'">
+          <div class="icon-container icon-brown3">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="10" rx="2"/>
+              <circle cx="8" cy="21" r="2"/>
+              <circle cx="16" cy="21" r="2"/>
+              <path d="M16 8h5l-3-3m3 3l-3 3"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Modern & Certified Fleet</h3>
+          <p class="feature-desc">Our vehicles are specially built and approved for carrying molasses. Equipped with GPS tracking, pressure seals, and anti-corrosion interiors, they ensure safe and compliant delivery.</p>
+        </div>
+        <div class="feature-image-container rotate-2deg">
+          <img src="./images/truck3.png" alt="Modern Fleet" class="feature-image" />
+        </div>
+      </div>
+
+      <!-- Feature 4 & 5 combined -->
+         <div class="feature-right">
+        <div class="feature-image-container rotate-neg-1deg" style="order: 1;">
+          <img src="./images/truck1.webp" alt="Timely Delivery" class="feature-image" />
+        </div>
+        <div class="feature-box rotate-1-5deg" style="order: 2;" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(1.5deg) scale(1)'">
+          <div class="icon-container icon-brown2">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-title"> 24/7 Support & Transparency</h3>
+          <p class="feature-desc">We believe in open communication. Our logistics coordinators provide real-time updates and round-the-clock customer support.</p>
+        </div>
+
+        
+      </div>
+       <div class="feature-left-offset">
+        <div class="feature-box rotate-neg-1deg" onmouseover="this.style.transform='rotate(0deg) scale(1.05)'" onmouseout="this.style.transform='rotate(-1deg) scale(1)'">
+          <div class="icon-container icon-brown3">
+            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="10" rx="2"/>
+              <circle cx="8" cy="21" r="2"/>
+              <circle cx="16" cy="21" r="2"/>
+              <path d="M16 8h5l-3-3m3 3l-3 3"/>
+            </svg>
+          </div>
+          <h3 class="feature-title"> Eco-Conscious Operations</h3>
+          <p class="feature-desc">We adhere to environmental regulations to minimize carbon footprints, avoid spillage, and protect ecosystems during transit.</p>
+        </div>
+        <div class="feature-image-container rotate-2deg">
+          <img src="./images/truck4.jpg" alt="Modern Fleet" class="feature-image" />
+        </div>
+      </div>
     </div>
   </div>
 </section>
