@@ -496,6 +496,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: auto;
+  background-color: #eebfbf;
 }
 
 .our-fleet-container {
@@ -503,6 +504,7 @@ body {
   margin: 0 auto;
   text-align: center;
   padding: 20px;
+ 
 }
 
 .our-fleet-section-header {
@@ -564,6 +566,7 @@ body {
 }
 
 .our-fleet-feature-card:hover {
+ 
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
@@ -813,6 +816,7 @@ body {
   line-height: 1.7;
 }
 
+
 /* Features Grid */
 .what-we-features-grid {
   display: grid;
@@ -831,6 +835,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 
 .what-we-feature-card {
   background-color: whitesmoke;
@@ -893,6 +898,8 @@ body {
   color: #6c757d;
   line-height: 1.5;
 }
+
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 767px) {
