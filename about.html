@@ -402,6 +402,63 @@ body.fonts-loaded .hero-text {
 .our-fleet-read-more-link {
   margin-top: 15px;
 }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;400&display=swap');
+
+.fleet-header-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: #eebfbf;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gradient-glow-heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(45deg, #bc1818, #ede208,  #e1c0c0);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+}
+
+.animated-subtext {
+  font-size: 1.4rem;
+  color: #e0e0e0;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out 0.8s forwards;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes textGlow {
+  from { filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.4)); }
+  to { filter: drop-shadow(0 0 40px rgba(78, 205, 196, 0.6)); }
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
 
     </style>
     
@@ -580,10 +637,10 @@ body.fonts-loaded .hero-text {
     <div class="mission-main-container">
       <!-- Left Content Column -->
       <div class="mission-content-column">
-        <h2>Our <span class="why-underline" style="color: black;">Vision</span></h2>
+        <h2>Our <span style="color: #FED100;">Vision</span></h2>
         <p>To become India’s most reliable and efficient molasses and liquid cargo transportation company, committed to
           safety, sustainability, and service excellence.</p>
-        <h2> Our <span class="why-underline" style="color: black;"> Mission </span> </h2>
+        <h2> Our <span  style="color: #FED100;"> Mission </span> </h2>
         <div class="vision-buttons">
           <p>To deliver high-quality, professional transportation solutions that support our clients' operations,
             promote industry compliance, and contribute to India’s growing supply chain ecosystem.</p>
@@ -604,13 +661,16 @@ body.fonts-loaded .hero-text {
   <!----------- Start Our Fleet Sections ---------------->
   <section class="fleet-section">
     <div class="our-fleet-container">
-      <div class="our-fleet-section-header">
+      <!-- <div class="our-fleet-section-header">
         <span class="our-fleet-subtitle"></span>
         <h2>Our Fleet Highlights</h2>
         <p>We are so excited and proud of our business. It's really easy to create a landing page for your awesome
           business.</p>
-      </div>
-
+      </div> -->
+<div class="fleet-header-container">
+  <h1 class="gradient-glow-heading">Our Fleet Highlights</h1>
+  <p class="animated-subtext">We are so excited and proud of our business. It's really easy to create a landing page for your awesome business.</p>
+</div>
       <div class="our-fleet-features-wrapper">
         <div class="our-fleet-features-grid">
           <!-- Feature Card 1 -->
@@ -766,15 +826,7 @@ body.fonts-loaded .hero-text {
   <div class="what-we-container">
     <div class="what-we-section-header">
       <h2>What we do</h2>
-      <!-- 
-        <p>
-            We help entrepreneurs and business leaders build and launch innovative custom
-            software solutions to the market across a range of verticals & industries. We can help
-            you turn your vision into a successful product together, whether it’s in the form of a
-            Minimum Viable Product, UX/UI services, full product custom software development or
-            help to scale your company.
-        </p> 
-        -->
+    
     </div>
 
     <div class="what-we-features-grid">
