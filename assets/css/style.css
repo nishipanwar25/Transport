@@ -248,6 +248,10 @@ body {
  body{
         font-family: arim;
        }
+.cards-container {
+  display: flex;
+  align-items: stretch; /* ensures equal height */
+}
 
 
 
