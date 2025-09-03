@@ -964,7 +964,7 @@ body {
   margin-bottom: 0.6rem;
 }
 .why-underline {
-  border-bottom: 4px solid yellow;
+  border-bottom: 4px solid #FED100;
   display: inline;
   padding-bottom: 3px;
 }
