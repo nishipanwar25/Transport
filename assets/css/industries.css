@@ -338,7 +338,7 @@ body {
     height: 80px;
     border-radius: 50%;
     background-color: #ffffff;
-    border: 2px solid darkred;
+    border: 2px solid rgb(72, 8, 8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,13 +381,14 @@ body {
 .sugar-service-step-icon {
     width: 40px;
     height: 40px;
-    filter: invert(50%) sepia(100%) saturate(2000%) hue-rotate(330deg) brightness(100%) contrast(100%);
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(330deg) brightness(51%) contrast(100%);
+    color: #82080e;
 }
 
 .sugar-service-step-title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #ffffff;
+    color: rgb(80, 9, 9);
     margin-bottom: 10px;
 }
 
@@ -497,6 +498,16 @@ body {
     100% {
         transform: scale(1) translateX(0);
     }
+}
+.about-section {
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.604)), url('/images/truck1.png') no-repeat center center/cover;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  color: white;
+  /* margin-top: 100px; */
 }
 
 .about-section-container {
