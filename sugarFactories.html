@@ -40,7 +40,7 @@
 
     <!------------- Main Style.css ----------->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/about.css">
+    <!-- <link rel="stylesheet" href="/assets/css/about.css"> -->
     <link rel="stylesheet" href="/assets/css/typeOfVehicles.css">
     <link rel="stylesheet" href="assets/css/industries.css">
 
@@ -73,6 +73,278 @@
         .footer-widget__links li a::before {
             content: none;
         }
+                @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+.ultra-creative-section {
+  position: relative;
+  min-height: 100vh;
+  background: #0a0a0a;
+  overflow: hidden;
+  /* cursor: none; */
+  font-family: 'Space Mono', monospace;
+}
+
+/* Floating particles */
+.particles-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+.particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: #e63946;
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
+.particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 5s; }
+.particle:nth-child(3) { top: 40%; left: 60%; animation-delay: 10s; }
+.particle:nth-child(4) { top: 80%; left: 30%; animation-delay: 15s; }
+.particle:nth-child(5) { top: 10%; left: 70%; animation-delay: 8s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+}
+
+/* Morphing background */
+.morph-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: morph 15s infinite;
+}
+.blob-1 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(226,57,70,0.3), transparent);
+  top: 10%; left: 70%;
+}
+.blob-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(241,196,15,0.2), transparent);
+  bottom: 10%; left: 10%;
+  animation-delay: 7s;
+}
+
+@keyframes morph {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  33% { transform: scale(1.3) rotate(120deg); }
+  66% { transform: scale(0.8) rotate(240deg); }
+}
+
+/* Main content grid */
+.content-grid {
+  position: relative;
+  z-index: 10;
+  padding: 26px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+/* Glitch header */
+.grid-header {
+  text-align: center;
+}
+.industry-tag {
+  display: inline-block;
+  background: #e63946;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.glitch-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #fff;
+  margin-top: -30px;
+  margin: 20px 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.glitch-title::before,
+.glitch-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.glitch-title::before {
+  color: #e63946;
+  animation: glitch1 2s infinite;
+}
+.glitch-title::after {
+  color: #f1c40f;
+  animation: glitch2 2s infinite;
+}
+
+@keyframes glitch1 {
+  0%, 100% { transform: translateX(0); clip-path: inset(0 0 0 0); }
+  20% { transform: translateX(-2px); clip-path: inset(0 0 85% 0); }
+}
+@keyframes glitch2 {
+  0%, 100% { transform: translateX(0); clip-path: inset(0 0 0 0); }
+  40% { transform: translateX(2px); clip-path: inset(85% 0 0 0); }
+}
+
+.subtitle-animated {
+  color: #f1c40f;
+  font-size: 1.2rem;
+  font-weight: 700;
+  animation: typing 4s steps(30) infinite;
+}
+
+@keyframes typing {
+  0%, 100% { width: 0; }
+  50% { width: 100%; }
+}
+
+/* Content blocks */
+.content-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.block {
+  background: linear-gradient(135deg, rgba(30,30,35,0.8) 0%, rgba(15,15,20,0.9) 100%);
+  border: 2px solid rgba(226,57,70,0.3);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* cursor: none; */
+}
+
+.block:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #e63946;
+  box-shadow: 0 20px 40px rgba(226,57,70,0.4);
+}
+
+.block-number {
+  position: absolute;
+  top: 20px; right: 20px;
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(226,57,70,0.5);
+}
+
+.block-content p {
+  color: #e0e0e0;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.block-title {
+  color: #f1c40f;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.block-highlight {
+  position: absolute;
+  bottom: 0; left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #e63946, #f1c40f);
+  transition: width 0.6s ease;
+}
+
+.block:hover .block-highlight {
+  width: 100%;
+}
+
+/* Trust meter */
+.trust-visual {
+  margin-top: 20px;
+}
+.trust-meter {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.meter-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #e63946, #f1c40f);
+  animation: fillMeter 3s ease forwards;
+}
+
+@keyframes fillMeter {
+  to { width: 95%; }
+}
+
+/* Stats rail */
+.stats-rail {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 40px 0;
+  border-top: 2px solid rgba(226,57,70,0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+.stat-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #e63946;
+  margin-bottom: 8px;
+}
+.stat-label {
+  color: #f1c40f;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#subtitle1{
+    margin-top: -55px;
+  margin-left: -40px;
+}
+
+/* Custom cursor */
+/* .cursor-follower {
+  position: fixed;
+  width: 40px; height: 40px;
+  background: radial-gradient(circle, rgba(226,57,70,0.6), transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+} */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-blocks { grid-template-columns: 1fr; }
+  .glitch-title { font-size: 2rem; }
+  .stats-rail { flex-direction: column; gap: 30px; }
+  .content-grid { padding: 40px 20px; }
+}
+
     </style>
 </head>
 
@@ -127,7 +399,7 @@
 
     <!-- Hero Section -->
     <div class="about-section">
-        <h1 style="color: #ffffff;">Sugar Factories</h1>
+        <h1 style="color: white; font-size: 50px;" >Sugar Factories</h1>
     </div>
 
     <!-- Slant Shape -->
@@ -140,42 +412,106 @@
 
     </div>
 
+  <div class="ultra-creative-section" id="creativeSugar">
+  <!-- Floating particles background -->
+  <div class="particles-bg">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
 
+  <!-- Morphing background shapes -->
+  <div class="morph-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
 
-    <section class="about-section-container">
-        <!-- Left Column: Image -->
-        <div class="image-column2">
-            <img src="https://cdn.pixabay.com/photo/2023/03/15/03/46/jeep-7853620_1280.jpg"
-                alt="Molasses being transported by truck">
+  <!-- Main content with brutalist grid -->
+  <div class="content-grid">
+    <!-- Header with glitch effect -->
+    <div class="grid-header">
+      <!-- <span class="industry-tag"> SUGAR INDUSTRY</span> -->
+      <h1 class="glitch-title" data-text="EFFICIENT TRANSPORT SOLUTIONS">
+        EFFICIENT TRANSPORT SOLUTIONS
+      </h1>
+      <div class="subtitle-wrapper">
+        <span class="subtitle-animated">HYGIENIC • RELIABLE • INNOVATIVE</span>
+      </div>
+    </div>
+
+    <!-- Interactive content blocks -->
+    <div class="content-blocks">
+      <div class="block block-main" data-tilt>
+        <div class="block-number"></div>
+        <div class="block-content">
+          <p>At Alaknanda Transport, we are proud to be a trusted logistics partner for sugar factories across India. With years of industry experience and a fleet designed for bulk liquid and dry cargo, we specialize in the safe, efficient, and timely transportation. </p>
         </div>
 
-        <!-- Right Column: Content -->
-        <div class="content-column2">
-            <span class="subtitle2">Sugar Factories Transportation Services</span>
-            <h2 class="main-title2">Efficient, Hygienic & Reliable Transport Solutions for India’s Sugar Industry</h2>
-            <p class="description-paragraph2"style="text-align: justify";>
-                At Alaknanda Transport, we are proud to be a trusted logistics partner for sugar factories across India.
-                With years of industry experience and a fleet designed for bulk liquid and dry cargo, we specialize in
-                the safe, efficient, and timely transportation of sugar-related products—from raw molasses and bagasse
-                to refined sugar and industrial by-products.
-            </p>
-            <!-- <a href="#" class="learn-more-button">Learn More About Our Services</a> -->
-
-            <h2 class="main-title2" style="margin-top: 40px;"><span></span> Why Sugar Factories Trust Alaknanda
-                Transport</h2>
-            <p class="description-paragraph2"  style="text-align: justify";>
-                The sugar industry operates on tight seasonal schedules, demanding precise logistics support. Alaknanda
-                Transport understands these complexities and delivers customized solutions that align with your
-                production and distribution timelines.
-            </p>
+        <div class="block-highlight"></div>
+        <div class="trust-visual">
+          <div class="trust-meter">
+            <div class="meter-fill"></div>
+          </div>
         </div>
-    </section>
+
+      </div>
+
+      <div class="block block-trust" data-tilt>
+        <div class="block-number"></div>
+        <div class="block-content">
+          
+          <!-- <h3 class="block-title">Why Trust Alaknanda?</h3> -->
+          <p>The sugar industry operates on tight seasonal schedules, demanding precise logistics support. Alaknanda Transport understands these complexities and delivers customized solutions that align with your production and distribution timelines.</p>
+        </div>
+        <div class="trust-visual">
+          <div class="trust-meter">
+            <div class="meter-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive stats -->
+    <!-- <div class="stats-rail">
+
+      <div class="stat-item">
+        <div class="stat-number" data-count="100">0</div>
+        <div class="stat-label">FACTORIES SERVED</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="24">0</div>
+        <div class="stat-label">HOURS SERVICE</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="99">0</div>
+        <div class="stat-label">SAFETY RECORD</div>
+      </div>
+    </div> -->
+
+     <h1 class="glitch-title" data-text="Why Trust Alaknanda" style="margin-left: 250px;">
+      Why Trust Alaknanda
+      </h1>
+     <div class="subtitle-wrapper" id="subtitle1">
+        <span class="subtitle-animated" style="margin-left: 450px ";>HYGIENIC • RELIABLE • INNOVATIVE</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Interactive cursor follower -->
+  <div class="cursor-follower"></div>
+</div>
+
+
+  
 
 
 
     <div class="serve-container">
         <div class="serve-section-header">
-            <h2>We serve sugar factories with:</h2>
+            <h2>We serve sugar factories with</h2>
         </div>
 
         <div class="serve-services-grid">
@@ -250,9 +586,9 @@
                 <!-- Step 1 -->
                 <div class="sugar-service-process-step">
                     <div class="sugar-service-icon-number-wrapper">
-                        <div class="sugar-service-step-number-circle green">01</div>
-                        <img src="https://img.icons8.com/ios-filled/50/e67e22/document.png" alt="Document Icon"
-                            class="sugar-service-step-icon">
+                        <!-- <div class="sugar-service-step-number-circle green"></div> -->
+                        <img src="./images/molasses1.png" alt="Document Icon"
+                            class="sugar-service-step-icon" style="color: rgb(58, 6, 6);">
                     </div>
                     <h3 class="sugar-service-step-title">Molasses Bulk Transport</h3>
                     <p class="sugar-service-step-description"  style="text-align: justify";>We offer fully sealed and stainless-steel tankers ideal
@@ -265,8 +601,8 @@
                 <!-- Step 2 -->
                 <div class="sugar-service-process-step">
                     <div class="sugar-service-icon-number-wrapper">
-                        <div class="sugar-service-step-number-circle orange">02</div>
-                        <img src="https://img.icons8.com/ios-filled/50/e67e22/delivery-box.png" alt="Delivery Box Icon"
+                        <!-- <div class="sugar-service-step-number-circle orange"></div> -->
+                        <img src="./images/ethanol.png" alt="Delivery Box Icon"
                             class="sugar-service-step-icon">
                     </div>
                     <h3 class="sugar-service-step-title">Ethanol & Liquid By-product Logistics</h3>
@@ -278,8 +614,8 @@
                 <!-- Step 3 -->
                 <div class="sugar-service-process-step">
                     <div class="sugar-service-icon-number-wrapper">
-                        <div class="sugar-service-step-number-circle teal">03</div>
-                        <img src="https://img.icons8.com/ios-filled/50/e67e22/handshake.png" alt="Handshake Icon"
+                        <!-- <div class="sugar-service-step-number-circle teal"></div> -->
+                        <img src="./images/drycargo.png" alt="Handshake Icon"
                             class="sugar-service-step-icon">
                     </div>
                     <h3 class="sugar-service-step-title">Dry Cargo Services for Bagasse & Pressmud</h3>
@@ -293,8 +629,8 @@
                 <!-- Step 4 -->
                 <div class="sugar-service-process-step">
                     <div class="sugar-service-icon-number-wrapper">
-                        <div class="sugar-service-step-number-circle blue">04</div>
-                        <img src="https://img.icons8.com/ios-filled/50/e67e22/payment-method.png"
+                        <!-- <div class="sugar-service-step-number-circle blue"></div> -->
+                        <img src="./images/sugar.png"
                             alt="Payment Method Icon" class="sugar-service-step-icon">
                     </div>
                     <h3 class="sugar-service-step-title">Refined Sugar Distribution</h3>
