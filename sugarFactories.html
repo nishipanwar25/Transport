@@ -149,201 +149,383 @@
   grid-template-columns: 1fr;
   gap: 60px;
 }
+/* ===================== */
+  .transport-section {
+            min-height: 100vh;
+            background: #ffffff;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Glitch header */
-.grid-header {
-  text-align: center;
-}
-.industry-tag {
-  display: inline-block;
-  background: #e63946;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
+        .subtle-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
 
-.glitch-title {
-  font-family: 'Orbitron', monospace;
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: #fff;
-  margin-top: -30px;
-  margin: 20px 0;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-.glitch-title::before,
-.glitch-title::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-}
-.glitch-title::before {
-  color: #e63946;
-  animation: glitch1 2s infinite;
-}
-.glitch-title::after {
-  color: #f1c40f;
-  animation: glitch2 2s infinite;
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 2;
+        }
 
-@keyframes glitch1 {
-  0%, 100% { transform: translateX(0); clip-path: inset(0 0 0 0); }
-  20% { transform: translateX(-2px); clip-path: inset(0 0 85% 0); }
-}
-@keyframes glitch2 {
-  0%, 100% { transform: translateX(0); clip-path: inset(0 0 0 0); }
-  40% { transform: translateX(2px); clip-path: inset(85% 0 0 0); }
-}
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
 
-.subtitle-animated {
-  color: #f1c40f;
-  font-size: 1.2rem;
-  font-weight: 700;
-  animation: typing 4s steps(30) infinite;
-}
+        .badge {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            position: relative;
+        }
 
-@keyframes typing {
-  0%, 100% { width: 0; }
-  50% { width: 100%; }
-}
+        .badge::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, #3b82f6, #10b981);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-/* Content blocks */
-.content-blocks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
+        .badge:hover::before {
+            opacity: 1;
+        }
 
-.block {
-  background: linear-gradient(135deg, rgba(30,30,35,0.8) 0%, rgba(15,15,20,0.9) 100%);
-  border: 2px solid rgba(226,57,70,0.3);
-  border-radius: 20px;
-  padding: 40px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  /* cursor: none; */
-}
+        .badge:hover {
+            color: white;
+        }
 
-.block:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: #e63946;
-  box-shadow: 0 20px 40px rgba(226,57,70,0.4);
-}
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
 
-.block-number {
-  position: absolute;
-  top: 20px; right: 20px;
-  font-family: 'Orbitron', monospace;
-  font-size: 2rem;
-  font-weight: 900;
-  color: rgba(226,57,70,0.5);
-}
+        .title-highlight {
+            color: #3b82f6;
+            position: relative;
+        }
 
-.block-content p {
-  color: #e0e0e0;
-  line-height: 1.7;
-  font-size: 1.1rem;
-  margin: 0;
-}
+        .title-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            border-radius: 2px;
+            transform: scaleX(0);
+            animation: underlineGrow 1s ease forwards 0.5s;
+        }
 
-.block-title {
-  color: #f1c40f;
-  font-family: 'Orbitron', monospace;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
+        @keyframes underlineGrow {
+            to { transform: scaleX(1); }
+        }
 
-.block-highlight {
-  position: absolute;
-  bottom: 0; left: 0;
-  height: 4px;
-  width: 0;
-  background: linear-gradient(90deg, #e63946, #f1c40f);
-  transition: width 0.6s ease;
-}
+        .feature-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
 
-.block:hover .block-highlight {
-  width: 100%;
-}
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-weight: 500;
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
 
-/* Trust meter */
-.trust-visual {
-  margin-top: 20px;
-}
-.trust-meter {
-  width: 100%;
-  height: 8px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.meter-fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, #e63946, #f1c40f);
-  animation: fillMeter 3s ease forwards;
-}
+        .feature-item:nth-child(1) { animation-delay: 0.8s; }
+        .feature-item:nth-child(2) { animation-delay: 1s; }
+        .feature-item:nth-child(3) { animation-delay: 1.2s; }
 
-@keyframes fillMeter {
-  to { width: 95%; }
-}
+        .feature-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #10b981);
+        }
 
-/* Stats rail */
-.stats-rail {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  padding: 40px 0;
-  border-top: 2px solid rgba(226,57,70,0.2);
-}
+        .content-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
 
-.stat-item {
-  text-align: center;
-}
-.stat-number {
-  font-family: 'Orbitron', monospace;
-  font-size: 3rem;
-  font-weight: 900;
-  color: #e63946;
-  margin-bottom: 8px;
-}
-.stat-label {
-  color: #f1c40f;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-#subtitle1{
-    margin-top: -55px;
-  margin-left: -40px;
-}
+        .text-content {
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.8s ease forwards 0.3s;
+        }
 
-/* Custom cursor */
-/* .cursor-follower {
-  position: fixed;
-  width: 40px; height: 40px;
-  background: radial-gradient(circle, rgba(226,57,70,0.6), transparent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
-} */
+        .description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 25px;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .content-blocks { grid-template-columns: 1fr; }
-  .glitch-title { font-size: 2rem; }
-  .stats-rail { flex-direction: column; gap: 30px; }
-  .content-grid { padding: 40px 20px; }
-}
+        .company-name {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #3b82f6;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .visual-area {
+            position: relative;
+            opacity: 0;
+            transform: translateX(30px);
+            animation: slideInRight 0.8s ease forwards 0.5s;
+        }
+
+        .truck-container {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .truck-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .truck-icon {
+            font-size: 120px;
+            margin-bottom: 20px;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .truck-path {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: #e2e8f0;
+            border-radius: 1px;
+            overflow: hidden;
+        }
+
+        .truck-path::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            border-radius: 1px;
+            animation: pathMove 3s ease-in-out infinite;
+        }
+
+        @keyframes pathMove {
+            0% { left: -30%; }
+            50% { left: 100%; }
+            100% { left: -30%; }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards 0.7s;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-area {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .truck-icon {
+                font-size: 80px;
+            }
+
+            .truck-container {
+                padding: 40px 20px;
+            }
+        }
+
 
     </style>
 </head>
@@ -429,75 +611,72 @@
   </div>
 
   <!-- Main content with brutalist grid -->
-  <div class="content-grid">
-    <!-- Header with glitch effect -->
-    <div class="grid-header">
-      <!-- <span class="industry-tag"> SUGAR INDUSTRY</span> -->
-      <h1 class="glitch-title" data-text="EFFICIENT TRANSPORT SOLUTIONS">
-        EFFICIENT TRANSPORT SOLUTIONS
-      </h1>
-      <div class="subtitle-wrapper">
-        <span class="subtitle-animated">HYGIENIC • RELIABLE • INNOVATIVE</span>
-      </div>
-    </div>
+  <section class="transport-section">
+        <div class="subtle-bg"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">🚛 Transport Solutions</div>
+                <h1 class="main-title">
+                    EFFICIENT <span class="title-highlight">TRANSPORT</span> SOLUTIONS
+                </h1>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-dot"></div>
+                        HYGIENIC
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-dot"></div>
+                        RELIABLE
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-dot"></div>
+                        INNOVATIVE
+                    </div>
+                </div>
+            </div>
 
-    <!-- Interactive content blocks -->
-    <div class="content-blocks">
-      <div class="block block-main" data-tilt>
-        <div class="block-number"></div>
-        <div class="block-content">
-          <p>At Alaknanda Transport, we are proud to be a trusted logistics partner for sugar factories across India. With years of industry experience and a fleet designed for bulk liquid and dry cargo, we specialize in the safe, efficient, and timely transportation. </p>
+            <div class="content-area">
+                <div class="text-content">
+                    <p class="description">
+                        At <span class="company-name">Alaknanda Transport</span>, we are proud to be a trusted logistics partner for sugar factories across India. With years of industry experience and a fleet designed for bulk liquid and dry cargo, we specialize in the safe, efficient, and timely transportation.
+                    </p>
+                    
+                    <p class="description">
+                        The sugar industry operates on tight seasonal schedules, demanding precise logistics support. <span class="company-name">Alaknanda Transport</span> understands these complexities and delivers customized solutions that align with your production and distribution timelines.
+                    </p>
+
+                 
+                </div>
+
+                <div class="visual-area">
+                    <div class="truck-container">
+                        <div class="truck-icon">🚛</div>
+                        <div class="truck-path"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Successful Deliveries</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Customer Support</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.8%</div>
+                    <div class="stat-label">On-Time Delivery</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
         </div>
-
-        <div class="block-highlight"></div>
-        <div class="trust-visual">
-          <div class="trust-meter">
-            <div class="meter-fill"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="block block-trust" data-tilt>
-        <div class="block-number"></div>
-        <div class="block-content">
-          
-          <!-- <h3 class="block-title">Why Trust Alaknanda?</h3> -->
-          <p>The sugar industry operates on tight seasonal schedules, demanding precise logistics support. Alaknanda Transport understands these complexities and delivers customized solutions that align with your production and distribution timelines.</p>
-        </div>
-        <div class="trust-visual">
-          <div class="trust-meter">
-            <div class="meter-fill"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Interactive stats -->
-    <!-- <div class="stats-rail">
-
-      <div class="stat-item">
-        <div class="stat-number" data-count="100">0</div>
-        <div class="stat-label">FACTORIES SERVED</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="24">0</div>
-        <div class="stat-label">HOURS SERVICE</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number" data-count="99">0</div>
-        <div class="stat-label">SAFETY RECORD</div>
-      </div>
-    </div> -->
-
-     <h1 class="glitch-title" data-text="Why Trust Alaknanda" style="margin-left: 250px;">
-      Why Trust Alaknanda
-      </h1>
-     <div class="subtitle-wrapper" id="subtitle1">
-        <span class="subtitle-animated" style="margin-left: 450px ";>HYGIENIC • RELIABLE • INNOVATIVE</span>
-      </div>
-    </div>
-  </div>
+    </section>
 
 
   <!-- Interactive cursor follower -->
