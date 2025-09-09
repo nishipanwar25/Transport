@@ -45,6 +45,8 @@
     <link rel="stylesheet" href="/assets/css/about.css">
     <link rel="stylesheet" href="/assets/css/typeOfVehicles.css">
     <link rel="stylesheet" href="assets/css/industries.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
 
 
 
@@ -75,6 +77,271 @@
         .footer-widget__links li a::before {
             content: none;
         }
+            .dist-serving{
+      margin: 0;
+      background: #161616;
+      color: #fff;
+      font-family: 'Cormorant Garamond', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+      
+    .heading-special {
+      text-align: center;
+      font-size: 4.2rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-top: 2.2rem;
+      margin-bottom: 2.2rem;
+      line-height: 1.12;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.6rem 1.6rem;
+      margin-bottom: 2.2rem;
+    }
+    .card {
+      background: #f8f6f1;
+      border-radius: 17px;
+      min-width: 314px;
+      max-width: 225px;
+      min-height: 230px;
+      position: relative;
+      box-shadow: 0 3px 11px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 39px;
+      padding-bottom: 16px;
+      padding-left: 13px;
+      padding-right: 13px;
+      text-align: center;
+      transition: box-shadow 0.3s, transform 0.3s;
+      will-change: transform;
+      cursor: pointer;
+      z-index: 1;
+    }
+    .card:hover {
+      box-shadow: 0 14px 30px rgba(49, 34, 35, 0.22), 0 2px 9px rgba(49,34,35,0.12);
+      transform: translateY(-10px) rotate(-2deg) scale(1.045);
+      background: #fffdf7;
+    }
+    .card-hang {
+      position: absolute;
+      top: -39px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 39px;
+      background: linear-gradient(#ae2329 83%, #2d090c 17%);
+      border-radius: 2px;
+      transition: transform 0.45s cubic-bezier(.25,1,.5,1);
+      z-index: 1;
+    }
+    .card:hover .card-hang {
+      transform: translateX(-50%) rotate(7deg) scaleY(1.12);
+    }
+    .card-dot {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: #2d090c;
+      border: 2px solid #ae2329;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px #ae232988;
+      z-index: 2;
+      transition: box-shadow 0.48s, background 0.3s;
+    }
+    .card:hover .card-dot {
+      box-shadow: 0 6px 13px #ae2329cc, 0 0 4px #63202f55;
+      background: #ae2329;
+      border-color: #ff3135;
+    }
+    .card-icon {
+      margin-bottom: 13px;
+      margin-top: 6px;
+      width: 39px;
+      height: 39px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: filter 0.3s, opacity 0.2s;
+    }
+    .card:hover .card-icon svg {
+      stroke: #7c142c;
+      filter: drop-shadow(0 2px 2px #ae232977);
+      opacity: 0.96;
+      transition: stroke 0.25s, filter 0.19s, opacity 0.19s;
+    }
+    .card-label {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #161616;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      margin-top: 7px;
+      font-family: 'Cormorant Garamond', serif;
+      transition: color 0.27s;
+    }
+    .card:hover .card-label {
+      color: #c02233;
+    }
+    .card-desc {
+      font-size: 0.93rem;
+      color: #444;
+      font-family: 'Inter', sans-serif;
+      margin-top: 3px;
+      line-height: 1.37;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.32s;
+    }
+    .card:hover .card-desc {
+      color: #883848;
+    }
+    @media (max-width: 900px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 650px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+      }
+    }
+    .card {
+  background-color: #fff;
+  background-image: 
+    linear-gradient(#f2f2f2 1px, transparent 1px),
+    linear-gradient(90deg, #f2f2f2 1px, transparent 1px);
+  background-size: 20px 20px; /* grid size */
+}
+ .container {
+      display: flex;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 30px 0 30px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      
+    }
+    .left {
+      flex: 1 1 390px;
+      max-width: 510px;
+      padding-right: 36px;
+    }
+    .heading {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 15px;
+      line-height: 1.13;
+      margin-top:35px;
+    }
+    .highlight {
+      color: #FED100;
+      font-weight: 700;
+    }
+    .desc {
+      font-size: 1.07rem;
+      color: #d8dbf1;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+    .features {
+      margin-bottom: 36px;
+    }
+    .features-list {
+      margin: 0; padding: 0; list-style: none;
+    }
+    .features-item {
+      display: flex;
+      align-items: flex-start;
+      font-size: 1.02rem;
+      color: #c8cadb;
+      margin-bottom: 15px;
+    }
+    .features-icon {
+      margin-right: 12px;
+      margin-top: 4px;
+      width: 20px; height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .features-icon svg {
+      width: 19px; height: 19px; fill: #FED100;
+      display: block;
+    }
+   
+    .right {
+      flex: 1 1 460px;
+      max-width: 550px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 300px;
+    }
+    .image-card {
+      background: darkred;
+      border-radius: 22px;
+      box-shadow: 0 4px 34px #00000044;
+      padding: 31px 36px 15px 36px;
+      width: 410px;
+      max-width: 95vw;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 45px;
+    }
+    .card-img {
+      width: 230px;
+      height: 145px;
+      object-fit: contain;
+      margin-bottom: 27px;
+      margin-top: 15px;
+      border-radius: 14px;
+      box-shadow: 0 2px 15px #c7cc41;
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-caption {
+      font-size: 1.9rem;
+      color: #FED100;
+      font-weight: 600;
+      margin-bottom: 14px;
+      margin-top: 0px;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 1000px) {
+      .container { flex-direction: column; padding: 30px 7vw 0 7vw;}
+      .right { justify-content: flex-start; margin-top: 42px;}
+      .image-card { width: 97vw; padding: 14px 0;}
+    }
+    @media (max-width: 600px) {
+      .heading { font-size: 1.2rem;}
+      .card-img { width: 98vw; height: 80px;}
+      .button { padding: 11px 20px; font-size: 1rem;}
+    }
+
+
+    
     </style>
 </head>
 
@@ -230,102 +497,152 @@
         </div>
     </section>
 
-
-
-    <section class="specialized">
-        <div class="specialized-container">
-            <div class="specialized-section-header">
-                <h2>Specialized Services for Distilleries</h2>
-                <p>
-                    Alaknanda Transport provides comprehensive logistics solutions tailored for the unique needs of
-                    distilleries, ensuring safe, compliant, and efficient movement of all related materials.
-                </p>
-            </div>
-
-            <div class="specialized-services-grid">
-                <!-- Service Card 1: Molasses Transportation -->
-                <div class="specialized-service-card">
-                    <div class="specialized-icon-wrapper">
-                        <i class="fa-solid fa-truck-field"></i>
-                    </div>
-                    <h3 class="specialized-service-title">Molasses Transportation</h3>
-                    <p class="specialized-service-description">Food-grade tankers designed to carry viscous liquids
-                        safely and cleanly.</p>
-                </div>
-
-                <!-- Service Card 2: ENA / Ethanol Logistics -->
-                <div class="specialized-service-card">
-                    <div class="specialized-icon-wrapper">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h3 class="specialized-service-title">ENA / Ethanol Logistics</h3>
-                    <p class="specialized-service-description">Secure and sealed transport for high-purity alcohol used
-                        in distilling processes.</p>
-                </div>
-
-                <!-- Service Card 3: By-Product Distribution -->
-                <div class="specialized-service-card">
-                    <div class="specialized-icon-wrapper">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h3 class="specialized-service-title">By-Product Distribution</h3>
-                    <p class="specialized-service-description">Support in transporting by-products to various processing
-                        or disposal units.</p>
-                </div>
-
-                <!-- Service Card 4: Custom Route Planning -->
-                <div class="specialized-service-card">
-                    <div class="specialized-icon-wrapper">
-                        <i class="fas fa-route"></i>
-                    </div>
-                    <h3 class="specialized-service-title">Custom Route Planning</h3>
-                    <p class="specialized-service-description">Optimized transport routes tailored for cost-efficiency
-                        and minimal transit time.</p>
-                </div>
-
-                <!-- Service Card 5: GPS Tracking -->
-                <div class="specialized-service-card">
-                    <div class="specialized-icon-wrapper">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="specialized-service-title">GPS Tracking</h3>
-                    <p class="specialized-service-description">Real-time shipment tracking and live updates for complete
-                        visibility and peace of mind.</p>
-                </div>
-                   <!-- Service Card 6: Spirit Storage -->
-
-                <div class="specialized-service-card">
-    <div class="specialized-icon-wrapper">
-        <i class="fa-solid fa-industry"></i>
+<div class="dist-serving">
+   <div class="heading-special">
+    Specialized Services for Distilleries
+  </div>
+  <div class="card-grid">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-hang"></div>
+      <div class="card-dot"></div>
+      <div class="card-icon">
+        <!-- Drop Icon SVG -->
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="#ae2329" stroke-width="3">
+          <path d="M24 7 C24 7,42 26,24 44 C6 26,24 7,24 7 Z" />
+          <path d="M24 26 Q28 24,30 30" />
+        </svg>
+      </div>
+      <div class="card-label">Molasses Transport</div>
+      <div class="card-desc">Food-grade tankers designed to carry viscous liquids safely and cleanly.</div>
     </div>
-    <h3 class="specialized-service-title">Spirit Storage Solutions</h3>
-    <p class="specialized-service-description">
-        Secure, temperature-controlled storage facilities to maintain quality and compliance.
-    </p>
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-hang"></div>
+      <div class="card-dot"></div>
+      <div class="card-icon">
+        <!-- Flask Icon SVG -->
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="#ae2329" stroke-width="2.6">
+          <path d="M19 6 v9 a8.5 8.5 0 0 0 -4 8.5 c0 6.5 7 13 9 13s9-6.5 9-13a8.5 8.5 0 0 0-4-8.5v-9" />
+          <ellipse cx="24" cy="34" rx="7.5" ry="3" />
+        </svg>
+      </div>
+      <div class="card-label">ENA/Ethanol Logistics</div>
+      <div class="card-desc">Secure, sealed transport for high-purity alcohol used in distilling processes.</div>
+    </div>
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-hang"></div>
+      <div class="card-dot"></div>
+      <div class="card-icon">
+        <!-- Arrow/Distribution SVG -->
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="#ae2329" stroke-width="2.6">
+          <polyline points="12,24 24,36 36,24" />
+          <line x1="24" y1="36" x2="24" y2="10" />
+        </svg>
+      </div>
+      <div class="card-label">By-Product Distribution</div>
+      <div class="card-desc">Support in transporting by-products to various processing or disposal units.</div>
+    </div>
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="card-hang"></div>
+      <div class="card-dot"></div>
+      <div class="card-icon">
+        <!-- Route/Map Pin SVG -->
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="#ae2329" stroke-width="2.6">
+          <circle cx="24" cy="18" r="3.8"/>
+          <path d="M24 22c-5 0-10 3.5-10 8.5C14 38 24 41 24 41s10-3 10-10.5C34 25.5 29 22 24 22z"/>
+        </svg>
+      </div>
+      <div class="card-label">Custom Route Planning</div>
+      <div class="card-desc">Optimized transport routes tailored for cost-efficiency and minimal transit time.</div>
+    </div>
+    <!-- Card 5 -->
+    <div class="card">
+      <div class="card-hang"></div>
+      <div class="card-dot"></div>
+      <div class="card-icon">
+        <!-- GPS/Location Pin SVG -->
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="#ae2329" stroke-width="2.6">
+          <circle cx="24" cy="16" r="4.5"/>
+          <path d="M24 4C16 14,8 24,24 44C40 24,32 14,24 4Z"/>
+        </svg>
+      </div>
+      <div class="card-label">GPS Tracking</div>
+      <div class="card-desc">Real-time shipment tracking and live updates for complete visibility and peace of mind.</div>
+    </div>
+    <!-- Card 6 -->
+    <div class="card">
+      <div class="card-hang"></div>
+      <div class="card-dot"></div>
+      <div class="card-icon">
+        <!-- Cube/Sugar Icon SVG -->
+        <svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="#ae2329" stroke-width="3">
+          <rect x="12" y="12" width="24" height="24" rx="4" />
+          <polyline points="12,12 24,24 36,12" />
+          <polyline points="12,36 24,24 36,36" />
+        </svg>
+      </div>
+      <div class="card-label">Spirit Storage Solutions</div>
+      <div class="card-desc">Secure, temperature-controlled storage facilities to maintain quality and compliance.</div>
+    </div>
+  </div>
 </div>
 
-            </div>
+   
+
+
+
+
+
+
+     <div class="container">
+    <!-- Left Side -->
+    <div class="left">
+      <div class="heading">
+        Cleanliness &amp; <span class="highlight">Maintenance Protocol</span>
+      </div>
+      <div class="desc">
+        Every tanker used for distillery transport undergoes routine internal and external cleaning, especially when switching between different liquid products. Our maintenance and sanitization protocols ensure that your cargo remains uncontaminated and meets the highest quality standards.
+      </div>
+      <div class="features">
+        <ul class="features-list">
+          <li class="features-item">
+            <span class="features-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 15 10"></polyline></svg>
+            </span>
+            Routine cleaning for all tankers
+          </li>
+          <li class="features-item">
+            <span class="features-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 15 10"></polyline></svg>
+            </span>
+            Separate sanitation for high-purity cargos
+          </li>
+          <li class="features-item">
+            <span class="features-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11.5 14.5 15 10"></polyline></svg>
+            </span>
+            Maintenance meets safety and quality standards
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- Right Side -->
+    <div class="right">
+      <div class="image-card">
+        <div class="card-img">
+          <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/4b3816e8-575c-4a4b-b4a3-2f1d3cbb508a.png" alt="Clean Tanker Illustration" style="width:100%;height:100%;">
         </div>
-    </section>
-
-
-
-
-
-
-
-    <section class="client-trust-section">
-        <img src="https://cdn.pixabay.com/photo/2016/11/21/16/37/loader-1846346_1280.jpg" alt="Ships in port at night"
-            class="client-trust-background-image">
-        <div class="client-trust-image-overlay">
-            <p class="client-trust-subtitle" style="padding-top: 50px;">Cleanliness & Maintenance Protocol</p>
-            <p class="client-trust-text">
-                Every tanker used for distillery transport undergoes routine internal and external cleaning, especially
-                when switching between different liquid products. Our maintenance and sanitization protocols ensure that
-                your cargo remains uncontaminated and meets the highest quality standards.
-            </p>
+        <div class="card-caption">
+          Tanker cleaning in progress
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
 
 
