@@ -8,6 +8,8 @@
     <meta name="theme-color" content="#317EFB" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alaknanda Transport | Independent Creative, Customer Experience & Performance Marketing Company</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -17,6 +19,8 @@
     <link rel="stylesheet" href="/assets/css/helper.css">
     <link rel="stylesheet" href="/assets/css/theme copy.css">
     <link rel="stylesheet" href="/assets/css/revamp.css">
+     <link rel="stylesheet" href="/assets/css/responsive-master.css">
+
     <!-- IcoFont CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.1/icofont.min.css">
 
@@ -100,6 +104,8 @@
 #hero video {
   visibility: hidden;
 }
+
+
 .navbar-logo {
   width: 220px !important;   /* set desired width */
   height: auto !important;   /* keep proportions */
@@ -196,6 +202,21 @@ body.fonts-loaded .hero-text {
   text-align: left;       /* aligns text content inside */
   box-sizing: border-box;
 }
+/* ===================================== */
+/* CSS for logo animation */
+.navbar-logo {
+    transition: all 0.8s ease-in-out;
+}
+
+.navbar-logo.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.navbar-logo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
     </style>
@@ -209,7 +230,7 @@ body.fonts-loaded .hero-text {
             <div class="tt-header-col nav-logo">
                 <!-- Begin logo 
                 ================ -->
-                <img src="./images/icons/Alaknanda Transport logo final.svg" alt="" class="navbar-logo">
+                <img src="./images/icons/Alaknanda Transport logo final.svg" alt="" class="navbar-logo hidden">
                 
                 <!-- End logo -->
             </div>
@@ -302,6 +323,8 @@ body.fonts-loaded .hero-text {
         </div>
         <!-- /.header-inner -->
     </header>
+ 
+
 
 
     <!-------------- Start Hero Section ------------->
@@ -1180,7 +1203,7 @@ Vehicles are well-maintained and spotlessly clean—unlike other carriers. It sh
                                                 loading="lazy" decoding="async"
                                                 src="/images/Alaknanda Transport logo final.png" width="103" height="55"
                                                 alt="Cityride"></a>
-                                        <p class="footer-widget__about-text" style="text-align: justify;">Alaknanda Transport Your reliable partner in pan-India molasses and bulk logistics. With GPS-enabled fleet management, strict safety standards, and transparent 24/7 service, we ensure every delivery is smooth, secure, and stress free.</p>
+                                        <p class="footer-widget__about-text" style="text-align: justify;">Alaknanda Transport Your reliable partner in pan-India molasses and bulk logistics. With GPS-enabled fleet management, strict safety standards, and transparent 24/7 service, we ensure every delivery is smooth, secure, and stress-free.</p>
                                         <!-- /.footer-widget__about-text -->
                                         <div class="footer-widget__social">
                                             <a href="https://www.facebook.com"><i
@@ -1545,6 +1568,36 @@ window.addEventListener('load', () => {
     "#hero .titleUp, #hero .titleDown, #hero .inline-block.space, #hero video"
   ).forEach(el => el.style.visibility = 'visible');
 });
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.querySelector('.navbar-logo');
+    const heroSection = document.querySelector('.hero-section'); // Replace with your hero section selector
+    
+    // Hide logo initially
+    logo.style.opacity = '0';
+    logo.style.transform = 'translateY(-30px)';
+    logo.style.transition = 'all 0.8s ease-in-out';
+    
+    // Function to show logo
+    function showLogo() {
+        logo.style.opacity = '1';
+        logo.style.transform = 'translateY(0)';
+    }
+    
+    // Option 1: Show logo after a specific delay
+    setTimeout(showLogo, 3000); // Adjust timing as needed
+    
+    // Option 2: Show logo when hero animation completes (if using CSS animations)
+    if (heroSection) {
+        heroSection.addEventListener('animationend', showLogo);
+    }
+    
+    // Option 3: Show logo when page is fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(showLogo, 1000);
+    });
+});
+
 
   
   
