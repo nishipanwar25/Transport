@@ -150,381 +150,702 @@
   gap: 60px;
 }
 /* ===================== */
-  .transport-section {
-            min-height: 100vh;
-            background: #ffffff;
-            font-family: 'Inter', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .subtle-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 15% 85%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .container {
-            max-width: 1200px;
+   .main-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 60px 20px;
-            position: relative;
-            z-index: 2;
+            padding: 80px 60px;
+            display: flex;
+            align-items: flex-start;
+            background-color: whitesmoke;
+            gap: 120px;
         }
 
-        .section-header {
-            text-align: center;
+        /* Left Content Section */
+        .left-section {
+            flex: 1;
+            max-width: 650px;
+            padding-top: 20px;
+        }
+
+        .main-heading {
+            font-size: 3.6rem;
+            font-weight: 600;
+            line-height: 1.1;
             margin-bottom: 80px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
+            letter-spacing: -0.02em;
         }
 
-        .badge {
-            display: inline-block;
-            background: #f1f5f9;
-            color: #475569;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            position: relative;
+        .main-heading .blue-text {
+            color: black;
         }
 
-        .badge::before {
-            content: '';
-            position: absolute;
-            left: -1px;
-            top: -1px;
-            right: -1px;
-            bottom: -1px;
-            background: linear-gradient(45deg, #3b82f6, #10b981);
-            border-radius: 20px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .main-heading .red-text {
+            color: #dc2626;
         }
 
-        .badge:hover::before {
-            opacity: 1;
-        }
-
-        .badge:hover {
-            color: white;
-        }
-
-        .main-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
+        .main-heading .dark-text {
             color: #1e293b;
-            margin-bottom: 20px;
-            line-height: 1.2;
         }
 
-        .title-highlight {
-            color: #3b82f6;
-            position: relative;
+        /* Vision and Mission Sections */
+        .content-sections {
+            display: flex;
+            flex-direction: column;
+            gap:45px;
         }
 
-        .title-highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
-            border-radius: 2px;
-            transform: scaleX(0);
-            animation: underlineGrow 1s ease forwards 0.5s;
+        .content-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
         }
 
-        @keyframes underlineGrow {
-            to { transform: scaleX(1); }
+        .item-number {
+            color: #dc2626;
+            font-size: 1.4rem;
+            font-weight: 600;
+            min-width: 35px;
+            margin-top: 2px;
         }
 
-        .feature-list {
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            color: #dc2626;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .item-description {
+            margin-top: -41px;
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 400;
+            max-width: 480px;
+        }
+
+        /* Right Section - Truck Container */
+        .right-section {
+            flex: 1;
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+            align-items: flex-start;
+            padding-top: 40px;
         }
 
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #64748b;
-            font-weight: 500;
-            font-size: 16px;
-            opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        .feature-item:nth-child(1) { animation-delay: 0.8s; }
-        .feature-item:nth-child(2) { animation-delay: 1s; }
-        .feature-item:nth-child(3) { animation-delay: 1.2s; }
-
-        .feature-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #3b82f6, #10b981);
-        }
-
-        .content-area {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-
-        .text-content {
-            opacity: 0;
-            transform: translateX(-30px);
-            animation: slideInLeft 0.8s ease forwards 0.3s;
-        }
-
-        .description {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #475569;
-            margin-bottom: 25px;
-        }
-
-        .company-name {
-            color: #3b82f6;
-            font-weight: 600;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #3b82f6;
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
+        .truck-wrapper {
             position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-        }
-
-        .visual-area {
-            position: relative;
-            opacity: 0;
-            transform: translateX(30px);
-            animation: slideInRight 0.8s ease forwards 0.5s;
-        }
-
-        .truck-container {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .truck-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .truck-icon {
-            font-size: 120px;
-            margin-bottom: 20px;
-            display: block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .truck-path {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            height: 2px;
-            background: #e2e8f0;
-            border-radius: 1px;
-            overflow: hidden;
-        }
-
-        .truck-path::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 30%;
-            height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
-            border-radius: 1px;
-            animation: pathMove 3s ease-in-out infinite;
-        }
-
-        @keyframes pathMove {
-            0% { left: -30%; }
-            50% { left: 100%; }
-            100% { left: -30%; }
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards 0.7s;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #10b981);
-            transform: scaleX(0);
+            background: linear-gradient(135deg, #7e0b0b 0%, #6c0707 100%);
+            border-radius: 35px;
+            padding: 50px;
+            transform: perspective(1200px) rotateY(-12deg) rotateX(2deg);
+            box-shadow: 
+                0 25px 60px rgba(59, 130, 246, 0.3),
+                0 8px 16px rgba(59, 130, 246, 0.2);
             transition: transform 0.3s ease;
         }
 
-        .stat-card:hover::before {
-            transform: scaleX(1);
+        .truck-wrapper:hover {
+            transform: perspective(1200px) rotateY(-8deg) rotateX(1deg) scale(1.02);
         }
 
-        .stat-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .truck-container {
+            width: 450px;
+            height: 300px;
+            background: #ffffff;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
+        /* Detailed Truck Design - Matching the image exactly */
+        .truck-body {
+            position: absolute;
+            left: 30px;
+            top: 90px;
+            width: 160px;
+            height: 130px;
+            background: #e2e8f0;
+            border-radius: 12px;
+            border: 2px solid #cbd5e1;
+        }
+
+        .truck-cab {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            width: 90px;
+            height: 65px;
+            background: #94a3b8;
+            border-radius: 8px;
+        }
+
+        .truck-windshield {
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            width: 70px;
+            height: 35px;
+            background: #475569;
+            border-radius: 6px;
+        }
+
+        .truck-door {
+            position: absolute;
+            left: 8px;
+            top: 45px;
+            width: 45px;
+            height: 30px;
+            background: #cbd5e1;
+            border-radius: 4px;
+            border: 1px solid #94a3b8;
+        }
+
+        .truck-grille {
+            position: absolute;
+            left: 145px;
+            top: 40px;
+            width: 20px;
+            height: 50px;
+            background: #64748b;
+            border-radius: 3px;
+        }
+
+        /* Container/Trailer */
+        .truck-trailer {
+            position: absolute;
+            right: 30px;
+            top: 70px;
+            width: 200px;
+            height: 150px;
+            background: #f8fafc;
+            border-radius: 15px;
+            border: 3px solid #e2e8f0;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .truck-logo {
+            position: absolute;
+            left: 20px;
+            top: 60px;
+            font-size: 16px;
             font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 8px;
+            color: #374151;
+            letter-spacing: 1px;
         }
 
-        .stat-label {
-            color: #64748b;
-            font-weight: 500;
-            font-size: 14px;
+        /* Wheels - Exact positioning */
+        .truck-wheel {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #1f2937;
+            border-radius: 50%;
+            bottom: 30px;
+            border: 4px solid #374151;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        .wheel-front { left: 70px; }
+        .wheel-middle { left: 180px; }
+        .wheel-rear { right: 70px; }
+
+        .wheel-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: #6b7280;
+            border-radius: 50%;
+        }
+
+        /* Decorative elements */
+        .truck-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .truck-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 130px;
+            height: 130px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* Additional truck details */
+        .truck-bumper {
+            position: absolute;
+            left: 170px;
+            top: 80px;
+            width: 15px;
+            height: 80px;
+            background: #94a3b8;
+            border-radius: 3px;
+        }
+
+        .truck-step {
+            position: absolute;
+            left: 30px;
+            bottom: 45px;
+            width: 25px;
+            height: 8px;
+            background: #64748b;
+            border-radius: 2px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main-container {
+                gap: 80px;
+                padding: 60px 40px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .main-heading {
+                font-size: 3.8rem;
             }
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+                gap: 60px;
+                align-items: center;
+                text-align: center;
             }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
+            
+            .truck-wrapper {
+                transform: none;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+            
+            .main-heading {
+                font-size: 3.4rem;
             }
         }
 
         @media (max-width: 768px) {
-            .content-area {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .feature-list {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .truck-icon {
-                font-size: 80px;
-            }
-
-            .truck-container {
+            .main-container {
                 padding: 40px 20px;
             }
+            
+            .main-heading {
+                font-size: 2.8rem;
+            }
+            
+            .truck-container {
+                width: 360px;
+                height: 240px;
+            }
+            
+            .truck-wrapper {
+                padding: 30px;
+            }
         }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 2.2rem;
+            }
+            
+            .truck-container {
+                width: 300px;
+                height: 200px;
+            }
+            
+            .content-sections {
+                gap: 35px;
+            }
+        }
+        .blue-text-sugar{
+            color: #fed100;
+        }
+        /* whysection */
+          .why-section{
+  background: #242252;
+  min-height: 100vh;
+  color: #fff;
+  
+   min-height: 100vh;
+  background:
+    linear-gradient(to right, rgba(46,234,255,0.08) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(46,234,255,0.08) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(16,209,254,0.10) 2px, transparent 2px) 0 0;
+  background-size:
+    80px 80px,                 /* grid spacing */
+    80px 80px,
+    160px 160px;               /* dot spacing */
+  background-color: #242252;   /* main deep blue backdrop */
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+.smart-automation-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  position: relative;
+}
+
+.smart-automation-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to right, 
+    rgba(52,54,139,0.1) 0 1px, 
+    transparent 1px 80px
+  ),
+  repeating-linear-gradient(
+    to bottom,
+    rgba(52,54,139,0.1) 0 1px, 
+    transparent 1px 80px
+  );
+  z-index: 0;
+}
+
+.automation-content {
+  z-index: 1;
+  position: relative;
+  margin-top: 77px;
+}
+
+.headline {
+  font-size: 2.6rem;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
+}
+.headline span {
+  color: #f2a045;
+}
+.subheadline {
+  font-size: 1.5rem;
+  color: #10d1fe;
+  margin-bottom: 1em;
+  border-bottom: 2px solid #10d1fe;
+  display: inline-block;
+}
+.description {
+  margin-bottom: 0.8em;
+  line-height: 1.6;
+}
+
+.automation-features {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2em;
+}
+
+.feature-block {
+  background: linear-gradient(135deg, #0dcfca 0%, #3685fa 100%);
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 24px 0 rgba(10,136,255,0.1);
+  font-size: 1.15rem;
+}
+
+.automation-image-card {
+  z-index: 1;
+  background: rgba(255,255,255,0.04);
+  border-radius: 22px;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18);
+  padding: 2.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.automation-image {
+  width: 320px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 2px rgba(0,0,0,0.3);
+}
+.sparkle-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(16,209,254,0.65);
+  box-shadow: 0 0 12px 3px rgba(16,209,254,0.12), 
+              0 0 2px 0 rgba(46,234,255,0.28);
+  animation: sparkle 2.8s infinite alternate;
+}
+
+@keyframes sparkle {
+  0% { filter: brightness(1); opacity: 0.7; }
+  50% { filter: brightness(2.3); opacity: 1; }
+  100% { filter: brightness(0.7); opacity: 0.3;}
+}
+.underline{
+  text-decoration: underline;
+  text-decoration-color: #51060a; /* your custom color */
+  text-underline-offset: 4px; /* space between text and underline */
+  text-decoration-thickness: 6px; /* thickness of the underline */
+}
+.headline {
+  font-size: 44px;
+  font-weight: bold;
+  text-align: center; /* optional */
+  line-height: 2.2;
+ 
+}
+
+.underline {
+  background: linear-gradient(90deg, #FED100, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 20px;
+  font-weight: bolder;
+}
+/* ================================================================================== */
+  .serving-container {
+      background: linear-gradient(135deg, #8e9dc0 0%, #d8a2a8 50%, #ecd779 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .serving-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="300" r="150" fill="url(%23a)"/><circle cx="800" cy="200" r="100" fill="url(%23a)"/><circle cx="600" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
+      background-size: cover;
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .servingg-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .serving-content {
+      color: #ffffff;
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #60a5fa;
+      margin-bottom: 1.5rem;
+    }
+    
+    .serving-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: rgb(83, 14, 14);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .serving-subtitle {
+      font-size: 1.25rem;
+      color: black;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 0.75rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .feature-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #5a0808;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .feature-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: black;
+    }
+    
+   
+    
+   
+    
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .visual-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    .map-illustration {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    
+    .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+    
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FED100;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      color: #570e0e;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+    
+    .floating-badge {
+      position: absolute;
+      top: -0.5rem;
+      right: -0.5rem;
+      background: #a0cfbf;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    }
+    
+    @media (max-width: 1024px) {
+      .servingg-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+      }
+      
+      .serving-title {
+        font-size: 2.5rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .serving-title {
+        font-size: 2rem;
+      }
+      
+      .serving-subtitle {
+        font-size: 1.125rem;
+      }
+    }
 
 
     </style>
@@ -594,98 +915,74 @@
 
     </div>
 
-  <div class="ultra-creative-section" id="creativeSugar">
-  <!-- Floating particles background -->
-  <div class="particles-bg">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-  </div>
+  <div class="main-container">
+        <!-- Left Content Section -->
+        <div class="left-section">
+            <h1 class="main-heading">
+                <span class="blue-text">Efficient, Hygienic & Reliable</span> <span class="red-text"> Transport Solutions for India’s<br>
+                </span> <span class="blue-text-sugar">
+                Sugar Industry</span>
+            </h1>
 
-  <!-- Morphing background shapes -->
-  <div class="morph-bg">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-  </div>
-
-  <!-- Main content with brutalist grid -->
-  <section class="transport-section">
-        <div class="subtle-bg"></div>
-        
-        <div class="container">
-            <div class="section-header">
-                <div class="badge">🚛 Transport Solutions</div>
-                <h1 class="main-title">
-                    EFFICIENT <span class="title-highlight">TRANSPORT</span> SOLUTIONS
-                </h1>
-                <div class="feature-list">
-                    <div class="feature-item">
-                        <div class="feature-dot"></div>
-                        HYGIENIC
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-dot"></div>
-                        RELIABLE
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-dot"></div>
-                        INNOVATIVE
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-area">
-                <div class="text-content">
-                    <p class="description">
-                        At <span class="company-name">Alaknanda Transport</span>, we are proud to be a trusted logistics partner for sugar factories across India. With years of industry experience and a fleet designed for bulk liquid and dry cargo, we specialize in the safe, efficient, and timely transportation.
-                    </p>
+            <div class="content-sections">
+                <div class="content-item">
                     
-                    <p class="description">
-                        The sugar industry operates on tight seasonal schedules, demanding precise logistics support. <span class="company-name">Alaknanda Transport</span> understands these complexities and delivers customized solutions that align with your production and distribution timelines.
-                    </p>
-
-                 
-                </div>
-
-                <div class="visual-area">
-                    <div class="truck-container">
-                        <div class="truck-icon">🚛</div>
-                        <div class="truck-path"></div>
+                    <div class="item-content">
+                        <div class="item-title"></div>
+                        <p class="item-description">
+                            At Alaknanda Transport, we are proud to be a trusted logistics partner for sugar factories across India. With years of industry experience and a fleet designed for bulk liquid and dry cargo, we specialize in the safe, efficient, and timely transportation of sugar-related products—from raw molasses and bagasse to refined sugar and industrial by-products.
+                        </p>
                     </div>
                 </div>
-            </div>
 
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Successful Deliveries</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Customer Support</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">99.8%</div>
-                    <div class="stat-label">On-Time Delivery</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
+              
             </div>
         </div>
-    </section>
+
+        <!-- Right Section - Truck -->
+        <div class="right-section">
+            <div class="truck-wrapper">
+                <img src="./images/sugar1.png" alt="image" width="400px" height="300px">
+        </div>
+    </div>
+    </div>
+    <!-- ============================================================================================================ -->
+<div class="why-section">
 
 
-  <!-- Interactive cursor follower -->
-  <div class="cursor-follower"></div>
-</div>
-
+  <div class="smart-automation-wrapper">
+  <div class="automation-content">
+  <h1 class="headline">
+  Why Sugar Factories Trust <br>
+  <span class="underline">Alaknanda Transport</span>
+</h1>
 
   
-
+    <p class="description">
+      
+    </p>
+    <p class="description">
+    The sugar industry operates on tight seasonal schedules, demanding precise logistics support. Alaknanda Transport understands these complexities and delivers customized solutions that align with your production and distribution timelines.
+    </p>
+    <div class="automation-features">
+     
+    </div>
+  </div>
+  <div class="automation-image-card">
+    <img src="./images/truck4.jpg" alt="Mobile Interface" class="automation-image"/>
+  </div>
+</div>
+<div class="sparkle-overlay">
+  <span class="dot" style="top:12%;left:23%;"></span>
+  <span class="dot" style="top:38%;left:47%;"></span>
+  <span class="dot" style="top:72%;left:62%;"></span>
+  <span class="dot" style="top:83%;left:19%;"></span>
+  <span class="dot" style="top:55%;left:77%;"></span>
+   
+ </div>
+ </div>
+  
+<!-- ======================================================================================================= -->
 
 
     <div class="serve-container">
@@ -827,26 +1124,105 @@
 
 
 
-    <div class="mission-main-container" style="margin: 50px 20px; width: auto;">
-        <!-- Left Content Column -->
-        <div class="mission-content-column">
-            <h2>Serving Sugar Belts Across India</h2>
-            <p style="text-align: justify">From Uttar Pradesh and Maharashtra to Karnataka, Tamil Nadu, and Gujarat, we support India’s major
-                sugar-producing states with scalable transport capacity and round-the-clock dispatch support.</p>
-            <!-- <h2>Our Mission</h2> -->
-            <div class="vision-buttons">
-                <p style="text-align: justify">Whether you're a co-operative sugar mill, a private refinery, or an ethanol blending unit, Alaknanda
-                    Transport is ready to be your reliable logistics backbone.</p>
+   <section class="serving-container">
+    <div class=" servingg-container">
+      <div class="serving-content">
+       
+        
+        <h1 class="serving-title">
+          Serving Sugar Belts Across India
+        </h1>
+        
+        <p class="serving-subtitle">
+          From Uttar Pradesh and Maharashtra to Karnataka, Tamil Nadu, and Gujarat, we support India's major sugar-producing states with scalable transport capacity and round-the-clock dispatch support.
+        </p>
+        
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
             </div>
+            <span class="feature-text">Pan-India Coverage</span>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            <span class="feature-text">24/7 Operations</span>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <span class="feature-text">Real-time Tracking</span>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4"/>
+                <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1"/>
+              </svg>
+            </div>
+            <span class="feature-text">Compliance Ready</span>
+          </div>
         </div>
-
-        <!-- Right Image Column -->
-        <!-- <div class="image-column-line"> -->
-        <div class="image-column">
-            <img src="https://cdn.pixabay.com/photo/2016/11/21/14/03/woman-1845572_1280.jpg" alt="Team Photo">
+        
+        
+      </div>
+      
+      <div class="hero-visual">
+        <div class="visual-card">
+          <div class="floating-badge">Live Tracking</div>
+          <div class="map-illustration">
+            <svg width="300" height="160" viewBox="0 0 300 160">
+              <!-- India outline simplified -->
+              <path d="M50 140 L80 120 L120 100 L160 80 L200 60 L250 40" 
+                    stroke="#3b82f6" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="50" cy="140" r="8" fill="#10b981"/>
+              <circle cx="120" cy="100" r="6" fill="#f59e0b"/>
+              <circle cx="200" cy="60" r="6" fill="#f59e0b"/>
+              <circle cx="250" cy="40" r="8" fill="#ef4444"/>
+              
+              <!-- Animated dots -->
+              <circle cx="80" cy="120" r="4" fill="#3b82f6">
+                <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="160" cy="80" r="4" fill="#3b82f6">
+                <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+          </div>
+          
+          <div class="stats-row">
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">States Covered</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Routes Active</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support</span>
+            </div>
+          </div>
         </div>
-        <!-- </div> -->
+      </div>
     </div>
+  </section>
 
     </section>
 
@@ -863,24 +1239,24 @@
     <!----------- Start Footer Sections ---------------->
 
 
-    <div class="footer-wrapper">
+  <div class="footer-wrapper">
         <!-- the loop -->
         <div data-elementor-type="wp-post" data-elementor-id="835" class="elementor elementor-835">
             <div class="elementor-element elementor-element-1963468 e-flex e-con-boxed e-con e-parent" data-id="1963468"
                 data-element_type="container">
-                <div class="e-con-inner">
+                <div class="e-con-inner" >
                     <div class="elementor-element elementor-element-e896b7e elementor-widget elementor-widget-cityride-call-to-action"
                         data-id="e896b7e" data-element_type="widget" data-widget_type="cityride-call-to-action.default">
-                        <div class="elementor-widget-container">
+                        <div class="elementor-widget-container" >
 
                             <section class="cta-one">
-                                <div class="container">
+                                <div class="container" >
                                     <div class="cta-one__inner">
                                         <!-- <div class="cta-one__inner__bg"
                                             style="background-image: url(/images/footer-book-banner.png);">
                                         </div> -->
                                         <!-- /.cta-one__inner__bg -->
-                                        <div class="row" style="margin-top: 170px;">
+                                        <div class="row" style="margin-top:79px ;">
                                             <div class="col-lg-6">
                                                 <div class="cta-one__content">
                                                     <div class="sec-title ">
@@ -944,10 +1320,10 @@
                 <div class="elementor-element elementor-element-a71829f e-flex e-con-boxed e-con e-child"
                     data-id="a71829f" data-element_type="container">
                     <div class="e-con-inner"
-                        style="width: 100%; display: flex; justify-content: flex-start; gap: 40px; ">
+                        style="width: 100%; display: flex; justify-content: flex-start; gap: 20px; ">
                         <div class="elementor-element elementor-element-cb2e830 elementor-widget elementor-widget-cityride-shape"
                             data-id="cb2e830" data-element_type="widget" data-widget_type="cityride-shape.default">
-                            <div class="elementor-widget-container">
+                            <div class="elementor-widget-container"style="margin-top: -69px;">
                                 <div class="main-footer__bg" style="background-image: url(/images/footerbg.png);">
                                 </div>
                             </div>
@@ -968,13 +1344,13 @@
                             <div class="elementor-element elementor-element-69d2541 elementor-widget elementor-widget-footer-about-two"
                                 data-id="69d2541" data-element_type="widget"
                                 data-widget_type="footer-about-two.default">
-                                <div class="elementor-widget-container">
+                                <div class="elementor-widget-container" style="margin-top: -89px;">
                                     <div class="footer-widget footer-widget--about">
                                         <a href="#" class="footer-widget__logo logo-retina footer-logo"><img
                                                 loading="lazy" decoding="async"
-                                                src="/images/Alaknanda Transport logo final.png" 
+                                                src="/images/Alaknanda Transport logo final.png" width="103" height="55"
                                                 alt="Cityride"></a>
-                                        <p class="footer-widget__about-text">Alaknanda Transport: Your reliable partner in pan-India molasses and bulk logistics. With GPS-enabled fleet management, strict safety standards, and transparent 24/7 service, we ensure every delivery is smooth, secure, and stress-free.</p>
+                                        <p class="footer-widget__about-text" style="text-align: justify;">Alaknanda Transport Your reliable partner in pan-India molasses and bulk logistics. With GPS-enabled fleet management, strict safety standards, and transparent 24/7 service, we ensure every delivery is smooth, secure, and stress-free.</p>
                                         <!-- /.footer-widget__about-text -->
                                         <div class="footer-widget__social">
                                             <a href="https://www.facebook.com"><i
@@ -995,7 +1371,7 @@
                             <div class="elementor-element elementor-element-9eceff4 elementor-widget elementor-widget-footer-nav-menu"
                                 data-id="9eceff4" data-element_type="widget" data-widget_type="footer-nav-menu.default">
                                 <div class="elementor-widget-container">
-                                    <div class="footer-widget footer-widget--links" style="margin-right: 50px;">
+                                    <div class="footer-widget footer-widget--links" style="margin-right: 50px; margin-top: -70px;">
                                         <h2 class="footer-widget__title" style="margin-left: 10px;">Quick Links</h2>
                                         <!-- /.footer-widget__title -->
                                         <div class="menu-quick-links-container">
@@ -1088,7 +1464,7 @@
                             data-id="60bcc0b" data-element_type="container" style="margin-left: 20px;">
                             <div class="elementor-element elementor-element-51deedd elementor-widget elementor-widget-footer-contact"
                                 data-id="51deedd" data-element_type="widget" data-widget_type="footer-contact.default">
-                                <div class="elementor-widget-container">
+                                <div class="elementor-widget-container" style="margin-top: -70px;">
                                     <div class="footer-widget footer-widget--contact">
                                         <h2 class="footer-widget__title">office address</h2>
                                         <!-- /.footer-widget__title -->
