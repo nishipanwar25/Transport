@@ -72,6 +72,250 @@
         .footer-widget__links li a::before {
             content: none;
         }
+        /* ========================================================== */
+          .logistics-services-section {
+  background: #fafbfc;
+  padding: 40px 0 10px 0;
+  width: 100%;
+}
+
+.logistics-main-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #15384A;
+  line-height: 1.13;
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.logistics-services-cards {
+  max-width: 1660px;
+  display: flex;
+  gap: 32px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logistics-service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 6px 36px 0 rgba(20, 38, 110, 0.10);
+  flex: 1 1 33%;
+  display: flex;
+  flex-direction: column;
+  min-width: 370px;
+  max-width: 540px;
+  transition: box-shadow .22s, transform .22s;
+  height: 567px;
+  
+}
+
+.logistics-service-card:hover {
+  box-shadow: 0 12px 48px 0 #22232622;
+  transform: translateY(-7px) scale(1.01);
+}
+
+.logistics-service-header {
+  padding: 44px 36px 18px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logistics-service-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #12353b;
+  transition: background .22s, color .22s;
+  border-radius: 3px;
+  padding: 6px 0;
+  z-index: 2;
+}
+
+.logistics-service-icon {
+  position: absolute;
+  right: 2px;
+  bottom: -39px;
+  background: #15384A;
+  color: #fff;
+  width: 83px;
+  height: 83px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: background .22s, color .22s, border .22s;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 22px rgba(26,30,30,0.07);
+  font-size: 2.1rem;
+}
+
+.logistics-service-desc {
+  color: #757A89;
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 10px 36px 12px 36px;
+  z-index: 2;
+}
+
+.logistics-service-img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 270px;
+  max-height: 300px;
+  display: block;
+}
+
+.logistics-service-card:hover .logistics-service-title {
+  background: #15384A;
+  color: #fff;
+  padding: 6px 8px;
+}
+
+.logistics-service-card:hover .logistics-service-icon {
+  background: #fff;
+  color: #15384A;
+  border: 5px solid #15384A;
+}
+
+@media (max-width: 1300px) {
+  .logistics-services-cards { flex-direction: column; max-width: 99vw;}
+  .logistics-service-card { max-width: 95vw; min-width: 0; }
+}
+.logistics-services-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* spacing between cards */
+  max-width: 1200px; /* optional: limit the container width */
+  margin: 0 auto; /* centering the grid */
+  
+}
+
+.logistics-service-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.logistics-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  
+}
+
+.logistics-service-title {
+  font-size: 2.2em;
+  font-weight: bold;
+}
+
+.logistics-service-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.logistics-service-desc {
+  font-size: 1.4em;
+  margin-bottom: 12px;
+}
+
+.logistics-service-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+/* =========================================== */
+
+.transport-feature-section {
+  background: #212531;
+  padding: 55px 0 16px 0;
+  margin: 0;
+  height: 566px;
+}
+
+.transport-feature-title {
+  color: black;
+  text-align: center;
+  font-size: 2.6rem; /* 42px */
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: .5px;
+}
+
+.transport-feature-underline {
+  height: 3px;
+  width: 48px;
+  background: #19C2FF;
+  margin: 20px auto 32px auto;
+  border-radius: 2px;
+}
+
+.transport-feature-grid {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 119px 36px;
+  justify-items: left;
+}
+
+.transport-feature-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 700px;
+  margin-bottom: 0;
+}
+
+.transport-feature-icon {
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+
+.transport-feature-item-title {
+  font-size: 2rem; /* 32px */
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 11px;
+  line-height: 1.1;
+}
+
+.transport-feature-item-desc {
+  color: #B5BAC3;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  line-height: 1.56;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+  .transport-feature-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 28px 0;
+  }
+  .transport-feature-item { max-width: 96vw; }
+}
+
+@media (max-width: 600px) {
+  .transport-feature-title { font-size: 2.08rem; }
+  .transport-feature-item-title { font-size: 1.32rem; }
+  .transport-feature-icon svg { width: 44px; height: 44px; }
+}
+
     </style>
 </head>
 
@@ -141,172 +385,265 @@
 
 
 
-    <section class="our-vehicle-section"> <!-- Updated class name -->
-        <!-- Left Content Column -->
-        <div class="our-vehicle-content-column">
-            <h2 class="our-vehicle-title-main">Specialized Fleet for Safe, Efficient Molasses Transportation</h2>
-            <p class="our-vehicle-description-text" style="text-align: justify">
-                At Alaknanda Transport, we operate a dedicated fleet of high-capacity tankers designed specifically for
-                the safe and compliant transportation of molasses and other liquid bulk materials across India. Each
-                vehicle in our fleet meets industry regulations and is maintained to the highest standards to ensure
-                reliability, hygiene, and safety during transit.
-            </p>
+   <section class="our-vehicle-section">
+  <div class="our-vehicle-container">
+    <div class="our-vehicle-card">
+      <!-- Left Content -->
+      <div class="our-vehicle-content">
+        <h2 class="our-vehicle-title">Specialized Fleet for Safe, Efficient Molasses Transportation</h2>
+        <div class="our-vehicle-line"></div>
+        <p class="our-vehicle-desc">
+          At Alaknanda Transport, we operate a dedicated fleet of high-capacity tankers designed specifically
+          for the safe and compliant transportation of molasses and other liquid bulk materials across India.
+          Each vehicle in our fleet meets industry regulations and is maintained to the highest standards to
+          ensure reliability, hygiene, and safety during transit.
+        </p>
+        <!-- <a href="#" class="our-vehicle-btn">Explore Fleet</a> -->
+      </div>
+
+      <!-- Right Image -->
+      <div class="our-vehicle-image">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/11/29/04/15/digger-1867268_1280.jpg"
+          alt="Molasses Tanker Truck"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+   <section class="logistics-services-section">
+  <h2 class="logistics-main-heading">
+    Our Tanker Fleet Includes:
+  </h2>
+  <div class="logistics-services-cards">
+    <div class="logistics-service-card">
+      <div class="logistics-service-header">
+        <div class="logistics-service-title">Mild Steel (MS) Tankers</div>
+        <div class="logistics-service-icon">
+          <!-- Airplane SVG icon -->
+         <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="5" y="20" width="45" height="20" stroke="black" stroke-width="2" fill="none"/>
+  <circle cx="16" cy="45" r="5" stroke="black" stroke-width="2" fill="none"/>
+  <circle cx="44" cy="45" r="5" stroke="black" stroke-width="2" fill="none"/>
+  <rect x="50" y="30" width="10" height="10" stroke="black" stroke-width="2" fill="none"/>
+  <line x1="50" y1="40" x2="60" y2="40" stroke="black" stroke-width="2"/>
+</svg>
         </div>
+      </div>
+      <div class="logistics-service-desc">
+       Perfect for non-corrosive liquid transport such as molasses and syrup-based products. <br>
 
-        <!-- Right Image Column -->
-        <div class="our-vehicle-image-column">
-            <img src="https://cdn.pixabay.com/photo/2016/11/29/04/15/digger-1867268_1280.jpg"
-                alt="Molasses Tanker Truck">
+
+  <br>
+  Capacity: 10 KL to 40 KL
+  <br>
+
+Usage: Widely used for molasses transport <br>
+
+Features: Heavy-duty chassis, anti-leak welding, and pressure-tested containers <br>
+
+      </div>
+      <!-- <img src="yourimage1.jpg" class="logistics-service-img" alt="Air Freight Service"> -->
+    </div>
+    <div class="logistics-service-card">
+      <div class="logistics-service-header">
+        <div class="logistics-service-title">Stainless Steel (SS) Tankers</div>
+        <div class="logistics-service-icon">
+          <!-- Ship SVG icon -->
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="8" y="9" width="8" height="6" rx="2"/>
+            <path d="M2 22s.6-2 5-2 6 2 10 2 5-2 5-2"/>
+            <path d="M3 18V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v13"/>
+            <path d="M5 9V7h14v2"/>
+          </svg>
         </div>
-    </section>
+      </div>
+      <div class="logistics-service-desc">
+        Ideal for carrying food-grade liquids or corrosive substances safely <br>
 
+Capacity: 12 KL to 36 KL <br>
 
-
-
-    <section class="our-tankers-solution-section">
-        <div class="our-tankers-section-header">
-            <div class="our-tankers-header-left">
-                <h2 class="our-tankers-section-title">Our Tanker Fleet Includes:</h2>
-            </div>
+Usage: Food-based molasses, edible liquids <br>
+Features: Corrosion-resistant, smooth internal finish, easy to clean and sanitize <br>
+      </div>
+      <!-- <img src="yourimage2.jpg" class="logistics-service-img" alt="Ocean Freight"> -->
+    </div>
+    <div class="logistics-service-card">
+      <div class="logistics-service-header">
+        <div class="logistics-service-title">Insulated Tankers</div>
+        <div class="logistics-service-icon">
+          <!-- Truck SVG icon -->
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="11" width="13" height="8" rx="2"/>
+            <path d="M16 13h3l3 3v3a1 1 0 0 1-1 1h-1"/>
+            <circle cx="7.5" cy="20.5" r="1.5"/>
+            <circle cx="17.5" cy="20.5" r="1.5"/>
+            <path d="M8 16V10h4v6"/>
+          </svg>
         </div>
+      </div>
+      
 
-        <div class="our-tankers-service-cards-grid">
-            <!-- Card 1: Mild Steel (MS) Tankers -->
-            <div class="our-tankers-service-card">
-                <img src="https://placehold.co/600x400/3b82f6/FFFFFF?text=MS+Tanker" alt="Mild Steel Tanker"
-                    class="our-tankers-card-image">
-                <div class="our-tankers-card-content">
-                    <h3 class="our-tankers-card-title">Mild Steel (MS) Tankers</h3>
-                    <p class="our-tankers-card-description">Perfect for non-corrosive liquid transport such as molasses
-                        and syrup-based products.</p>
-                    <ul class="our-tankers-details-list">
-                        <li><strong>Capacity:</strong> 10 KL to 40 KL</li>
-                        <li><strong>Usage:</strong> Widely used for molasses transport</li>
-                        <li><strong>Features:</strong> Heavy-duty chassis, anti-leak welding, and pressure-tested
-                            containers</li>
-                    </ul>
-                </div>
-            </div>
+      <div class="logistics-service-desc">
+       Designed for temperature-sensitive cargo to retain product integrity. <br>
 
-            <!-- Card 2: Stainless Steel (SS) Tankers -->
-            <div class="our-tankers-service-card">
-                <img src="https://placehold.co/600x400/22C55E/FFFFFF?text=SS+Tanker" alt="Stainless Steel Tanker"
-                    class="our-tankers-card-image">
-                <div class="our-tankers-card-content">
-                    <h3 class="our-tankers-card-title">Stainless Steel (SS) Tankers</h3>
-                    <p class="our-tankers-card-description">Ideal for carrying food-grade liquids or corrosive
-                        substances safely.</p>
-                    <ul class="our-tankers-details-list">
-                        <li><strong>Capacity:</strong> 12 KL to 36 KL</li>
-                        <li><strong>Usage:</strong> Food-based molasses, edible liquids</li>
-                        <li><strong>Features:</strong> Corrosion-resistant, smooth internal finish, easy to clean and
-                            sanitize</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Card 3: Insulated Tankers -->
-            <div class="our-tankers-service-card">
-                <img src="https://placehold.co/600x400/F97316/FFFFFF?text=Insulated+Tanker" alt="Insulated Tanker"
-                    class="our-tankers-card-image">
-                <div class="our-tankers-card-content">
-                    <h3 class="our-tankers-card-title">Insulated Tankers</h3>
-                    <p class="our-tankers-card-description">Designed for temperature-sensitive cargo to retain product
-                        integrity.</p>
-                    <ul class="our-tankers-details-list">
-                        <li><strong>Capacity:</strong> 20 KL to 30 KL</li>
-                        <li><strong>Usage:</strong> Transport where temperature maintenance is required</li>
-                        <li><strong>Features:</strong> Double-layer insulation, climate control options</li>
-                    </ul>
-                </div>
-            </div>
+Capacity: 20 KL to 30 KL <br>
 
-            <!-- Card 4: Multi-Compartment Tankers -->
-            <div class="our-tankers-service-card">
-                <img src="https://placehold.co/600x400/EF4444/FFFFFF?text=Multi-Compartment+Tanker"
-                    alt="Multi-Compartment Tanker" class="our-tankers-card-image">
-                <div class="our-tankers-card-content">
-                    <h3 class="our-tankers-card-title">Multi-Compartment Tankers</h3>
-                    <p class="our-tankers-card-description">Used when transporting multiple grades of liquids in a
-                        single trip.</p>
-                    <ul class="our-tankers-details-list">
-                        <li><strong>Capacity:</strong> 20 KL to 40 KL (divided sections)</li>
-                        <li><strong>Usage:</strong> Multiple molasses qualities or dual-route deliveries</li>
-                        <li><strong>Features:</strong> Independent compartments, leak-proof separators</li>
-                    </ul>
-                </div>
-            </div>
+Usage: Transport where temperature maintenance is required <br>
+
+Features: Double-layer insulation, climate control options <br>
+
+      </div>
+      <!-- <img src="./images/truck1.webp" class="logistics-service-img" alt="Road Transport"> -->
+    </div>
+    <div class="logistics-service-card">
+      <div class="logistics-service-header">
+        <div class="logistics-service-title">Multi-Compartment Tankers</div>
+        <div class="logistics-service-icon">
+          <!-- Truck SVG <div class="logistics-service-desc">
+       Designed for temperature-sensitive cargo to retain product integrity. <br>
+
+
+Capacity: 20 KL to 30 KL <br>
+
+Usage: Transport where temperature maintenance is required <br>
+
+Features: Double-layer insulation, climate control options <br>
+
+      </div>icon -->
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="11" width="13" height="8" rx="2"/>
+            <path d="M16 13h3l3 3v3a1 1 0 0 1-1 1h-1"/>
+            <circle cx="7.5" cy="20.5" r="1.5"/>
+            <circle cx="17.5" cy="20.5" r="1.5"/>
+            <path d="M8 16V10h4v6"/>
+          </svg>
         </div>
-    </section>
+      </div>
+     <div class="logistics-service-desc">
+       Used when transporting multiple grades of liquids in a single trip.  <br>
+
+
+Capacity: 20 KL to 40 KL (divided sections) <br>
+
+Usage: Multiple molasses qualities or dual-route deliveries <br>
+Features: Independent compartments, leak-proof separators <br>
+
+
+      </div>
+      
+  </div>
+</section>
 
 
 
 
-    <section class="vf-section">
-        <!-- Left Content Column -->
-        <div class="vf-content">
-            <h2 class="vf-title">Vehicle Features & Safety Standards</h2>
-
-            <div class="vf-grid">
-                <!-- Service Item 1: GPS-Enabled Tracking Systems -->
-                <div class="vf-item">
-                    <span class="vf-num">01</span>
-                    <h3 class="vf-heading">GPS-Enabled Tracking Systems</h3>
-                    <p class="vf-desc">Real-time location monitoring for transparency and safety.</p>
-                </div>
-
-                <!-- Service Item 2: Pressure Release Valves & Seals -->
-                <div class="vf-item">
-                    <span class="vf-num">02</span>
-                    <h3 class="vf-heading">Pressure Release Valves & Seals</h3>
-                    <p class="vf-desc">Prevent spillage, leakage, and pressure damage.</p>
-                </div>
-
-                <!-- Service Item 3: Pneumatic Unloading Systems -->
-                <div class="vf-item">
-                    <span class="vf-num">03</span>
-                    <h3 class="vf-heading">Pneumatic Unloading Systems</h3>
-                    <p class="vf-desc">Ensures smooth, controlled discharge at destination points.</p>
-                </div>
-
-                <!-- Service Item 4: RTO Compliant & ISO-Certified Units -->
-                <div class="vf-item">
-                    <span class="vf-num">04</span>
-                    <h3 class="vf-heading">RTO Compliant & ISO-Certified Units</h3>
-                    <p class="vf-desc">All our vehicles meet government transport and industry safety norms.</p>
-                </div>
-            </div>
+<section class="transport-feature-section">
+  <h2 class="transport-feature-title">Vehicle Features & Safety Standards</h2>
+  <div class="transport-feature-underline"></div>
+  <div class="transport-feature-grid">
+    <div class="transport-feature-item">
+      <div class="transport-feature-icon">
+        <!-- SVG Icon: Goods -->
+        <svg width="58" height="58" stroke="black" fill="none" stroke-width="2.8" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="18" r="6"/>
+          <path d="M10 24c0 10 14 20 14 20s14-10 14-20"/>
+          <path d="M18 18a6 6 0 0 1 12 0"/>
+        </svg>
+      </div>
+      <div>
+        <div class="transport-feature-item-title">GPS-Enabled Tracking Systems</div>
+        <div class="transport-feature-item-desc">
+          Real-time location monitoring for transparency and safety.
         </div>
+      </div>
+    </div>
 
-        <!-- Right Image Column -->
-        <div class="vf-img">
-            <img src="https://cdn.pixabay.com/photo/2016/11/29/04/15/digger-1867268_1280.jpg"
-                alt="Cargo ship and airplane">
+    <div class="transport-feature-item">
+      <div class="transport-feature-icon">
+        <!-- SVG Icon: Truck -->
+        <svg width="58" height="58" stroke="black" fill="none" stroke-width="2.8" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="20" width="24" height="14" rx="3"/>
+          <rect x="10" y="14" width="28" height="6" rx="1"/>
+          <circle cx="18" cy="38" r="3"/>
+          <circle cx="30" cy="38" r="3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="transport-feature-item-title">Pressure Release Valves & Seals</div>
+        <div class="transport-feature-item-desc">
+          Prevent spillage, leakage, and pressure damage.
         </div>
-    </section>
+      </div>
+    </div>
 
+    <div class="transport-feature-item">
+      <div class="transport-feature-icon">
+        <!-- SVG Icon: Storage -->
+        <svg width="58" height="58" stroke="darkred" fill="none" stroke-width="2.8" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="10" width="20" height="28" rx="2"/>
+          <line x1="18" y1="18" x2="30" y2="18"/>
+          <line x1="18" y1="24" x2="30" y2="24"/>
+          <line x1="18" y1="30" x2="26" y2="30"/>
+        </svg>
+      </div>
+      <div>
+        <div class="transport-feature-item-title">RTO Compliant & ISO-Certified Units</div>
+        <div class="transport-feature-item-desc">
+          All our vehicles meet government transport and industry safety norms.
+        </div>
+      </div>
+    </div>
 
+    <div class="transport-feature-item">
+      <div class="transport-feature-icon">
+        <!-- SVG Icon: Forwarding -->
+        <svg width="58" height="58" stroke="darkred" fill="none" stroke-width="2.8" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="8"/>
+          <path d="M16 24h16M24 16v16"/>
+          <path d="M20 20l8 8M28 20l-8 8"/>
+        </svg>
+      </div>
+      <div>
+        <div class="transport-feature-item-title">Pneumatic Unloading Systems</div>
+        <div class="transport-feature-item-desc">
+          Ensures smooth, controlled discharge at destination points.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================================ -->
 
     <section class="routes-new-section">
-        <div class="section-content">
-            <h2 class="section-title">Our Extensive Network Across India</h2>
-            <p class="section-description">
-                Our tankers regularly operate across Pan India, ensuring timely and efficient deliveries
-                to key industrial and agricultural hubs. We maintain a strong presence in the following states:
-            </p>
+  <div class="routes-container">
+    <h2 class="routes-title">
+      Our Extensive <span>Network Across India</span>
+    </h2>
+    <p class="routes-description">
+      Our tankers regularly operate across Pan India, ensuring timely and efficient deliveries
+      to key industrial and agricultural hubs. We maintain a strong presence in the following states:
+    </p>
 
-            <ul class="states-grid">
-                <li class="state-item">Uttar Pradesh</li>
-                <li class="state-item">Maharashtra</li>
-                <li class="state-item">Karnataka</li>
-                <li class="state-item">Tamil Nadu</li>
-                <li class="state-item">Andhra Pradesh</li>
-                <li class="state-item">Gujarat</li>
-                <li class="state-item">Bihar</li>
-                <li class="state-item">And many more…</li>
-            </ul>
-        </div>
-    </section>
+    <ul class="routes-states-grid">
+      <li class="routes-state-item">Uttar Pradesh</li>
+      <li class="routes-state-item">Maharashtra</li>
+      <li class="routes-state-item">Karnataka</li>
+      <li class="routes-state-item">Tamil Nadu</li>
+      <li class="routes-state-item">Andhra Pradesh</li>
+      <li class="routes-state-item">Gujarat</li>
+      <li class="routes-state-item">Bihar</li>
+      <li class="routes-state-item">And many more…</li>
+    </ul>
+  </div>
+</section>
 
 
 
